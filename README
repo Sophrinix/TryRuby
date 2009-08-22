@@ -1,0 +1,41 @@
+This is the FRONT END try ruby files from 2008 piecemeal'd together.
+
+Again, this is only the front end.
+
+I seem to be having issues with anything outside of firefox.
+I have not started implementing /irb?cmd= yet.
+UPDATE: I am in contact with the whymirror and company to get the sandbox integrated.
+
+I have a few ideas for how to do this.
+I figured this would be a great time to explain as far as I can tell how this works, and how you could can
+hook this into other languages. 
+
+For instance, you could have a try python. 
+Only, you'd probably have to rewrite this in tables, because guido doesn't seem to see the value in css. :-)
+
+Crispy Tofu > chunky bacon ;-P
+
+-----------------
+The Magic behind "try ruby"
+
+index.html
+loads several js files...specifically mouseIrb and mouseApp
+loads css
+loads html
+
+Most of the css and html we can ignore. The real power is in what mouseirb.js and mouseapp are doing.
+In this version moo and prototype are making all the ajax go around.
+
+In later versions of this program, _why replaced moo and prototype with jquery and mouseirb simply became irb.js
+
+I will upload those differences once it is clear that I have a full server + client stack working.
+
+I am still working out why there is authentication built in to mouse irb objects.
+
+
+If this file seems incoherent, it is because I am recovering what I can, and mapping it out at the same time.
+
+In this inital release, I am stabilizing it on a copy of MAMP.
+After the first repo checkout it  will be pushed into a rails app (he probably used camping, but he also
+didn't leave any of that code... so rails it is)
+
