@@ -11,8 +11,9 @@ from there I will see about the viability of making this use the r bridge so you
 can have ruby to R lessons. :-)
 
 Explaination of /irb.cgi
+========================
 The only part of the TryRuby implementation that wasn't able to be recovered from archive.org is the /irb file (or /irb.cgi currently, you can change the name of the file used in js/irb.js). This script should:
- - Take one GET param "cmd", which will contain a single line of ruby to run. It can also be "!INIT!IRB", which is called at the start of the session. The current implementation of irb.cgi ignores this.
+ - Take one GET param "cmd", which will contain a single line of ruby to run. It can also be "!INIT!IRB", which is called at the start of the session. The current implementation of irb.cgi ignores this. "reset" should also do something special (but doesn't atm).
  - Return the output, optionally formatted using normal shell escapes (eg "\033[1;33mThis appears orange")
 
 The output has four main formats for returning a result, error output and line continuation. This is used by the help system so that it can detect when a user has entered the next step for the tutorial.
@@ -29,6 +30,7 @@ Finally, if the command isn't finished (eg "def myfunc"), then ".." should be re
 
 
 How this works with the help system:
+====================================
 The help system works with the file /tutorials/intro.html . There is a <div class="stretcher"> section for each part of the tutorial. Most of it is just the text for that part of the tutorial. However, there is also a <div class="answer|stdout">regex</div> section. If this matches against the output for a command, then the tutorial will go to the next step. 
 
 When the class is "answer", then it will match against lines beginning with "=>". So <div class="answer">\d+</div> will match any code that returns a number. Other output can be shown as well, eg "someoutput\n=> 42" will match this. The exact regexp is '^\s*=> match_regex_from_help\s*$'. So the line must be an exact match, other than spaces and the initial =>
@@ -40,6 +42,7 @@ As a special case, if the tutorial expects that a command isn't finished (such a
 
 
 Current Implementation
+======================
 The current implentation doesn't use persistant processes like irb. What it does is it stores all previous successfully run commands in session['previous_commands'], and runs them all first (disabling stdout). Then it will finally run the command. It uses a primitive method of detecting incomplete statements (with the function unfinished_statement?) and when a incomplete statement is finished (finished_statement?). The current nesting level (eg "class X" then "def myfunc" will having a nesting level of 2) is stored in $session['nesting_level']. All the lines of the current incomplete statement are stored in $session['current_statement'].
 
 
