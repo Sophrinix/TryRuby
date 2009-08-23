@@ -1,0 +1,11 @@
+This is the original code base from 2009 for try ruby.
+it is not sandboxed. do not run it on a publicly facing server yet.
+
+it will run the system method. It will let you hose your server.
+I am working to make this a saner program.
+it does not include the sandbox. you have to use that seperately.
+
+once i have this stable and running I will begin to sandbox this inside of jruby.
+
+from there I will see about the viability of making this use the r bridge so you 
+can have ruby to R lessons. :-)
