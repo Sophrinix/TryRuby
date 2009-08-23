@@ -1,4 +1,4 @@
-this is the original code base from 2009 for try ruby.
+This is the original code base from 2009 for try ruby.
 it is not sandboxed. do not run it on a publicly facing server yet.
 
 it will run the system method. It will let you hose your server.
