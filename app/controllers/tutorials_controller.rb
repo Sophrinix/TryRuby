@@ -1,2 +1,0 @@
-class TutorialsController < ApplicationController
-end

@@ -1,2 +1,0 @@
-class IrbController < ApplicationController
-end
