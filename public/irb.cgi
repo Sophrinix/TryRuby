@@ -155,7 +155,6 @@ EOF
     # format the message so that it maches what is expected
     # in the help files
     msg = e.message.sub(/.*:in `initialize': /, "")
-    p msg
     error_s = "#{e.class}: #{msg}"
     result = "\033[1;33m#{error_s}"
     
