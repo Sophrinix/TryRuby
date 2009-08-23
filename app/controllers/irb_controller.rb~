@@ -1,0 +1,2 @@
+class IrbController < ApplicationController
+end

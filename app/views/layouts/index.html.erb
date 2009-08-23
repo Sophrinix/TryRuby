@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>try ruby! (in your browser)</title>
+    <script type="text/javascript" src="javascripts/prototype.js"></script>
+    <script type="text/javascript" src="javascripts/mouseApp.js"></script>
+    <script type="text/javascript" src="javascripts/mouseIrb.js"></script>
+    <script type="text/javascript" src="javascripts/moo.fx.js"></script>
+    <script type="text/javascript" src="javascripts/moo.fx.pack.js"></script>
+    <script type="text/javascript">
+    var allStretch;
+    var helpPages;
+    var chapPages;
+    var defaultPage;
+    var toot = window.location.search.substr(1)
+
+    //the main function, call to the effect object
+    function dumpAlert(obj) {
+        props = [];
+        for ( var i in obj ) {
+            props.push( "" + i + ": " + obj[i] );
+        }
+        alert( props );
+    }
+    window.onload = function() {
+        Element.cleanWhitespace('helpstone');
+        defaultPage = $('helpstone').childNodes[0].innerHTML;
+
+        window.irb = new MouseApp.Irb('irb', {
+            rows: 13,
+            name: 'IRB',
+            input: 'irb_input',
+            greeting: "%+r Interactive ruby ready. %-r",
+            ps: '\033[0;32m>>\033[m',
+            user: 'guest',
+            host: 'tryruby',
+            irbUrl: '/irb',
+            init: function () {
+                Element.cleanWhitespace('helpstone');
+                helpPages = document.getElementsByClassName("stretcher");
+                chapPages = new Array();
+                allStretch = new fx.MultiFadeSize(helpPages, {duration: 400});
+                for (var i = 0; i < helpPages.length; i++ ) {
+                    var cls = helpPages[i].className.split(' ');
+                    for (var j = 0; j < cls.length; j++) {
+                        if (cls[j] == 'chapmark') {
+                            chapPages.push([i, helpPages[i]]);
+                            break;
+                        }
+                    }
+                    allStretch.hide(helpPages[i], 'height');
+                }
+                helpPages[0].fs.toggle('height');
+            },
+            loadTutorial: function (id, instruct) {
+                new Ajax.Request('/tutorials/' + id + '.html', {
+                    method: 'get', 
+                    onSuccess: function (r) {
+                        if ( instruct ) { 
+                            $('helpstone').innerHTML = "<div class='stretcher chapmark'>" + defaultPage + "</div>" + r.responseText;
+                        } else {
+                            $('helpstone').innerHTML = r.responseText;
+                        }
+                        window.irb.init();
+                        window.irb.showHelp(0);
+                    }
+                });
+            },
+            showChapter: function (n) {
+                if (n >= chapPages.length) return;
+                allStretch.showThisHideOpen(chapPages[n][1], 100, 'height');
+                this.setHelpPage(chapPages[n][0], chapPages[n][1]);
+            },
+            showHelp: function (n) {
+                if (n >= helpPages.length) return;
+                allStretch.showThisHideOpen(helpPages[n], 100, 'height');
+                this.setHelpPage(n, helpPages[n]);
+            },
+            popup_goto: function (u) {
+                Element.show('lilBrowser');
+                $('lilBrowser').style.left = '40px';
+                $('lilBrowser').style.top = '40px';
+                $('lbIframe').src = u;
+            },
+            popup_make: function (s) {
+                Element.show('lilBrowser');
+                $('lilBrowser').style.left = '40px';
+                $('lilBrowser').style.top = '40px';
+                $('lbIframe').onIframeLoad = function () { 
+                    return s;
+                };
+                $('lbIframe').src = '/blank.html';
+            },
+            popup_close: function () {
+                Element.hide('lilBrowser');
+            }
+        });
+
+        if ( !toot ) {
+            toot = 'intro';
+        }
+        try {
+            window.irb.options.loadTutorial( toot, true );
+        } catch (e) {}
+    }
+    </script>
+    <style type="text/css">
+        @import 'stylesheets/site.css';
+    </style>
+</head>
+<body>
+<%= @content_for_layout %>
+</body>
+
+</html>
