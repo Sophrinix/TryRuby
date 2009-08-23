@@ -130,16 +130,19 @@ def run_line(line)
   line_caused_error = false
   begin
     previous_commands = $session['past_commands'].join("\n")
+
+    stdout_captured = StringIO.new()
        
     # This script will
     # firstly runs the $common_code. Then it disables stdout 
-    # and runs all previous commands. Finally it will re-enable
-    # stdout and run line
+    # and runs all previous commands.
+    # Finally it will redirect all stdout to stdout_captured
+    # and runs line
     eval_cmd = <<EOF
 #{$common_code}
-$stdout = StringIO.new("w")
+$stdout = StringIO.new() #disable stdout
 #{previous_commands}
-$stdout = $original_stdout
+$stdout = stdout_captured
 #{line}
 EOF
     #puts eval_cmd
@@ -148,15 +151,24 @@ EOF
     if output.instance_of? JavascriptResult
       result = "\033[1;JSm#{output.js}\033[m"
     else
+      
       result = "=> " + "\033[1;20m" + output.inspect
     end
   rescue Exception => e
+    puts "here#{e.inspect}"
     line_caused_error = true
     # format the message so that it maches what is expected
     # in the help files
     msg = e.message.sub(/.*:in `initialize': /, "")
     error_s = "#{e.class}: #{msg}"
     result = "\033[1;33m#{error_s}"
+
+  ensure
+    # make sure we can print again
+    $stdout = $original_stdout
+    print stdout_captured.string
+    print "\n" unless stdout_captured.string.empty?
+
     
   end
   unless line == "!INIT!IRB!" or line_caused_error
