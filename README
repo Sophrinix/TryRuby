@@ -1,3 +1,12 @@
+ATTENTION:
+ THIS CODEBASE WILL REQUIRE THAT YOU HAVE SOMETHING LIKE SELINUX IN PLACE TO SECURE. 
+CHROOTS OR JAILS WON'T DO THE TRICK!
+ZONES MAY WORK, BUT THAT IS NO GUARANTEE!
+ 
+I have started a repo that will have a copy of the selinux policy and xen create script
+to safely host this project
+-------------------------------------------------------------------
+
 This is the original code base from 2009 for try ruby.
 it is not sandboxed. do not run it on a publicly facing server yet.
 
