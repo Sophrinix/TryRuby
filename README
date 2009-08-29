@@ -1,3 +1,25 @@
+ATTENTION:
+ THIS CODEBASE WILL REQUIRE THAT YOU HAVE SOMETHING LIKE SELINUX IN PLACE TO SECURE. 
+CHROOTS OR JAILS WON'T DO THE TRICK!
+ZONES MAY WORK, BUT THAT IS NO GUARANTEE!
+
+THIS WARNING IS TRUE EVEN IF YOU USE _WHY'S SANDBOX CODE FOR THE BACKEND.
+
+I have started a repo that will have a copy of the selinux policy and xen create script
+to safely host this project
+
+Only the first 4 summaries work. 5-7 do not work. 8 works on a technicality.
+
+I need a few files:
+/MouseHole/flickrpedia.user.rb
+Anything in /MouseHole/
+anything in /Libraries/
+comics.txt
+
+If you have any of this, please fork this, make the commit and give a pull request. Thanks.
+
+-------------------------------------------------------------------
+
 This is the original code base from 2009 for try ruby.
 it is not sandboxed. do not run it on a publicly facing server yet.
 
