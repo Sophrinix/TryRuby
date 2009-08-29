@@ -17,7 +17,24 @@ module Popup
     end
   end
 
+  class List
+    attr_accessor :elements
+    def initialize(elements)
+      self.elements = elements
+    end
+  end
+
+
+  class Paragraph
+    attr_accessor :text
+    def initialize(text)
+      self.text = text
+    end
+  end
+
+
   class ComplexPopup
+    attr_reader :elements
     def initialize
       @elements = []
     end
@@ -29,6 +46,17 @@ module Popup
     def link(text, target)
       @elements << Link.new(text, target)
     end
+
+    def p(text)
+      @elements << Paragraph.new(text)
+    end
+
+    def list(&block)
+      lst = ComplexPopup.new
+      lst.instance_eval(&block)
+      @elements << List.new(lst.elements)
+    end
+      
   end
       
       
