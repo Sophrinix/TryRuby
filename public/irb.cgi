@@ -65,14 +65,18 @@ end
 # matches against def x, class x and test.asdf do |dfdf| style statements
 # Not that robust
 def unfinished_statement?(line)
-  line.match(/^\s*((def)|(class))/) || line.match(/.* do *\|.*\| *$/)
+  [/^\s*((def)|(class))/,
+   /.* do *\|.*\| *$/,
+   /((do)|(\{))\s*$/].any? {|regexp| line.match(regexp) }
+  
+  
 
 end
 
 # matches against end, to finish a statement (or reduce the
 # indent_level by one
 def finished_statement?(line)
-  line == "end"
+  line == "end" || line == "}"
 end
 
 # This code is used to initialize any predefined variables used
