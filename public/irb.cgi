@@ -138,11 +138,41 @@ def run_line(line)
     # and runs all previous commands.
     # Finally it will redirect all stdout to stdout_captured
     # and runs line
+		# For temporary security-reasons, undefine unsafe methods on Kernel - which should prevent all 
+		# calls to them - regardless of how it's passed to the script!
     eval_cmd = <<EOF
+
+		module Kernel
+			UNSAFE_METHODS = ["system", "exit", "abort", "exit!", "`", "eval", "exec", "syscall"]
+			
+			UNSAFE_METHODS.each do |m_name|
+				undef_method m_name
+			end
+			
+			def system(cmd)
+				return "Kernel.system is not allowed for security-reasons."
+			end
+			
+			def self.system(cmd)
+				return "Kernel.system is not allowed for security-reasons!"		
+			end
+			
+			def method_missing(method_name, *args, &block)
+				if UNSAFE_METHODS.include?(method_name.to_s)
+					return "Calls to unsafe methods in Kernel is disabled."
+				else
+					super
+				end
+			end
+			
+		end
+		
+		
 #{$common_code}
 $stdout = StringIO.new() #disable stdout
-#{previous_commands}
+	#{previous_commands}
 $stdout = stdout_captured
+
 #{line}
 EOF
     #puts eval_cmd
@@ -177,12 +207,8 @@ EOF
   return result
 end
 
-def security_tape(value)
-value = value.gsub(/system/," ").gsub(/ernel/," ")
-return value
-end
 
-print run_script(security_tape(cgi['cmd']))
+print run_script(cgi['cmd'])
 
 
   
