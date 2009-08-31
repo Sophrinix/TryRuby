@@ -177,10 +177,12 @@ EOF
   return result
 end
 
+def security_tape(value)
+value = value.gsub(/system/," ").gsub(/ernel/," ")
+return value
+end
 
-
-# finally run the script
-print run_script(cgi['cmd'])
+print run_script(security_tape(cgi['cmd']))
 
 
   
