@@ -1,10 +1,13 @@
-ATTENTION:
- THIS CODEBASE WILL REQUIRE THAT YOU HAVE SOMETHING LIKE SELINUX IN PLACE TO SECURE. 
-CHROOTS OR JAILS WON'T DO THE TRICK!
-ZONES MAY WORK, BUT THAT IS NO GUARANTEE!
-
-THIS WARNING IS TRUE EVEN IF YOU USE _WHY'S SANDBOX CODE FOR THE BACKEND.
-
+This dire warning is no long strictly true, but is none the less a good idea.
+***************************************
+* ATTENTION:
+*  THIS CODEBASE WILL REQUIRE THAT YOU HAVE SOMETHING LIKE SELINUX
+*  IN PLACE TO SECURE. 
+*  CHROOTS OR JAILS WON'T DO THE TRICK!
+*  ZONES MAY WORK, BUT THAT IS NO GUARANTEE!
+*
+* THIS WARNING IS TRUE EVEN IF YOU USE _WHY'S SANDBOX CODE FOR THE BACKEND.
+*************************************
 I have started a repo that will have a copy of the selinux policy and xen create script
 to safely host this project
 
