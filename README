@@ -1,5 +1,11 @@
-
 Only the first 4 summaries work. 5-7 do not work. 8 works on a technicality.
+
+If you feel like you are stuck in the middle of a lesson try typing:
+
+next
+
+
+Doing so will skip to to the next part of the less/next lesson
 
 I need a few files:
 /MouseHole/flickrpedia.user.rb
