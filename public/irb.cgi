@@ -148,7 +148,7 @@ def run_line(line)
     eval_cmd = <<EOF
 
 		module Kernel
-			UNSAFE_METHODS = ["system", "exit", "abort", "exit!", "`", "eval", "exec", "syscall"]
+			UNSAFE_METHODS = ["system", "exit", "abort", "exit!", "kernel","IO","popen","`", "eval", "exec", "syscall"]
 			
 			UNSAFE_METHODS.each do |m_name|
 				undef_method m_name
