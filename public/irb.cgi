@@ -9,7 +9,7 @@ require 'cgi/session/pstore'     # provides CGI::Session::PStore
 ##Good Catch Ruby Community
 # This is a psa Go Here to find out what this means:
 # http://www.rubycentral.com/pickaxe/taint.html
-$SAFE = 4
+#$SAFE = 4
 cgi = CGI.new("html5")
 
 
