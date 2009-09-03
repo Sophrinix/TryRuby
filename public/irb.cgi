@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-
+require 'sandbox'
 require 'cgi'
 require 'stringio'
 require 'cgi/session'
@@ -182,7 +182,7 @@ $stdout = stdout_captured
 EOF
     #puts eval_cmd
 
-    output = eval(eval_cmd)
+    output = Sandbox.safe.eval(eval_cmd)
     if output.instance_of? JavascriptResult
       result = "\033[1;JSm#{output.js}\033[m"
     else
