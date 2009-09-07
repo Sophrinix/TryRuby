@@ -1,10 +1,15 @@
 #!/usr/bin/env ruby
 
-
+require 'sandbox'
 require 'cgi'
 require 'stringio'
 require 'cgi/session'
 require 'cgi/session/pstore'     # provides CGI::Session::PStore
+
+##Good Catch Ruby Community
+# This is a psa Go Here to find out what this means:
+# http://www.rubycentral.com/pickaxe/taint.html
+#$SAFE = 4
 cgi = CGI.new("html5")
 
 
@@ -142,16 +147,46 @@ def run_line(line)
     # and runs all previous commands.
     # Finally it will redirect all stdout to stdout_captured
     # and runs line
+		# For temporary security-reasons, undefine unsafe methods on Kernel - which should prevent all 
+		# calls to them - regardless of how it's passed to the script!
     eval_cmd = <<EOF
+
+		module Kernel
+			UNSAFE_METHODS = ["system", "exit", "abort", "exit!", "kernel","IO","popen","`", "eval", "exec", "syscall"]
+			
+			UNSAFE_METHODS.each do |m_name|
+				undef_method m_name
+			end
+			
+			def system(cmd)
+				return "Kernel.system is not allowed for security-reasons."
+			end
+			
+			def self.system(cmd)
+				return "Kernel.system is not allowed for security-reasons!"		
+			end
+			
+			def method_missing(method_name, *args, &block)
+				if UNSAFE_METHODS.include?(method_name.to_s)
+					return "Calls to unsafe methods in Kernel is disabled."
+				else
+					super
+				end
+			end
+			
+		end
+		
+		
 #{$common_code}
 $stdout = StringIO.new() #disable stdout
-#{previous_commands}
+	#{previous_commands}
 $stdout = stdout_captured
+
 #{line}
 EOF
     #puts eval_cmd
 
-    output = eval(eval_cmd)
+    output = Sandbox.safe.eval(eval_cmd)
     if output.instance_of? JavascriptResult
       result = "\033[1;JSm#{output.js}\033[m"
     else
@@ -182,8 +217,6 @@ EOF
 end
 
 
-
-# finally run the script
 print run_script(cgi['cmd'])
 
 
