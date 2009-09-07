@@ -8,6 +8,10 @@ module Popup
     def initialize(level, text)
       self.level, self.text = level, text
     end
+    def generate_html
+      "<h#{level}>#{self.text}</h#{level}>"
+    end
+
   end
 
   class Link
@@ -15,12 +19,26 @@ module Popup
     def initialize(text, target)
       self.text, self.target = text, target
     end
+    def generate_html
+      "<a href=\"#{target}\">#{text}</a>"
+    end
+
+
   end
 
   class List
     attr_accessor :elements
     def initialize(elements)
       self.elements = elements
+    end
+    
+    def generate_html
+      items = elements.map do |elem|
+        text = elem.instance_of?(Paragraph) ? elem.text : elem.generate_html
+        "<li>#{text}</li>"
+      end.join(" ")
+
+      "<ul>#{items}</ul>"
     end
   end
 
@@ -29,6 +47,10 @@ module Popup
     attr_accessor :text
     def initialize(text)
       self.text = text
+    end
+
+    def generate_html
+      "<p>#{self.text}</p>"
     end
   end
 
@@ -56,6 +78,12 @@ module Popup
       lst.instance_eval(&block)
       @elements << List.new(lst.elements)
     end
+
+    def generate_html()
+      @elements.map(&:generate_html).join(" ")
+    end
+        
+              
       
   end
       
@@ -64,7 +92,11 @@ module Popup
     result = ComplexPopup.new
     result.instance_eval(&block)
 
-    result
+    html = result.generate_html.gsub('\\', '\\\\').gsub('"', '\\"')
+    command = "window.irb.options.popup_make(\"#{html}\")"
+    # puts command
+    JavascriptResult.new command
+      
   end
     
 end

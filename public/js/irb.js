@@ -87,9 +87,14 @@ window.onload = function() {
         popup_make: function (s) {
             $('#lilBrowser').show().css({left: '40px', top: '40px'});
             $('#lbIframe').get(0).onIframeLoad = function () { 
+                alert($(this).html());
+                alert("$(this).html()");
                 return s;
             };
-            $('#lbIframe').attr({src: '/blank.html'});
+            //$('#lbIframe').attr({src: '/blank.html'});
+            src = s.replace(/\\/g, "\\\\").replace(/\"/g, "\\\"");
+            $('#lbIframe').attr({src: "javascript:\"" + src + "\""});
+            // $('#
         },
         popup_close: function () {
             $('#lilBrowser').hide();
