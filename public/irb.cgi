@@ -62,7 +62,8 @@ def unfinished_statement?(line)
 end
  
 def finished_statement?(line)
-  line == "end" || line == "}"
+  [/^\s*end\s*$/,
+   /^\s*}\s*$/].any? {|regexp| line.match(regexp)};
 end
  
 $common_code = <<EOF
@@ -85,7 +86,7 @@ def run_script(line)
   if unfinished_statement?(line) then
     $session['current_statement'] << line
     $session['nesting_level'] += 1
-    return ".."
+    return ".." * $session['nesting_level']
   end
  
  
@@ -98,12 +99,12 @@ def run_script(line)
       $session['current_statement'] = []
       return run_line(new_line)
     else
-      return ".."
+      return ".." * $session['nesting_level']
     end
   end
   if $session['nesting_level'] > 0 then
     $session['current_statement'] << line
-    return ".."
+    return ".." * $session['nesting_level']
   end
   # finally ready to run a command
   run_line(line)

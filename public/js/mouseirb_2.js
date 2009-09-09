@@ -63,7 +63,7 @@ $.extend(MouseApp.Irb.prototype, MouseApp.Terminal.prototype, {
     reply: function(str) {
         var raw = str.replace(/\033\[(\d);(\d+)m/g, '');
         this.checkAnswer(raw);
-        if (str != "..") {
+        if (!str.match(/^(\.\.)+$/)) {
             if ( str[str.length - 1] != "\n" ) {
                 str += "\n";
             }
@@ -84,7 +84,12 @@ $.extend(MouseApp.Irb.prototype, MouseApp.Terminal.prototype, {
             this.write(str);
             this.prompt();
         } else {
-            this.prompt("\033[1;32m..\033[m", true);
+            this.prompt("\033[1;32m" + ".." + "\033[m", true);
+            var indent = [];
+            for(var i = 0; i < str.length; i++) {
+                indent.push(" ");
+            }
+            this.puts(indent.join(""), 0);
         }
     },
 
