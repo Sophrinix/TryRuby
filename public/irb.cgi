@@ -23,7 +23,6 @@ $session['past_commands'] ||= []
  
 print cgi.header
  
-Dir = Class.new
  
 class Dir
   def self.entries(path)
