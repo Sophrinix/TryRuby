@@ -85,11 +85,7 @@ $.extend(MouseApp.Irb.prototype, MouseApp.Terminal.prototype, {
             this.prompt();
         } else {
             this.prompt("\033[1;32m" + ".." + "\033[m", true);
-            var indent = [];
-            for(var i = 0; i < str.length; i++) {
-                indent.push(" ");
-            }
-            this.puts(indent.join(""), 0);
+            this.puts(str.replace(/\./g, ' '), 0);
         }
     },
 
