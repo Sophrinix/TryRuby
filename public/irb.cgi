@@ -1,7 +1,11 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby1.9
+
+# yes i put ruby1.9 instead of ruby because of debian, i know
+#i need to fix that, i'll do it later
  
 #require "sandbox" 
 require 'cgi'
+require 'popup.rb'
 require 'stringio'
 require 'cgi/session'
 require 'cgi/session/pstore' # provides CGI::Session::PStore
