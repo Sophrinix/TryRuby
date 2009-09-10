@@ -18,6 +18,7 @@ $session = CGI::Session.new(cgi,
 $session['current_statement'] ||= []
 $session['nesting_level'] ||= 0
 $session['nesting_level'] = 0 if $session['nesting_level'] < 0
+$session['start_time'] ||= Time.now
  
 $session['past_commands'] ||= []
  
@@ -59,6 +60,12 @@ def require(require_path)
   true
 end
   
+def time
+  seconds = (Time.now - $session['start_time']).ceil
+  return "#{seconds} seconds" if seconds < 60 
+  return "#{seconds / 60} minutes" if seconds > 60
+    
+end
     
     
  
@@ -94,7 +101,20 @@ def run_script(line)
   #puts "SESSION FOR LINE #{line}"
   $session
   #puts "########################\n\n"
+
+  if line == "!INIT!IRB!" then
+    $session['start_time'] = Time.now
+    $session['current_statement'] = []
+    $session['nesting_level'] = 0
+    $session['past_commands'] = []
+    return " "
+  end
  
+  if /^\s*reset\s*$/ === line then
+    $session['current_statement'] = []
+    $session['nesting_level'] = 0
+    return " "
+  end
  
   line_caused_error = false
   if unfinished_statement?(line) then
