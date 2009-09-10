@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
  
-require "sandbox" 
+#require "sandbox" 
 require 'cgi'
 require 'stringio'
 require 'cgi/session'
@@ -67,11 +67,10 @@ def finished_statement?(line)
 end
  
 $common_code = <<EOF
- 
 poem = "My toast has flown from my hand\nAnd my toast has gone to the
 moon.\nBut when I saw it on television,\nPlanting our flag on Halley's
 comet,\nMore still did I want to eat it.\n"
- 
+
 EOF
  
 $original_stdout = $stdout
@@ -111,7 +110,7 @@ def run_script(line)
 end
  
 def run_line(line)
-Sandbox.new()  
+#Sandbox.new()  
 #p $session
   begin
     previous_commands = $session['past_commands'].map do |cmd|
@@ -120,15 +119,18 @@ Sandbox.new()
     end.join("\n")
        
     eval_cmd = <<EOF
+$SAFE = 3
+# an idea to try ##line == "require 'popup.rb' " ? $SAFE = 0 : $SAFE = 3 
 #{$common_code}
-$stdout = StringIO.new("w")
+$stdout = StringIO.new()
 #{previous_commands}
 $stdout = $original_stdout
+
 #{line}
 EOF
     #puts eval_cmd
  
-    output = Sandbox.safe.eval(eval_cmd)
+    output = eval(eval_cmd)
 
     if output.instance_of? JavascriptResult
       result = "\033[1;JSm#{output.js}\033[m"
