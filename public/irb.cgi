@@ -7,6 +7,7 @@ require 'cgi/session'
 require 'cgi/session/pstore' # provides CGI::Session::PStore
 cgi = CGI.new("html5")
  
+  
  
 $session = CGI::Session.new(cgi,
     'database_manager' => CGI::Session::PStore, # use PStore
@@ -20,9 +21,13 @@ $session['nesting_level'] = 0 if $session['nesting_level'] < 0
  
 $session['past_commands'] ||= []
  
+$session['current_includes'] ||= []
  
 print cgi.header
  
+$session['current_includes'].each do |inc|
+  require inc
+end
  
 class Dir
   def self.entries(path)
@@ -45,6 +50,16 @@ class File
     end
   end
 end
+
+def require(require_path)
+  path = require_path.sub(/\.rb$/, "")
+  return false unless ['popup'].include? path
+  return false if $session['current_includes'].include? path
+  $session['current_includes'] << path
+  true
+end
+  
+    
     
  
 class JavascriptResult
