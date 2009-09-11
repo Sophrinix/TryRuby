@@ -160,9 +160,10 @@ class TryRubyOutputTest < Test::Unit::TestCase
                  t.format_output)
   end
 
-  #def test_line_continuation
-  #  t = TryRubyOutput.line_continuation(3)
-  #  assert_equal
+  def test_line_continuation
+    t = TryRubyOutput.line_continuation(3)
+    assert_equal(".." * 3, t.format_output)
+  end
 
 end
     
