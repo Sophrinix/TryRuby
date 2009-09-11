@@ -197,6 +197,7 @@ EOF
     #puts eval_cmd
  
     result = eval(eval_cmd)
+    session.past_commands << line
     $stdout = $original_stdout
     return TryRubyOutput.standard(result: result, output: outputIO.string)
 

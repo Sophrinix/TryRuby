@@ -1,8 +1,9 @@
 require 'pp'
 require 'test/unit'
-require 'tryruby_runner.rb'
 require 'test/unit/ui/console/testrunner'
 require 'stringio'
+
+load 'tryruby_runner.rb'
 
 class TryRubyTest < Test::Unit::TestCase
 
@@ -15,7 +16,11 @@ class TryRubyTest < Test::Unit::TestCase
       params[:result] ||= nil
       params[:error] ||= nil
       
-      result = run_script(self[:session], line)
+      o = Object.new
+      session = self[:session]
+      result = o.instance_eval do
+        res = run_script(session, line)
+      end
 
       begin
         tester = self[:test]
