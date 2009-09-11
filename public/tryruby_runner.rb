@@ -12,12 +12,6 @@ class TryRubyTestSession
 
 end
 
-    
-  
-  
-  
-
-
 
 def special_require(require_path)
   path = require_path.sub(/\.rb$/, "")
@@ -31,7 +25,6 @@ def time
   seconds = (Time.now - $session.start_time).ceil
   return "#{seconds} seconds" if seconds < 60 
   return "#{seconds / 60} minutes" if seconds > 60
-    
 end
     
     

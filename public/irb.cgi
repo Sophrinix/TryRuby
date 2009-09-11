@@ -30,6 +30,7 @@ class TryRubyCGISession
     @session['current_includes'] ||= []
     print cgi.header
   end
+
   def self.make_session_accessor(name)
     define_method(name.to_sym) do
       @session[name]
