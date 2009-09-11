@@ -11,7 +11,7 @@ require 'cgi/session'
 require 'cgi/session/pstore' # provides CGI::Session::PStore
 require 'tryruby_runner.rb'
  
-class TryRubyCGISession
+class TryRubyCGISession < TryRubyBaseSession
   def initialize
     @cgi = CGI.new("html5")
     @session = CGI::Session.new(@cgi,
@@ -60,6 +60,5 @@ $session.current_includes.each do |inc|
   require inc
 end
  
-script_results = run_script($session, $session.cgi['cmd'])
+puts run_script($session, $session.cgi['cmd']).format_output
 # puts script_results[:output] unless script_results[:output].empty?
-puts format_result(script_results)
