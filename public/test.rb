@@ -101,6 +101,24 @@ EOF
       input 'print poem.lines.to_a.reverse.join', output: poem.lines.to_a.reverse.join
       end
   end
+
+  def test_lesson4
+    tryruby_session do
+      input 'books = {}', result: {}
+      input 'books["Gravity\'s Rainbow"] = :splendid', result: :splendid
+      input 'books["a"] = :mediocre', result: :mediocre
+      input 'books["b"] = :mediocre', result: :mediocre
+      input 'books["c"] = :mediocre', result: :mediocre
+      input 'books.length', result: 4
+      input 'books["Gravity\'s Rainbow"]', result: :splendid
+      input 'books.keys', result: ["Gravity's Rainbow", "a", "b", "c"]
+      input 'ratings = Hash.new {0}', result: {}
+      input 'books.values.each { |rate| ratings[rate] += 1 }',
+            result: [:splendid, :mediocre, :mediocre, :mediocre]  
+      input '5.times {print "Odelay!" }', result: 5, output: 'Odelay!Odelay!Odelay!Odelay!Odelay!'
+      
+    end
+  end
   
   
 
