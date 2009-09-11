@@ -71,11 +71,12 @@ end
 EOF
 
 class TryRubyOutput
-  attr_reader :type, :result, :output, :error
+  attr_reader :type, :result, :output, :error, :indent_level
 
   def self.standard(params)
     new_params = { type: :standard, result: params[:result],
       output: params[:output]}
+    new_params[:output] ||= ""
     TryRubyOutput.new(new_params)
   end
 
@@ -92,6 +93,7 @@ class TryRubyOutput
   def self.error(params = {})
     new_params = { type: :error, error: params[:error],
       output: params[:output]}
+    new_params[:output] ||= ""
     TryRubyOutput.new(new_params)
   end
 
@@ -155,7 +157,7 @@ def run_script(session, line)
   if unfinished_statement?(line) then
     session.current_statement << line
     session.nesting_level += 1
-    return TryRuby.line_continuation(session.nesting_level)
+    return TryRubyOutput.line_continuation(session.nesting_level)
   end
  
  

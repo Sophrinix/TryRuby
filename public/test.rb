@@ -34,6 +34,10 @@ class TryRubyTest < Test::Unit::TestCase
         if params[:line_continuation]
           tester.assert_equal(:line_continuation, result.type,
                               "Testing if line `#{line}' resulted in a line continuation")
+          if params[:line_continuation] != true then
+            tester.assert_equal(result.indent_level, params[:line_continuation],
+                                "Testing if line `#{line}' triggered enough autoindent")
+          end
           return
         end
         tester.assert_nil(result.error,
@@ -119,6 +123,13 @@ EOF
       
     end
   end
+
+  def test_lesson6
+    tryruby_session do
+      input 'Hash.new', result: {}
+      input 'class BlogEntry', line_continuation: 1
+    end
+  end
   
   
 
@@ -128,4 +139,33 @@ EOF
     
 end
 
+class TryRubyOutputTest < Test::Unit::TestCase
+  def test_simple_result
+    t = TryRubyOutput.standard(result: [12,24])
+    assert_equal("=> \033[1;20m[12, 24]", t.format_output)
+  end
+  
+  def test_result_and_output
+    t = TryRubyOutput.standard(result: 333, output: "hello")
+    assert_equal("hello\n=> \033[1;20m333", t.format_output)
+  end
+
+  def test_error
+    begin
+      40.reverse
+    rescue Exception => e
+      t = TryRubyOutput.error(error: e)
+    end
+    assert_equal("\033[1;33mNoMethodError: undefined method `reverse' for 40:Fixnum",
+                 t.format_output)
+  end
+
+  #def test_line_continuation
+  #  t = TryRubyOutput.line_continuation(3)
+  #  assert_equal
+
+end
+    
+
+Test::Unit::UI::Console::TestRunner.run(TryRubyOutputTest)
 Test::Unit::UI::Console::TestRunner.run(TryRubyTest)
