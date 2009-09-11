@@ -9,22 +9,45 @@ class TryRubyTest < Test::Unit::TestCase
   def tryruby_session(session = TryRubyTestSession.new, &block)
     input_o = Hash.new
     input_o[:session] = session
-    input_o[:tests] = []
+    input_o[:test] = self
     def input_o.input(line, params = {})
       params[:output] ||= ""
       params[:result] ||= nil
+      params[:error] ||= nil
       
       result = run_script(self[:session], line)
-      self[:tests] << {:actual => result,
-        :expected_result => params[:result],
-        :expected_output => params[:output]}
-      
+
+      begin
+        tester = self[:test]
+        if params[:error] then
+          tester.assert_equal(:error, result.type, 
+                              "Testing if line `#{line}` resulted in an error")
+          tester.assert_equal(params[:error], result.error.class,
+                              "Testing if line `#{line}` result in the right error")
+          return
+        end
+        if params[:line_continuation]
+          tester.assert_equal(:line_continuation, result.type,
+                              "Testing if line `#{line}' resulted in a line continuation")
+          return
+        end
+        tester.assert_equal(params[:result],
+                            result.result,
+                            "Testing line `#{line}' for correct result")
+
+        tester.assert_equal(params[:output],
+                            result.output,
+                            "Testing line `#{line}' for correct output")
+      rescue Test::Unit::AssertionFailedError => e
+        new_bt = Test::Unit::Util::BacktraceFilter.filter_backtrace(e.backtrace)[1..1]
+        e.set_backtrace(new_bt)
+        raise e
+        
+      end
+
+
     end
     input_o.instance_eval(&block)
-    input_o[:tests].each do |test|
-      assert_equal(test[:expected_result], test[:actual][:result])
-      assert_equal(test[:expected_output], test[:actual][:output])
-    end
     
   end
 
@@ -38,6 +61,11 @@ class TryRubyTest < Test::Unit::TestCase
     end
   end
 
+  def test_lesson2
+    tryruby_session do
+      input '40.reverse', :error => NoMethodError
+    end
+  end
   
   
 
