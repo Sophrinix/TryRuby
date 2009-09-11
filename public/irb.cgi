@@ -61,5 +61,5 @@ $session.current_includes.each do |inc|
 end
  
 script_results = run_script($session, $session.cgi['cmd'])
-puts script_results[:output] unless script_results[:output].empty?
-puts format_result(script_results[:result])
+# puts script_results[:output] unless script_results[:output].empty?
+puts format_result(script_results)

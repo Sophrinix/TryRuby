@@ -58,6 +58,25 @@ def require(str)
 end
 
 EOF
+
+class TryRubyOutput
+  attr_reader :type, :result, :output
+  def initialize(result, output = "")
+    @type = :standard
+    @result = result
+    @output = output
+  end
+
+  def self.no_output
+    @type = :standard
+    @result = nil
+    @output = ""
+  end
+  def self.line_continuation(level)
+    @type = :line_continuation
+    @indent_level = level
+  end
+end
  
 $original_stdout = $stdout
  
@@ -68,20 +87,20 @@ def run_script(session, line)
     session.current_statement = []
     session.nesting_level = 0
     session.past_commands = []
-    return " "
+    return TryRubyOutput.no_output
   end
  
   if /^\s*reset\s*$/ === line then
     session.current_statement = []
     session.nesting_level = 0
-    return " "
+    return TryRubyOutput.no_output
   end
  
   line_caused_error = false
   if unfinished_statement?(line) then
     session.current_statement << line
     session.nesting_level += 1
-    return ".." * session.nesting_level
+    return TryRuby.line_continuation(session.nesting_level)
   end
  
  
@@ -94,12 +113,12 @@ def run_script(session, line)
       session.current_statement = []
       return run_line(session, new_line)
     else
-      return ".." * session.nesting_level
+      return TryRuby.line_continuation(session.nesting_level)
     end
   end
   if session.nesting_level > 0 then
     session.current_statement << line
-    return ".." * session.nesting_level
+    return TryRuby.line_continuation(session.nesting_level)
   end
   # finally ready to run a command
   run_line(session, line)
@@ -135,22 +154,36 @@ EOF
     $stdout = $original_stdout
     line_caused_error = true
     msg = e.message.sub(/.*:in `initialize': /, "")
-    p msg
     error_s = "#{e.class}: #{msg}"
-    result = "\033[1;33m#{error_s}"
+    
+    errorOutput = "\033[1;33m#{error_s}"
+    if outputIO.string.empty? then
+      outputIO.string = errorOutput
+    else
+      outputIO.string += ("\n" + errorOutput)
+    end
+    result = nil
     
   end
   unless line == "!INIT!IRB!" or line_caused_error
     session.past_commands << line
   end
-  {:output => outputIO.string, :result => result}
+  
+  TryRubyOutput.new(result, outputIO.string)
 end
  
-def format_result(str)
-  if str.instance_of? JavascriptResult
-    result = "\033[1;JSm#{str.js}\033[m"
-  else
-    result = "=> " + "\033[1;20m" + str.inspect
+def format_result(tro)
+  if tro.type == :line_continuation then
+    return ".." * tro.indent_level
   end
+  result = ""
+  result += "#{tro.output}\n" unless tro.output.empty?
+
+  if tro.result.instance_of? JavascriptResult
+    result += "\033[1;JSm#{tro.result.js}\033[m"
+  else
+    result += "=> \033[1;20m#{tro.result.inspect}"
+  end
+  result
 end
  
