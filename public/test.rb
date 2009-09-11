@@ -77,7 +77,29 @@ class TryRubyTest < Test::Unit::TestCase
       input '[12,47,35].max', result: 47
       input 'ticket = [12,47,35]', result: [12,47,35]
       input 'ticket', result: [12,47,35]
+      input 'ticket.sort!', result: [12,35,47]
     end
+  end
+
+  def test_lesson3
+    poem = <<-EOF
+My toast has flown from my hand
+And my toast has gone to the
+moon.
+But when I saw it on television,
+Planting our flag on Halley's
+comet,
+More still did I want to eat it.
+EOF
+    
+    tryruby_session do
+      input 'print poem', output: poem
+      input "poem['toast'] = 'honeydew'", result: "honeydew"
+      input 'print poem', output: (poem['toast'] = 'honeydew'; poem)
+      input 'poem.reverse', result: poem.reverse
+      input 'poem.lines.to_a.reverse', result: poem.lines.to_a.reverse
+      input 'print poem.lines.to_a.reverse.join', output: poem.lines.to_a.reverse.join
+      end
   end
   
   

@@ -156,17 +156,20 @@ for toast and swapping it out with fruit.</p>
     <p>Okay, sure.  So the whole poem's been turned backwards, letter-by-letter.  I really want to just
        reverse the lines, though.  Move the last line up to first and the first line down to last.  Backwards, but not
        <em>that</em> backwards.</p> 
-    <p>Here's how: <code class="cmd">poem.to_a.reverse</code></p>
+    <p>Here's how: <code class="cmd">poem.lines.to_a.reverse</code></p>
     <div class="answer">\["More still did I(.+)"\]</div>
 </div>
 <div class="stretcher">
     <h3>Ringlets of Chained Methods</h3>
-    <p>So what do you see?  What happened there?  You typed <code>poem.to_a.reverse</code> and what happened?</p>
-    <p>Two things happened.  You turned the <code>poem</code> into a list using <code>to_a</code>.  (<strong>To a</strong>rray.)
-When Ruby turns a string into an array, its breaks the whole thing up
-at each line break. So you end up getting each line of the poem.</p>
+    <p>So what do you see?  What happened there?  You typed <code>poem.lines.to_a.reverse</code> and what happened?</p>
+    <p>Two things happened.  You turned the <code>poem</code> into a
+list using <code>lines.to_a</code>. <code>lines</code> decides the way
+the string is split up, then <code>to_a</code> converted it into an
+Array. (<strong>To a</strong>rray.) Different methods, such
+as <code>bytes</code> and <code>chars</code> can be used in place
+of <code>lines</code>. By using lines, ruby will return each line of the poem.</p>
     <p>Then, you <code>reverse</code>d that list.  You had each line.  You reversed them.  That's it.</p>
-    <p>Let's tack one more method on the end there: <code class="cmd">print poem.to_a.reverse.join</code>
+    <p>Let's tack one more method on the end there: <code class="cmd">print poem.lines.to_a.reverse.join</code>
     </p><div class="stdout">More still did I(.+)</div>
 </div>
 <div class="stretcher chapmark">
@@ -179,7 +182,7 @@ at each line break. So you end up getting each line of the poem.</p>
             in their name.  No big deal.  Try: <code>poem.include? "my hand"</code></li>
         <li><strong>Square brackets.</strong>  Target and find things.  Search and replace.</li>
         <li><strong>Chaining</strong> methods lets you get a lot more done.  Break up a poem,
-            reverse it, reassemble it: <code>poem.to_a.reverse.join</code></li>
+            reverse it, reassemble it: <code>poem.lines.to_a.reverse.join</code></li>
     </ul>
     <p>At this point, you may want to tinker with the poem a bit more.  A complete list of all
     the <code>String</code> methods is <a href="http://www.whytheluckystiff.net/ruby/pickaxe/html/ref_c_string.html" target="_new">here</a>.  Go ahead and try a few (such as <code>poem.downcase</code> or <code>poem.delete</code>.)</p>
