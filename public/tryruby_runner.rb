@@ -170,12 +170,12 @@ def run_script(session, line)
       session.current_statement = []
       return run_line(session, new_line)
     else
-      return TryRuby.line_continuation(session.nesting_level)
+      return TryRubyOutput.line_continuation(session.nesting_level)
     end
   end
   if session.nesting_level > 0 then
     session.current_statement << line
-    return TryRuby.line_continuation(session.nesting_level)
+    return TryRubyOutput.line_continuation(session.nesting_level)
   end
   # finally ready to run a command
   run_line(session, line)

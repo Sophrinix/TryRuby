@@ -18,9 +18,19 @@ class TryRubyTest < Test::Unit::TestCase
       
       o = Object.new
       session = self[:session]
+      # store the initial constants of Object
+      initial_constants = Object.constants
       result = o.instance_eval do
-        res = run_script(session, line)
+        run_script(session, line)
       end
+
+      # next 4 lines will revert Object to the way it was before
+      # run_script
+      diff_constants = Object.constants - initial_constants
+      diff_constants.each do |constant|
+        Object.send(:remove_const, constant)
+      end
+
 
       begin
         tester = self[:test]
@@ -42,9 +52,14 @@ class TryRubyTest < Test::Unit::TestCase
         end
         tester.assert_nil(result.error,
                           "Testing line `#{line}' to ensure there was no error")
-        tester.assert_equal(params[:result],
-                            result.result,
-                            "Testing line `#{line}' for correct result")
+        if params[:result].instance_of?(Proc) then
+          tester.assert(params[:result].call(result.result),
+                        "Testing line `#{line}': #{params[:message]}")
+        else
+          tester.assert_equal(params[:result],
+                              result.result,
+                              "Testing line `#{line}' for correct result")
+        end
 
         tester.assert_equal(params[:output],
                             result.output,
@@ -124,10 +139,48 @@ EOF
     end
   end
 
+    
+
   def test_lesson6
     tryruby_session do
       input 'Hash.new', result: {}
       input 'class BlogEntry', line_continuation: 1
+      input 'attr_accessor :title, :time, :fulltext, :mood', line_continuation: 1
+      input 'end', result: nil
+      input 'entry = BlogEntry.new', result: Proc.new {|v| v.class.name == "BlogEntry"},
+             message: "result should be a class named BlogEntry"
+      input 'entry.title = "Today Mt. Hood Was Stolen!"', result: "Today Mt. Hood Was Stolen!"
+      input 'entry.time = Time.now', result: Proc.new {|v| v.class == Time },
+             message: "result should be a Time object"
+      input 'entry.mood = :sick', result: :sick
+      input ('entry.fulltext = "I can\'t believe Mt. Hood was stolen! ' +
+            'I am speechless! It was stolen by a giraffe who drove ' +
+            'away in his Cadillac Seville very nonchalant!!"'),
+            result: ("I can't believe Mt. Hood was stolen! " +
+                     "I am speechless! It was stolen by a giraffe who " + 
+                     "drove away in his Cadillac Seville very nonchalant!!")
+      input 'entry', result: Proc.new {|v|
+        v.mood == :sick and v.time.instance_of?(Time) and v.fulltext[0..5] = "I am "
+      }, message: "result should be a correctly created BlogEntry"
+
+      input 'class BlogEntry', line_continuation: 1
+      input 'def initialize( title, mood, fulltext )', line_continuation: 2
+      input '@time = Time.now', line_continuation: 2
+      input '@title, @mood, @fulltext = title, mood, fulltext', line_continuation: 2
+      input 'end', line_continuation: 1
+      input 'end', result: nil
+      
+      input 'BlogEntry.new', error: ArgumentError
+
+
+
+      input ('entry2 = BlogEntry.new("I Left my Hoodie on the Mountain!", ' + 
+            ':confused, "I am never going back to that mountain and I ' + 
+        'hope a giraffe steals it." )'),
+        result: Proc.new {|v| v.class.name == "BlogEntry" },
+        message: "Result should be a BlogEntry"
+
+        
     end
   end
   
