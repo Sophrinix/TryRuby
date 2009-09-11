@@ -1,13 +1,34 @@
-def require(require_path)
+class TryRubyTestSession
+  def initialize()
+    @current_statement = []
+    @nesting_level = 0
+    @start_time = Time.now
+    @past_commands = []
+    @current_includes = []
+  end
+
+  attr_accessor :start_time, :current_statement
+  attr_accessor :nesting_level, :past_commands, :current_includes
+
+end
+
+    
+  
+  
+  
+
+
+
+def special_require(require_path)
   path = require_path.sub(/\.rb$/, "")
   return false unless ['popup'].include? path
-  return false if $session['current_includes'].include? path
-  $session['current_includes'] << path
+  return false if $session.current_includes.include? path
+  $session.current_includes << path
   true
 end
   
 def time
-  seconds = (Time.now - $session['start_time']).ceil
+  seconds = (Time.now - $session.start_time).ceil
   return "#{seconds} seconds" if seconds < 60 
   return "#{seconds / 60} minutes" if seconds > 60
     
@@ -39,6 +60,10 @@ poem = "My toast has flown from my hand\nAnd my toast has gone to the
 moon.\nBut when I saw it on television,\nPlanting our flag on Halley's
 comet,\nMore still did I want to eat it.\n"
 
+def require(str)
+  special_require(str)
+end
+
 EOF
  
 $original_stdout = $stdout
@@ -46,42 +71,42 @@ $original_stdout = $stdout
 def run_script(session, line)
 
   if line == "!INIT!IRB!" then
-    session['start_time'] = Time.now
-    session['current_statement'] = []
-    session['nesting_level'] = 0
-    session['past_commands'] = []
+    session.start_time = Time.now
+    session.current_statement = []
+    session.nesting_level = 0
+    session.past_commands = []
     return " "
   end
  
   if /^\s*reset\s*$/ === line then
-    session['current_statement'] = []
-    session['nesting_level'] = 0
+    session.current_statement = []
+    session.nesting_level = 0
     return " "
   end
  
   line_caused_error = false
   if unfinished_statement?(line) then
-    session['current_statement'] << line
-    session['nesting_level'] += 1
-    return ".." * session['nesting_level']
+    session.current_statement << line
+    session.nesting_level += 1
+    return ".." * session.nesting_level
   end
  
  
   if finished_statement?(line) then
-    session['nesting_level'] -= 1
-    session['current_statement'] << line
+    session.nesting_level -= 1
+    session.current_statement << line
     
-    if session['nesting_level'] <= 0 then
-      new_line = session['current_statement'].join("\n")
-      session['current_statement'] = []
+    if session.nesting_level <= 0 then
+      new_line = session.current_statement.join("\n")
+      session.current_statement = []
       return run_line(session, new_line)
     else
-      return ".." * session['nesting_level']
+      return ".." * session.nesting_level
     end
   end
-  if session['nesting_level'] > 0 then
-    session['current_statement'] << line
-    return ".." * session['nesting_level']
+  if session.nesting_level > 0 then
+    session.current_statement << line
+    return ".." * session.nesting_level
   end
   # finally ready to run a command
   run_line(session, line)
@@ -93,7 +118,7 @@ def run_line(session, line)
 #p session
   begin
     outputIO = StringIO.new
-    previous_commands = session['past_commands'].map do |cmd|
+    previous_commands = session.past_commands.map do |cmd|
       cmd
       #"begin\n#{cmd}\nrescue Exception\nend"
     end.join("\n")
@@ -123,7 +148,7 @@ EOF
     
   end
   unless line == "!INIT!IRB!" or line_caused_error
-    session['past_commands'] << line
+    session.past_commands << line
   end
   {:output => outputIO.string, :result => result}
 end

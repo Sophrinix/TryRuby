@@ -10,31 +10,55 @@ require 'stringio'
 require 'cgi/session'
 require 'cgi/session/pstore' # provides CGI::Session::PStore
 require 'tryruby_runner.rb'
-cgi = CGI.new("html5")
  
+class TryRubyCGISession
+  def initialize
+    @cgi = CGI.new("html5")
+    @session = CGI::Session.new(@cgi,
+                                'database_manager' => CGI::Session::PStore, # use PStore
+                                'session_key' => '_rb_sess_id', # custom $session key
+                                'session_expires' => Time.now + 60 * 60, # 30 minute timeout
+                                'prefix' => 'pstore_sid_') # PStore option
+ 
+    @session['current_statement'] ||= []
+    @session['nesting_level'] ||= 0
+    @session['nesting_level'] = 0 if @session['nesting_level'] < 0
+    @session['start_time'] ||= Time.now
+    
+    @session['past_commands'] ||= []
+    
+    @session['current_includes'] ||= []
+    print cgi.header
+  end
+  def self.make_session_accessor(name)
+    define_method(name.to_sym) do
+      @session[name]
+    end
+
+    define_method("#{name}=".to_sym) do |new_val|
+      @session[name] = new_val
+    end
+  end
+
+  make_session_accessor 'current_statement'
+  make_session_accessor 'past_commands'
+  make_session_accessor 'nesting_level'
+  make_session_accessor 'start_time'
+  make_session_accessor 'current_includes'
+
+  attr_accessor :cgi, :session
+
   
+end
+  
+$session = TryRubyCGISession.new 
+
  
-$session = CGI::Session.new(cgi,
-    'database_manager' => CGI::Session::PStore, # use PStore
-    'session_key' => '_rb_sess_id', # custom $session key
-    'session_expires' => Time.now + 60 * 60, # 30 minute timeout
-    'prefix' => 'pstore_sid_') # PStore option
  
-$session['current_statement'] ||= []
-$session['nesting_level'] ||= 0
-$session['nesting_level'] = 0 if $session['nesting_level'] < 0
-$session['start_time'] ||= Time.now
- 
-$session['past_commands'] ||= []
- 
-$session['current_includes'] ||= []
- 
-print cgi.header
- 
-$session['current_includes'].each do |inc|
+$session.current_includes.each do |inc|
   require inc
 end
  
-script_results = run_script($session, cgi['cmd'])
+script_results = run_script($session, $session.cgi['cmd'])
 puts script_results[:output] unless script_results[:output].empty?
 puts format_result(script_results[:result])
