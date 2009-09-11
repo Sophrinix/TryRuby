@@ -31,6 +31,8 @@ class TryRubyTest < Test::Unit::TestCase
                               "Testing if line `#{line}' resulted in a line continuation")
           return
         end
+        tester.assert_nil(result.error,
+                          "Testing line `#{line}' to ensure there was no error")
         tester.assert_equal(params[:result],
                             result.result,
                             "Testing line `#{line}' for correct result")
@@ -64,6 +66,12 @@ class TryRubyTest < Test::Unit::TestCase
   def test_lesson2
     tryruby_session do
       input '40.reverse', :error => NoMethodError
+      input '40.to_s.reverse', result: "04"
+      input '[]', result: []
+      input '[12,47,35]', result: [12,47,35]
+      input '[12,47,35].max', result: 47
+      input 'ticket = [12,47,35]', result: [12,47,35]
+      input 'ticket', result: [12,47,35]
     end
   end
   
