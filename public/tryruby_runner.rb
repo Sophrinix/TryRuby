@@ -82,7 +82,7 @@ class TryRubyOutput
   end
 
   def self.javascript(params)
-    new_params = { type: :javascript, js: params[:js],
+    new_params = { type: :js, js: params[:js],
       output: params[:output]}
     new_params[:output] ||= ""
     TryRubyOutput.new(new_params)
