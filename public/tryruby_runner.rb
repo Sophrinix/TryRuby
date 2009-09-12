@@ -195,21 +195,21 @@ def run_line(session, line)
     previous_commands = session.past_commands.join("\n")
 
     include_cmd = session.current_includes.map do |inc|
-      "require '#{inc}'"
+      "old_require '#{inc}'"
     end.join("\n")
        
     eval_cmd = <<EOF
+#{include_cmd}
 # $SAFE = 3
 # an idea to try ##line == "require 'popup.rb' " ? $SAFE = 0 : $SAFE = 3 
 #{$common_code}
-#{$include_cmd}
 $stdout = StringIO.new()
 #{previous_commands}
 $stdout = outputIO
 
 #{line}
 EOF
-    #puts eval_cmd
+    puts eval_cmd
  
     result = eval(eval_cmd)
     session.past_commands << line
