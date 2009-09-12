@@ -38,6 +38,55 @@ def time
   return "#{seconds} seconds" if seconds < 60 
   return "#{seconds / 60} minutes" if seconds > 60
 end
+
+def debug_define_all
+eval <<RUBY_EOF
+  Object.send(:remove_const, :BlogEntry) if Object.constants.include? :BlogEntry
+  class BlogEntry
+    attr_accessor :title, :time, :fulltext, :mood
+  end
+
+  entry = BlogEntry.new
+  entry.title = "Today Mt. Hood Was Stolen!"
+  entry.time = Time.now
+  entry.mood = :sick
+
+  str = <<EOF
+I can't believe Mt. Hood was stolen!
+I am speechless! It was stolen by a giraffe who drove
+away in his Cadillac Seville very nonchalant!!
+EOF
+  entry.fulltext = str.tr("\n", " ")
+  
+  class BlogEntry
+    def initialize( title, mood, fulltext)
+      @time = Time.now
+      @title, @mood, @fulltext = title, mood, fulltext
+    end
+  end
+
+  entry2 = BlogEntry.new("I Left my Hoodie on the Mountain!",
+            :confused, "I am never going back to that mountain and I " + 
+                       "hope a giraffe steals it." )
+
+  blog = [entry, entry2]
+
+  require 'popup'
+  $blog_popup = Popup.make do
+    h1 'My Blog'
+    list do
+      blog.each do |entry|
+        h2 entry.title
+        p entry.fulltext
+      end
+    end
+  end
+
+  nil
+
+RUBY_EOF
+end
+
     
 class JavascriptResult
   attr_accessor :javascript
