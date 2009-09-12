@@ -23,6 +23,7 @@ class TryRubyTestSession < TryRubyBaseSession
 
 end
 
+alias :old_require :require
 
 def special_require(require_path)
   path = require_path.sub(/\.rb$/, "")
@@ -71,10 +72,17 @@ end
 EOF
 
 class TryRubyOutput
-  attr_reader :type, :result, :output, :error, :indent_level
+  attr_reader :type, :result, :output, :error, :indent_level, :js
 
   def self.standard(params)
     new_params = { type: :standard, result: params[:result],
+      output: params[:output]}
+    new_params[:output] ||= ""
+    TryRubyOutput.new(new_params)
+  end
+
+  def self.javascript(params)
+    new_params = { type: :javascript, js: params[:js],
       output: params[:output]}
     new_params[:output] ||= ""
     TryRubyOutput.new(new_params)
@@ -106,8 +114,8 @@ class TryRubyOutput
     result = ""
     result += "#{self.output}\n" unless self.output.empty?
 
-    if self.result.instance_of? JavascriptResult
-      result += "\033[1;JSm#{self.result.js}\033[m"
+    if self.type == :js
+      result += "\033[1;JSm#{self.js}\033[m"
     else
       result += "=> \033[1;20m#{self.result.inspect}"
     end
@@ -185,11 +193,16 @@ def run_line(session, line)
   begin
     outputIO = StringIO.new
     previous_commands = session.past_commands.join("\n")
+
+    include_cmd = session.current_includes.map do |inc|
+      "require '#{inc}'"
+    end.join("\n")
        
     eval_cmd = <<EOF
 # $SAFE = 3
 # an idea to try ##line == "require 'popup.rb' " ? $SAFE = 0 : $SAFE = 3 
 #{$common_code}
+#{$include_cmd}
 $stdout = StringIO.new()
 #{previous_commands}
 $stdout = outputIO
@@ -201,7 +214,11 @@ EOF
     result = eval(eval_cmd)
     session.past_commands << line
     $stdout = $original_stdout
-    return TryRubyOutput.standard(result: result, output: outputIO.string)
+    if result.is_a?(JavascriptResult) then
+      return TryRubyOutput.javascript(js: result.js, output: outputIO.string)
+    else
+      return TryRubyOutput.standard(result: result, output: outputIO.string)
+    end
 
   rescue Exception => e
     $stdout = $original_stdout

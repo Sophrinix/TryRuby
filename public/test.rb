@@ -5,6 +5,8 @@ require 'stringio'
 
 load 'tryruby_runner.rb'
 
+$session = nil
+
 class TryRubyTest < Test::Unit::TestCase
 
   def tryruby_session(session = TryRubyTestSession.new, &block)
@@ -39,6 +41,11 @@ class TryRubyTest < Test::Unit::TestCase
                               "Testing if line `#{line}` resulted in an error")
           tester.assert_equal(params[:error], result.error.class,
                               "Testing if line `#{line}` result in the right error")
+          return
+        end
+        if params[:js]
+          tester.assert_equal(params[:js], result.js,
+                              "Testing if line `#{line}' results in the correct javascript")
           return
         end
         if params[:line_continuation]
@@ -142,7 +149,8 @@ EOF
     
 
   def test_lesson6
-    tryruby_session do
+    $session = TryRubyTestSession.new
+    tryruby_session $session do
       input 'Hash.new', result: {}
       input 'class BlogEntry', line_continuation: 1
       input 'attr_accessor :title, :time, :fulltext, :mood', line_continuation: 1
@@ -180,9 +188,29 @@ EOF
         result: Proc.new {|v| v.class.name == "BlogEntry" },
         message: "Result should be a BlogEntry"
 
+      # lesson 7 starts here (depends on lesson 6 to complete)
+      input 'blog = [entry, entry2]', result: Proc.new { |v|
+        v.is_a?(Array) and v.all? {|e| e.class.name == "BlogEntry" }
+      }, message: "All elements of result should be a BlogEntry"
+
+
+      input 'blog.map { |entry| entry.mood }', result: [:sick, :confused]
+      input 'require "popup"', result: Proc.new {true} # don't care
+      input 'Popup.make do', line_continuation: 1
+      input "h1 My Blog", line_continuation: 1
+      input "list do", line_continuation: 2
+      input 'blog.each do |entry|', line_continuation: 3
+      input 'h2 entry.title', line_continuation: 3
+      input 'p entry.fulltext', line_continuation: 3
+      input 'end', line_continuation: 2
+      input 'end', line_continuation: 1
+      input 'end', javascript: ""
+      
         
     end
   end
+
+    
   
   
 

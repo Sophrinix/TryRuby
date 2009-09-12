@@ -71,10 +71,16 @@ module Popup
     def initialize
       @elements = []
     end
-    
-    def h1 text
-      @elements << Header.new(1, text)
+
+    [1..6].each do |n|
+      define_method "h#{n}".to_sym do |text|
+        @elements << Header.new(1, text)
+      end
     end
+    
+    # def h1 text
+    #   @elements << Header.new(1, text)
+    # end
  
     def link(text, target)
       @elements << Link.new(text, target)

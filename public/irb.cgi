@@ -56,9 +56,9 @@ $session = TryRubyCGISession.new
 
  
  
-$session.current_includes.each do |inc|
-  require inc
-end
+# $session.current_includes.each do |inc|
+#   require inc
+# end
  
 print run_script($session, $session.cgi['cmd']).format_output
 # puts script_results[:output] unless script_results[:output].empty?
