@@ -39,12 +39,10 @@ def time
   return "#{seconds / 60} minutes" if seconds > 60
 end
     
-    
- 
 class JavascriptResult
-  attr_accessor :js
-  def initialize(js)
-    self.js = js
+  attr_accessor :javascript
+  def initialize(javascript)
+    self.javascript = javascript
   end
 end
  
@@ -72,7 +70,7 @@ end
 EOF
 
 class TryRubyOutput
-  attr_reader :type, :result, :output, :error, :indent_level, :js
+  attr_reader :type, :result, :output, :error, :indent_level, :javascript
 
   def self.standard(params)
     new_params = { type: :standard, result: params[:result],
@@ -82,7 +80,7 @@ class TryRubyOutput
   end
 
   def self.javascript(params)
-    new_params = { type: :js, js: params[:js],
+    new_params = { type: :javascript, javascript: params[:javascript],
       output: params[:output]}
     new_params[:output] ||= ""
     TryRubyOutput.new(new_params)
@@ -114,8 +112,8 @@ class TryRubyOutput
     result = ""
     result += "#{self.output}\n" unless self.output.empty?
 
-    if self.type == :js
-      result += "\033[1;JSm#{self.js}\033[m"
+    if self.type == :javascript
+      result += "\033[1;JSm#{self.javascript}\033[m"
     else
       result += "=> \033[1;20m#{self.result.inspect}"
     end
@@ -209,13 +207,13 @@ $stdout = outputIO
 
 #{line}
 EOF
-    puts eval_cmd
+    #puts eval_cmd
  
     result = eval(eval_cmd)
     session.past_commands << line
     $stdout = $original_stdout
     if result.is_a?(JavascriptResult) then
-      return TryRubyOutput.javascript(js: result.js, output: outputIO.string)
+      return TryRubyOutput.javascript(javascript: result.javascript, output: outputIO.string)
     else
       return TryRubyOutput.standard(result: result, output: outputIO.string)
     end
