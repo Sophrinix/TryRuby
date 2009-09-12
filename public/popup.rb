@@ -72,11 +72,12 @@ module Popup
       @elements = []
     end
 
-    [1..6].each do |n|
+    (1..6).each do |n|
       define_method "h#{n}".to_sym do |text|
-        @elements << Header.new(1, text)
+        @elements << Header.new(n, text)
       end
     end
+
     
     # def h1 text
     #   @elements << Header.new(1, text)
