@@ -15,16 +15,19 @@ class TryRubyTest < Test::Unit::TestCase
     def do_assert(actual, expected, name, message, line)
       case expected
       when Class
-        @test.assert_equal(actual.class, expected,
+        @test.assert_equal(expected, actual.class,
                            "Testing line `#{line}': #{name} should be a #{expected}")
       when Regexp
         @test.assert_match(expected, actual, 
                               "Testing line `#{line}': #{name} should match #{expected}")
       when Proc
-          @test.assert(expected.call(actual),
-                       "Testing line `#{line}': #{message} \n[#{actual}]")
+        @backtrace_pos = 0
+        @test.instance_exec(actual, &expected)
+          
+          # @test.assert(expected.call(actual),
+          #              "Testing line `#{line}': #{message} \n[#{actual}]")
       else
-          @test.assert_equal(actual, expected,
+          @test.assert_equal(expected,actual,
                              "Testing line `#{line}' for correct #{name}")
       end
     end
@@ -34,9 +37,13 @@ class TryRubyTest < Test::Unit::TestCase
       # store the initial constants of Object
       initial_constants = Object.constants
       session = @session
-      result = o.instance_eval do
-        run_script(session, line)
+      
+      thread = Thread.new do
+        o.instance_eval do
+          run_script(session, line)
+        end
       end
+      result = thread.value
       # next 4 lines will revert Object to the way it was before
       # run_script
       diff_constants = Object.constants - initial_constants
@@ -48,6 +55,7 @@ class TryRubyTest < Test::Unit::TestCase
 
 
     def input(line, params = {})
+      @backtrace_pos = 1
       params[:output] ||= ""
       params[:result] ||= nil
       params[:error] ||= nil
@@ -76,7 +84,9 @@ class TryRubyTest < Test::Unit::TestCase
         end
         
       rescue Test::Unit::AssertionFailedError => e
-        new_bt = Test::Unit::Util::BacktraceFilter.filter_backtrace(e.backtrace)[1..1]
+        
+        new_bt = Test::Unit::Util::BacktraceFilter.filter_backtrace(e.backtrace)
+        new_bt = new_bt[@backtrace_pos..@backtrace_pos]
         e.set_backtrace(new_bt)
         raise e
         
@@ -193,7 +203,13 @@ EOF
                    
 
       input 'entry', result: Proc.new {|v|
-        v.mood == :sick and v.time.instance_of?(Time) and v.fulltext[0..5] = "I am "
+        assert_equal(v.instance_variable_get("@mood"), :sick)
+        assert_equal(Time, v.instance_variable_get("@time").class)
+        assert_equal("I can'",v.instance_variable_get("@fulltext")[0..5])
+        
+        # v.untaint
+        # v.class.untaint
+        # v.mood == :sick and v.time.instance_of?(Time) and v.fulltext[0..5] = "I am "
       }, message: "result should be a correctly created BlogEntry"
 
       input 'class BlogEntry',                                  line_continuation: 1
@@ -210,8 +226,7 @@ EOF
       input ('entry2 = BlogEntry.new("I Left my Hoodie on the Mountain!", ' + 
             ':confused, "I am never going back to that mountain and I ' + 
         'hope a giraffe steals it." )'),
-        result: Proc.new {|v| v.class.name == "BlogEntry" },
-        message: "Result should be a BlogEntry"
+        result: Proc.new {|v| assert_equal("BlogEntry", v.class.name) }
 
       # lesson 7 starts here (depends on lesson 6 to complete)
 
@@ -248,6 +263,9 @@ EOF
                      </ul>;?"\)|x
                 )
       }, message: "testing that Popup creating generates correct javascript code"
+      # " 
+      # above line (# ") fixes bad emacs syntax highlighting
+
         
         
       

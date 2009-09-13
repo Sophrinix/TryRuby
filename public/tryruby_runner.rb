@@ -235,11 +235,35 @@ def run_script(session, line)
   # finally ready to run a command
   run_line(session, line)
 end
+
+class FakeStdout
+  attr_accessor :calls
+  def initialize
+    @calls = []
+    @string = ""
+  end
+  def method_missing(method, *args)
+    @calls << {method: method, args: args}
+  end
+
+  def write(str)
+    @string += str
+    
+    method_missing(:write, strs)
+  end
+
+  def to_s
+    return "" if @calls.empty?
+    @string
+    # @calls.join("\n")
+  end
+end
  
 def run_line(session, line)
   begin
-    outputIO = StringIO.new
+    # outputIO = StringIO.new
     previous_commands = session.past_commands.join("\n")
+    $outputIO = nil
 
     include_cmd = session.current_includes.map do |inc|
       "old_require '#{inc}'"
@@ -247,29 +271,53 @@ def run_line(session, line)
        
     eval_cmd = <<EOF
 #{include_cmd}
-# $SAFE = 3
-# an idea to try ##line == "require 'popup.rb' " ? $SAFE = 0 : $SAFE = 3 
-#{$common_code}
-$stdout = StringIO.new()
-#{previous_commands}
-$stdout = outputIO
 
-#{line}
+$SAFE = 3
+$outputIO = StringIO.new
+outputIO = StringIO.new
+#{$common_code}
+$stdout = FakeStdout.new
+#{previous_commands}
+begin
+  $stdout = FakeStdout.new
+  result = instance_eval do
+    #{line}
+  end
+  {:result => result, :output => $stdout.to_s}
+  
+rescue SecurityError => e
+  TryRubyOutput.standard(result: "SECURITY ERROR: " + e.inspect + e.backtrace.inspect)
+rescue Exception => e
+  TryRubyOutput.error(error: e, output: outputIO.string)
+end
 EOF
-    #puts eval_cmd
+    line_count = 0
+    
+    # res = eval_cmd.lines.map do |line| 
+    #   line_count += 1
+    #   line_count.to_s.ljust(4) + line
+    # end.join
+    # puts res
+      
  
-    result = eval(eval_cmd)
-    session.past_commands << line
+    # o = Object.new
+    # thread = Thread.new { o.instance_eval(eval_cmd) }
+    # result = thread.value
+    eval_result = eval(eval_cmd)
     $stdout = $original_stdout
+    return eval_result if eval_result.is_a?(TryRubyOutput) # exception occurred
+    output = eval_result[:output]
+    result = eval_result[:result]
+
+
+    # result = eval(eval_cmd)
+    session.past_commands << line
     if result.is_a?(JavascriptResult) then
-      return TryRubyOutput.javascript(javascript: result.javascript, output: outputIO.string)
+      return TryRubyOutput.javascript(javascript: result.javascript, output: output)
     else
-      return TryRubyOutput.standard(result: result, output: outputIO.string)
+      return TryRubyOutput.standard(result: result, output: output)
     end
 
-  rescue Exception => e
-    $stdout = $original_stdout
-    return TryRubyOutput.error(error: e, output: outputIO.string)
   end
   
 end
