@@ -1,5 +1,6 @@
 require 'pp'
 require 'test/unit'
+require 'rexml/document'
 require 'test/unit/ui/console/testrunner'
 require 'stringio'
 
@@ -43,6 +44,8 @@ class TryRubyTest < Test::Unit::TestCase
           run_script(session, line)
         end
       end
+        
+        
       result = thread.value
       # next 4 lines will revert Object to the way it was before
       # run_script
@@ -231,12 +234,14 @@ EOF
       # lesson 7 starts here (depends on lesson 6 to complete)
 
       input 'blog = [entry, entry2]', result: Proc.new { |v|
-        v.is_a?(Array) and v.all? {|e| e.class.name == "BlogEntry" }
-      }, message: "All elements of result should be a BlogEntry"
+        assert_kind_of(Array, v)
+        assert(v.all? {|e| e.class.name == "BlogEntry" },
+               "All elements of result should be a BlogEntry")
+      }
 
 
       input 'blog.map { |entry| entry.mood }', result: [:sick, :confused]
-      input 'require "popup"',                 result: Proc.new {true} # don't care
+      input 'require "popup"',                 result: Proc.new {} # don't care
       input 'Popup.make do',                   line_continuation: 1
       input "h1 'My Blog'",                    line_continuation: 1
       input "list do",                         line_continuation: 2
@@ -249,20 +254,29 @@ EOF
       
       
       input 'end', javascript: Proc.new {|v|
-        v = v.gsub(/\s+/,"") # remove all spaces
-        v.match(%r|^window.irb.options.popup_make\(
-                   "<h1>My Blog</h1>
-                    <ul>
-                       <li><h2>Today Mt. Hood Was Stolen!</h2></li>
-                       <li>I can't believe Mt. Hood was stolen! I am speechless! 
-                           It was stolen by a giraffe who drove away in his
-                           Cadillac Seville very nonchalant!!</li>
-                       <li><h2>I Left my Hoodie on the Mountain!</h2></li>
-                       <li>I am never goin gback to that mountain and
-                           I hope a giraffe steals it. </li>
-                     </ul>;?"\)|x
-                )
-      }, message: "testing that Popup creating generates correct javascript code"
+        # v = v.gsub(/\s+/,"") # remove all spaces
+        expected_str = <<-EOF
+          <xml><h1>My Blog</h1>
+          <ul>
+            <li><h2>Today Mt. Hood Was Stolen!</h2></li>
+            <li>I can't believe Mt. Hood was stolen! I am speechless! 
+                It was stolen by a giraffe who drove away in his
+                Cadillac Seville very nonchalant!!</li>
+            <li><h2>I Left my Hoodie on the Mountain!</h2></li>
+            <li>I am never going back to that mountain and
+              I hope a giraffe steals it.</li>
+          </ul></xml>
+          EOF
+        expected_xml = REXML::Document.new(expected_str.strip)
+        assert_match(/^window.irb.options.popup_make\(".*"\)?/m,
+                     v,
+                     "testing that Popup calls the correct javascript function")
+        actual_str = v.match(/^window.irb.options.popup_make\("(.*)"\);?/m)[1]
+        actual_str = "<xml>#{actual_str}</xml>"
+        actual_xml = REXML::Document.new(actual_str.strip)
+        assert_equal(expected_xml.write(StringIO.new).to_s,
+                     actual_xml.write(StringIO.new).to_s)
+      }
       # " 
       # above line (# ") fixes bad emacs syntax highlighting
 
