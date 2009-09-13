@@ -15,15 +15,15 @@ class TryRubyTest < Test::Unit::TestCase
   # It then takes a block. In the block a method input is available which is used
   # to send a line to the interpretor and test the output.
   # 
-  # It takes one mandatory argument, the line, and some optional args:
+  # input takes one mandatory argument, the line, and some optional args:
   # - output: The output of line should match this (defaults to "")
   # - javascript: The line generated a javascript function, and should match this
   # - error: The line generated an error and should match this
   # - result: The line didn't generate an error or javascript, and should match this
   #           (defaults to nil if not supplied)
-  # - line_continuation: The line didn't complete, the current indent leve
+  # - line_continuation: The line didn't complete, the current indent level
   #   should be equal to this (use true if you aren't interested in testing this)
-  # output, error and result can take either a
+  # output, error, javascript and result can take either a:
   # - Class: Tests if <value> is the given type
   # - Proc: Proc should take one param (the <value>) and run assertions with that value
   # - Regexp: Tests <value> (a string) against the regexp
