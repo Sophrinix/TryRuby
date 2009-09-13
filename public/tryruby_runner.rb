@@ -162,7 +162,7 @@ class TryRubyOutput
     result += "#{self.output}\n" unless self.output.empty?
 
     if self.type == :javascript
-      result += "\033[1;JSm#{self.javascript}\033[m"
+      result += "\033[1;JSm#{self.javascript}\033[m "
     else
       result += "=> \033[1;20m#{self.result.inspect}"
     end

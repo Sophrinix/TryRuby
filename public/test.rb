@@ -9,102 +9,25 @@ load 'tryruby_runner.rb'
 $session = nil
 
 class TryRubyTest < Test::Unit::TestCase
-
-  class TryRubySession_Input
-    attr_accessor :session, :test
-
-    def do_assert(actual, expected, name, message, line)
-      case expected
-      when Class
-        @test.assert_equal(expected, actual.class,
-                           "Testing line `#{line}': #{name} should be a #{expected}")
-      when Regexp
-        @test.assert_match(expected, actual, 
-                              "Testing line `#{line}': #{name} should match #{expected}")
-      when Proc
-        @backtrace_pos = 0
-        @test.instance_exec(actual, &expected)
-          
-          # @test.assert(expected.call(actual),
-          #              "Testing line `#{line}': #{message} \n[#{actual}]")
-      else
-          @test.assert_equal(expected,actual,
-                             "Testing line `#{line}' for correct #{name}")
-      end
-    end
-
-    def do_test(line)
-      o = Object.new
-      # store the initial constants of Object
-      initial_constants = Object.constants
-      session = @session
-      
-      thread = Thread.new do
-        o.instance_eval do
-          run_script(session, line)
-        end
-      end
-
-
-        
-        
-      result = thread.value
-      # restores require to its old functionality
-      def Object.require(str)
-        old_require(str)
-      end
-      # next 4 lines will revert Object to the way it was before
-      # run_script
-      diff_constants = Object.constants - initial_constants
-      diff_constants.each do |constant|
-        Object.send(:remove_const, constant)
-      end
-      result
-    end
-
-
-    def input(line, params = {})
-      @backtrace_pos = 1
-      params[:output] ||= ""
-      params[:result] ||= nil
-      params[:error] ||= nil
-      
-      result = do_test(line)
-      begin
-        if params[:error] then
-          @test.assert_equal(:error, result.type, 
-                              "Testing if line `#{line}` resulted in an error")
-          do_assert(result.error, params[:error], "error", params[:message], line)
-        elsif params[:javascript] then
-          do_assert(result.javascript, params[:javascript], "javascript", params[:message], line)
-          do_assert(result.output, params[:output], "output", params[:message], line)
-        elsif params[:line_continuation]
-          @test.assert_equal(:line_continuation, result.type,
-                              "Testing if line `#{line}' resulted in a line continuation")
-          if params[:line_continuation] != true then
-            @test.assert_equal(result.indent_level, params[:line_continuation],
-                                "Testing if line `#{line}' triggered enough autoindent")
-          end
-        else
-          @test.assert_nil(result.error,
-                            "Testing line `#{line}' to ensure there was no error")
-          do_assert(result.result, params[:result], "result", params[:message], line)
-          do_assert(result.output, params[:output], "output", params[:message], line)
-        end
-        
-      rescue Test::Unit::AssertionFailedError => e
-        
-        new_bt = Test::Unit::Util::BacktraceFilter.filter_backtrace(e.backtrace)
-        new_bt = new_bt[@backtrace_pos..@backtrace_pos]
-        e.set_backtrace(new_bt)
-        raise e
-        
-      end
-
-
-    end
-  end
-
+  # a test helper that simplifies testing the tryruby interpretor. 
+  # It takes one optional argument session, which is the session to use for
+  # the test.
+  # It then takes a block. In the block a method input is available which is used
+  # to send a line to the interpretor and test the output.
+  # 
+  # It takes one mandatory argument, the line, and some optional args:
+  # - output: The output of line should match this (defaults to "")
+  # - javascript: The line generated a javascript function, and should match this
+  # - error: The line generated an error and should match this
+  # - result: The line didn't generate an error or javascript, and should match this
+  #           (defaults to nil if not supplied)
+  # - line_continuation: The line didn't complete, the current indent leve
+  #   should be equal to this (use true if you aren't interested in testing this)
+  # output, error and result can take either a
+  # - Class: Tests if <value> is the given type
+  # - Proc: Proc should take one param (the <value>) and run assertions with that value
+  # - Regexp: Tests <value> (a string) against the regexp
+  # - <other>: <value> should equal <other>
   def tryruby_session(session = TryRubyTestSession.new, &block)
     input_o = TryRubySession_Input.new
     input_o.session = session
@@ -112,6 +35,7 @@ class TryRubyTest < Test::Unit::TestCase
     input_o.instance_eval(&block)
     
   end
+
 
   def test_lesson1
     tryruby_session do
@@ -184,7 +108,7 @@ EOF
 
     
 
-  def test_lesson6
+  def test_lesson6_and_7
     $session = TryRubyTestSession.new
     tryruby_session $session do
       input 'Hash.new',              result: {}
@@ -192,13 +116,15 @@ EOF
       input 'attr_accessor :title, :time, :fulltext, :mood', line_continuation: 1
       input 'end',                   result: nil
 
-      input 'entry = BlogEntry.new', result: Proc.new {|v| v.class.name == "BlogEntry"},
-             message: "result should be a class named BlogEntry"
+      # can't test for BlogEntry directly, as it isn't defined in this scope
+      input 'entry = BlogEntry.new', result: Proc.new {|v|
+        assert_equal(v.class.name, "BlogEntry",
+                     "line should result in a BlogEntry")
+      }
 
       input 'entry.title = "Today Mt. Hood Was Stolen!"', result: "Today Mt. Hood Was Stolen!"
 
-      input 'entry.time = Time.now', result: Proc.new {|v| v.class == Time },
-             message: "result should be a Time object"
+      input 'entry.time = Time.now', result: Time
 
       input 'entry.mood = :sick', result: :sick
 
@@ -212,13 +138,10 @@ EOF
                    
 
       input 'entry', result: Proc.new {|v|
-        assert_equal(v.instance_variable_get("@mood"), :sick)
-        assert_equal(Time, v.instance_variable_get("@time").class)
+        assert_equal(:sick,  v.instance_variable_get("@mood"))
+        assert_equal(Time,    v.instance_variable_get("@time").class)
         assert_equal("I can'",v.instance_variable_get("@fulltext")[0..5])
         
-        # v.untaint
-        # v.class.untaint
-        # v.mood == :sick and v.time.instance_of?(Time) and v.fulltext[0..5] = "I am "
       }, message: "result should be a correctly created BlogEntry"
 
       input 'class BlogEntry',                                  line_continuation: 1
@@ -231,13 +154,18 @@ EOF
       input 'BlogEntry.new',                                    error: ArgumentError
 
 
+      line = <<-EOF
+        entry2 = BlogEntry.new("I Left my Hoodie on the Mountain!",
+          :confused,
+          "I am never going back to that mountain and I hope a giraffe steals it.")
+      EOF
 
-      input ('entry2 = BlogEntry.new("I Left my Hoodie on the Mountain!", ' + 
-            ':confused, "I am never going back to that mountain and I ' + 
-        'hope a giraffe steals it." )'),
+      input line.tr("\n", ' '),
         result: Proc.new {|v| assert_equal("BlogEntry", v.class.name) }
 
+      # ######################################################
       # lesson 7 starts here (depends on lesson 6 to complete)
+      # ######################################################
 
       input 'blog = [entry, entry2]', result: Proc.new { |v|
         assert_kind_of(Array, v)
@@ -281,28 +209,127 @@ EOF
         actual_str = "<xml>#{actual_str}</xml>"
         actual_xml = REXML::Document.new(actual_str.strip)
         assert_equal(expected_xml.write(StringIO.new).to_s,
-                     actual_xml.write(StringIO.new).to_s)
+                     actual_xml.write(StringIO.new).to_s,
+                     "testing that html used with the javascript popup " +
+                     "function is correct")
       }
-      # " 
-      # above line (# ") fixes bad emacs syntax highlighting
+        
+    end # tryruby_session
 
-        
-        
+  end # lesson6_and_7
+
+
+    
+  # class that performs the tests with the input sections of the 
+  # tryrubysession test helper
+  class TryRubySession_Input
+    attr_accessor :session, :test
+
+    # performs an assertion
+    # actual is the value being tested 
+    # expected should either be a 
+    # - Class: the class of actual should be expected
+    # - Regexp: actual (a string) should match the expected Regexp
+    # - Proc: A proc that takes one argument, actual. Assertions can
+    # be used inside that proc, eg assert_equal, assert.
+    # - <other>: actual should equal expected
+    # name is the name of the input (result, output, javascript, error),
+    # used in messages
+    # line is the line being tested
+    def do_assert(actual, expected, name, line)
+      case expected
+      when Class
+        @test.assert_kind_of(expected, actual,
+                           "Testing line `#{line}': #{name} should be a #{expected}")
+      when Regexp
+        @test.assert_match(expected, actual, 
+                              "Testing line `#{line}': #{name} should match #{expected}")
+      when Proc
+        @backtrace_pos = 0
+        @test.instance_exec(actual, &expected)
+          
+          # @test.assert(expected.call(actual),
+          #              "Testing line `#{line}': #{message} \n[#{actual}]")
+      else
+          @test.assert_equal(expected,actual,
+                             "Testing line `#{line}' for correct #{name}")
+      end
+    end
+
+    # runs the line using this objects session. 
+    def do_test(line)
+      o = Object.new
+      # store the initial constants of Object
+      initial_constants = Object.constants
+      session = @session
       
+      thread = Thread.new do
+        o.instance_eval do
+          run_script(session, line)
+        end
+      end
         
+      result = thread.value
+      # restores require to its old functionality
+      def Object.require(str)
+        old_require(str)
+      end
+
+      # next 4 lines will revert Object to the way it was before
+      # run_script
+      diff_constants = Object.constants - initial_constants
+      diff_constants.each do |constant|
+        Object.send(:remove_const, constant)
+      end
+      result
+    end
+
+
+    # The input function, used with the tryruby_session test helper
+    # see tryruby_session for more details
+    def input(line, params = {})
+      @backtrace_pos = 1
+      params[:output] ||= ""
+      params[:result] ||= nil
+      params[:error] ||= nil
+      
+      result = do_test(line)
+      begin
+        if params[:error] then
+          @test.assert_equal(:error, result.type, 
+                              "Testing if line `#{line}` resulted in an error")
+          do_assert(result.error, params[:error], "error", line)
+        elsif params[:javascript] then
+          do_assert(result.javascript, params[:javascript], "javascript", line)
+          do_assert(result.output, params[:output], "output", line)
+        elsif params[:line_continuation]
+          @test.assert_equal(:line_continuation, result.type,
+                              "Testing if line `#{line}' resulted in a line continuation")
+          if params[:line_continuation] != true then
+            @test.assert_equal(result.indent_level, params[:line_continuation],
+                                "Testing if line `#{line}' triggered enough autoindent")
+          end
+        else
+          @test.assert_nil(result.error,
+                            "Testing line `#{line}' to ensure there was no error")
+          do_assert(result.result, params[:result], "result" , line)
+          do_assert(result.output, params[:output], "output", line)
+        end
+        
+      rescue Test::Unit::AssertionFailedError => e
+        
+        new_bt = Test::Unit::Util::BacktraceFilter.filter_backtrace(e.backtrace)
+        new_bt = new_bt[@backtrace_pos..@backtrace_pos]
+        e.set_backtrace(new_bt)
+        raise e
+        
+      end
     end
   end
-
-    
-  
-  
-
-  
-
-
-    
 end
 
+# tests if the TryRubyOutput translation, for use with mouseapp_2.js and similar
+# is working correctly
 class TryRubyOutputTest < Test::Unit::TestCase
   def test_simple_result
     t = TryRubyOutput.standard(result: [12,24])
@@ -327,6 +354,12 @@ class TryRubyOutputTest < Test::Unit::TestCase
   def test_line_continuation
     t = TryRubyOutput.line_continuation(3)
     assert_equal(".." * 3, t.format_output)
+  end
+
+  def test_javascript
+    t = TryRubyOutput.javascript(javascript: 'alert("hello")')
+    # expected ends in a space to stop a visual problem in mouseapp
+    assert_equal("\033[1;JSmalert(\"hello\")\033[m ", t.format_output)
   end
 
 end
