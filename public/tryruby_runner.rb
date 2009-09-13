@@ -272,10 +272,10 @@ def run_line(session, line)
     eval_cmd = <<EOF
 #{include_cmd}
 
+#{$common_code}
 $SAFE = 3
 $outputIO = StringIO.new
 outputIO = StringIO.new
-#{$common_code}
 $stdout = FakeStdout.new
 #{previous_commands}
 begin

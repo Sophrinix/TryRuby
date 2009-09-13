@@ -44,9 +44,15 @@ class TryRubyTest < Test::Unit::TestCase
           run_script(session, line)
         end
       end
+
+
         
         
       result = thread.value
+      # restores require to its old functionality
+      def Object.require(str)
+        old_require(str)
+      end
       # next 4 lines will revert Object to the way it was before
       # run_script
       diff_constants = Object.constants - initial_constants
