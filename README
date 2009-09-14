@@ -1,4 +1,3 @@
-**testing* modifying readme because either github is messing up right now or snow lepard and git dont mix
 
 
 TRYRUBY! is now 1.9 ready and hosted using 1.9.
@@ -20,7 +19,13 @@ Doing so will skip to to the next part of the less/next lesson
 
 comics.txt was recovered! ^_^
 
+The sessions are now stored in a tmp folder.
+ For the time being it is within the htdoc path. I know this is bad. 
+I have included an index.html that redirects you back to the home page in the mean time. 
+Ideally, I need to put this some place like /var/logs/tryruby.
 
+if I do that, then it builds a system dependency on this project. It limits how portable it is.
+I might say screw it and do it anyway.  
 
 -------------------------------------------------------------------
 
