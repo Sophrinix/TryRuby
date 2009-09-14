@@ -15,10 +15,12 @@ class TryRubyCGISession < TryRubyBaseSession
   def initialize
     @cgi = CGI.new("html5")
     @session = CGI::Session.new(@cgi,
-                                'database_manager' => CGI::Session::PStore, # use PStore
-                                'session_key' => '_rb_sess_id', # custom $session key
-                                'session_expires' => Time.now + 60 * 60, # 30 minute timeout
-                                'prefix' => 'pstore_sid_') # PStore option
+                                    'database_manager' => CGI::Session::PStore, # use PStore
+                                    'session_key' => '_rb_sess_id', # custom $session key
+                                    'session_expires' => Time.now + 60 * 60, # 30 minute timeout
+                                    'prefix' => 'pstore_sid_', #Pstore option
+                                    'tmpdir' => 'tmp')       # Temp Directory for sessions
+    
  
     @session['current_statement'] ||= []
     @session['nesting_level'] ||= 0
