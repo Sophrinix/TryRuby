@@ -1,29 +1,47 @@
+TRYRUBY! is now 1.9 ready and hosted using 1.9. Please note this is beta software.
 
-TRYRUBY! is now 1.9 ready and hosted using 1.9.
+Copyright (c) 2009 Andrew McElroy
+
+index.html  is Copyright (c) 2009 _why
+test.rb, tryruby_runner.rb Copyright (c) 2009 David Miani
+
+Permission is hereby granted, free of charge, to any person
+obtaining a copy of this software and associated documentation
+files (the "Software"), to deal in the Software without
+restriction, including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the
+Software is furnished to do so, subject to the following
+conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
 
 
-<del>
-   Only the first 4 summaries work. 5-7 do not work. 8 works on a technicality.
-</del>
-<add>
-   Some lessons may be incomplete, but they are being either rewritten, or recovered.
-</add>
 
-If you feel like you are stuck in the middle of a lesson try typing:
+Please note that If you feel like you are stuck in the middle of a lesson try typing:
 
 next
 
 
 Doing so will skip to to the next part of the less/next lesson
 
-comics.txt was recovered! ^_^
-
+UPDATE:
 The sessions are now stored in a tmp folder.
- For the time being it is within the htdoc path. I know this is bad. 
+For the time being it is within the htdoc path. I know this is bad. 
 I have included an index.html that redirects you back to the home page in the mean time. 
 Ideally, I need to put this some place like /var/logs/tryruby.
 
-if I do that, then it builds a system dependency on this project. It limits how portable it is.
+If I do that, then it builds a system dependency on this project. It limits how portable it is.
 I might say screw it and do it anyway.  
 
 -------------------------------------------------------------------
@@ -31,7 +49,7 @@ I might say screw it and do it anyway.
 This is the original code base from 2009 for try ruby.
 it is not sandboxed. do not run it on a publicly facing server yet.
 
-it will run the system method. It will let you hose your server.
+It will run the system method. It will let you hose your server.
 I am working to make this a saner program.
 it does not include the sandbox. you have to use that seperately.
 
