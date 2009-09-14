@@ -28,8 +28,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 
 What is TryRuby?
 --------------------------------------------------------------------------------------
-Try Ruby is a interactive shell that quickly and enjoyably teaches the Ruby programming language.
-Originally _why's idea, it has been revied by Rubists who have a passion for the language and learning.
+Try Ruby is a interactive shell that quickly and whimsically teaches the Ruby programming language. Originally _why's idea, it has been recreated from the ground up by Rubists who have a passion for Ruby and for teaching their fellow (wo)man how to program.
 
 Please note that If you feel like you are stuck in the middle of a lesson try typing:
 
