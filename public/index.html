@@ -13,6 +13,7 @@
     </style>
 </head>
 <body>
+
 <div id="container">
     <div id="header"><img src="/images/header.png" /></div>
     <div id="content">
@@ -73,5 +74,21 @@
 
 </div>
 <input class="keyboard-selector-input" type="text" id="irb_input" autocomplete="off" />
+
+<!-- Putting the Google Analytics Code Here. Google Likes this to be in the header, but I can't bare
+putting my code though that. Expect This to become it's own .js file in the future. 
+Replace the UA code if your hosting your own copy -->
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2365371-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+
+<!-- end of GA code -->
 </body>
 </html>
