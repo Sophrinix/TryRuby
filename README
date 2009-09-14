@@ -26,7 +26,10 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
 FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-
+What is TryRuby?
+--------------------------------------------------------------------------------------
+Try Ruby is a interactive shell that quickly and enjoyably teaches the Ruby programming language.
+Originally _why's idea, it has been revied by Rubists who have a passion for the language and learning.
 
 Please note that If you feel like you are stuck in the middle of a lesson try typing:
 
@@ -41,19 +44,7 @@ For the time being it is within the htdoc path. I know this is bad.
 I have included an index.html that redirects you back to the home page in the mean time. 
 Ideally, I need to put this some place like /var/logs/tryruby.
 
-If I do that, then it builds a system dependency on this project. It limits how portable it is.
-I might say screw it and do it anyway.  
 
--------------------------------------------------------------------
-
-This is the original code base from 2009 for try ruby.
-it is not sandboxed. do not run it on a publicly facing server yet.
-
-It will run the system method. It will let you hose your server.
-I am working to make this a saner program.
-it does not include the sandbox. you have to use that seperately.
-
-once i have this stable and running I will begin to sandbox this inside of jruby.
 
 from there I will see about the viability of making this use the r bridge so you 
 can have ruby to R lessons. :-)
