@@ -103,8 +103,8 @@ def unfinished_statement?(line)
 end
  
 def finished_statement?(line)
-  [/^\s*end\s*$/,
-  /^\s*}\s*$/].any? {|regexp| line.match(regexp)};
+  [ /^.*[\s;]*end[\s;]*.*$/,
+  /^.*[\s;]*\}[\s;]*.*$/ ].any? {|regexp| line.match(regexp)};
 end
  
 $common_code = <<EOF
