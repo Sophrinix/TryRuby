@@ -9,11 +9,8 @@ end
  
  
 class TryRubyTestSession < TryRubyBaseSession
-  def initialize()
-    @current_statement = []
-    @nesting_level = 0
-    @start_time = Time.now
-    @past_commands = []
+  def initialize
+    reset
     @current_includes = []
   end
  
