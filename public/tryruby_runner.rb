@@ -32,8 +32,9 @@ end
   
 def time
   seconds = (Time.now - $session.start_time).ceil
-  return "#{seconds} seconds" if seconds < 60
-  return "#{seconds / 60} minutes" if seconds > 60
+  if seconds < 60; return "#{seconds} seconds"
+  else; return "#{seconds / 60} minutes"
+  end # if
 end
  
 def debug_define_all
