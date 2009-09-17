@@ -85,17 +85,16 @@ end
 class Regexp
   def +(regex)
     return false if regex.class != Regexp
-    eval('(/'+self.source+regex.source+'/)')
+    Regexp.new(self.source + regex.source)
   end
 end
 
-keyword_boundrys = /[\b;]*/
-$unfinished_keywords = keyword_boundrys+ /(class|def|module|for|if|else|elsif|until|unless|when|while|do|\{)/ +keyword_boundrys
-$finished_keywords = keyword_boundrys+ /(end|\})/ +keyword_boundrys
-
 def nesting_level_change(line)
-  line.scan($unfinished_keywords).length +
-  (0-line.scan($finished_keywords).length)
+  keyword_boundaries = /\b/
+  unfinished_keywords = keyword_boundaries+ /(class|def|module|for|if|else|elsif|until|unless|case|while|do|\{)/ +keyword_boundaries
+  finished_keywords = keyword_boundaries+ /(end|\})/ +keyword_boundaries
+  line.scan(unfinished_keywords).length -
+  line.scan(finished_keywords).length
 end
  
 $common_code = <<EOF
@@ -212,7 +211,8 @@ def run_script(session, line)
     #return run_line(session, new_line)
     line = new_line
   elsif session.nesting_level < 0 then
-    return TryRubyOutput.standard({output: 'you ended too much.', result: nil}) #should think of a more user-friendly message.
+    #return TryRubyOutput.standard({output: 'you ended too much.', result: nil}) #should think of a more user-friendly message.
+    # do nothing. As said in the poignant guide, "ruby will chime in".
     session.nesting_level = 0
   end
 
