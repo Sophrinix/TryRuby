@@ -90,7 +90,7 @@ class Regexp
 end
 
 keyword_boundrys = /[\b;]*/
-$unfinished_keywords = keyword_boundrys+ /(class|def|module|for|if|else|elsif|until|unless|when|while|\{)/ +keyword_boundrys
+$unfinished_keywords = keyword_boundrys+ /(class|def|module|for|if|else|elsif|until|unless|when|while|do|\{)/ +keyword_boundrys
 $finished_keywords = keyword_boundrys+ /(end|\})/ +keyword_boundrys
 
 def nesting_level_change(line)
