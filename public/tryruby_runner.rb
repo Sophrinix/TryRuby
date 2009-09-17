@@ -212,7 +212,7 @@ def run_script(session, line)
     #return run_line(session, new_line)
     line = new_line
   elsif session.nesting_level < 0 then
-    return TryRubyOutput.error({:output => 'you ended too much.'}) #should think of a more user-friendly message.
+    return TryRubyOutput.standard({output: 'you ended too much.', result: nil}) #should think of a more user-friendly message.
     session.nesting_level = 0
   end
 
