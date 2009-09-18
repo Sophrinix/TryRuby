@@ -20,6 +20,59 @@ end
 
 $session = nil
 
+# This tests the TryRubyBaseSession#calculate_nesting_level function
+class NestingLevelTest < Test::Unit::TestCase
+  def test_finished_statement_should_return_0
+    t = TryRubyBaseSession.new
+    assert_equal(0, t.calculate_nesting_level("42"))
+  end
+
+  def test_missing_end_should_return_1
+    t = TryRubyBaseSession.new
+    assert_equal(1, t.calculate_nesting_level("3.times do"))
+  end
+
+  def test_missing_close_brace_should_return_1
+    t = TryRubyBaseSession.new
+    assert_equal(1, t.calculate_nesting_level("3.times {"))
+  end
+
+  def test_open_class_should_return_1
+    t = TryRubyBaseSession.new
+    assert_equal(1, t.calculate_nesting_level("class BlogEntry"))
+  end
+
+  def test_closed_class_should_return_0
+    t = TryRubyBaseSession.new
+    assert_equal(0, t.calculate_nesting_level("class BlogEntry\nend"))
+  end
+
+  def test_2_unclosed_dos_should_return_2
+    t = TryRubyBaseSession.new
+    assert_equal(2, t.calculate_nesting_level("3.times do\n4.times do"))
+  end
+
+  def test_mix_of_opened_statements
+    t = TryRubyBaseSession.new
+    test_str = <<-EOF
+    class MyClass
+      def mymethod
+        3.times do
+          8.times {
+    EOF
+    assert_equal(4, t.calculate_nesting_level(test_str))
+  end
+
+  def test_open_and_close_on_same_line_should_return_0
+    t = TryRubyBaseSession.new
+    assert_equal(0, t.calculate_nesting_level("3.times { puts 'lol' }"))
+    assert_equal(0, t.calculate_nesting_level("3.times do |v| puts 'lol'; end"))
+  end
+
+                                                                   
+end
+    
+
 class TryRubyTest < Test::Unit::TestCase
   # a test helper that simplifies testing the tryruby interpretor. 
   # It takes one optional argument session, which is the session to use for
@@ -58,6 +111,27 @@ class TryRubyTest < Test::Unit::TestCase
       input '"Jimmy" * 5'     , result: "JimmyJimmyJimmyJimmyJimmy"
     end
   end
+
+  # tests statements that should end with a line continuation
+  def test_line_continuations
+    tryruby_session do
+      input '3.times do |v|' , line_continuation: 1
+      input '3.times { |v|', line_continuation: 2
+      input '}; end', result: Proc.new {true}
+      input 'class MyClass', line_continuation: 1
+      input "def mymethod", line_continuation: 2
+      input "end; end", result: Proc.new{true}
+    end
+  end
+
+  # tests statements that shouldn't end with a line continuation
+  def test_shouldnt_have_line_continuation
+    tryruby_session do
+      input "'helloclassend'", result: "helloclassend"
+      input "3.class", result: Class
+    end
+  end
+
 
   def test_lesson2
     tryruby_session do
@@ -377,5 +451,6 @@ class TryRubyOutputTest < Test::Unit::TestCase
 end
     
 
+Test::Unit::UI::Console::TestRunner.run(NestingLevelTest)
 Test::Unit::UI::Console::TestRunner.run(TryRubyOutputTest)
 Test::Unit::UI::Console::TestRunner.run(TryRubyTest)

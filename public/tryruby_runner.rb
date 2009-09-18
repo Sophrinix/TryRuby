@@ -1,3 +1,6 @@
+require 'ruby_parser'
+
+
 
 class TryRubyBaseSession
   def reset
@@ -6,6 +9,32 @@ class TryRubyBaseSession
     self.nesting_level = 0
     self.past_commands = []
   end
+
+  def calculate_nesting_level(statement)
+    begin
+      RubyParser.new.parse(statement)
+      0
+    rescue Racc::ParseError => e
+      case e.message
+      when /parse error on value \"\$end\" \(\$end\)/ then
+        new_statement = statement + "\n end"
+        begin
+          RubyParser.new.parse(new_statement)
+          return 1
+        rescue Racc::ParseError => e
+          if e.message =~ /parse error on value \"end\" \(kEND\)/ then
+            new_statement = statement + "\n }"
+          end
+        end
+        1 + calculate_nesting_level(new_statement)
+      else
+        raise e
+      end
+    end
+  end
+      
+      
+    
 
   def <<(line)
     if line == "!INIT!IRB!" then
@@ -19,9 +48,9 @@ class TryRubyBaseSession
       return TryRubyOutput.no_output
     end
     
-    self.nesting_level += nesting_level_change(line)
 
     self.current_statement << line
+    self.nesting_level = calculate_nesting_level(current_statement.join("\n"))
 
     run_session
     
@@ -60,6 +89,7 @@ end
 EOF
 
     
+    # puts eval_cmd
     # thread = Thread.new { o.instance_eval(eval_cmd) }
     # result = thread.value
     eval_result = eval(eval_cmd, TOPLEVEL_BINDING)
@@ -80,15 +110,7 @@ EOF
     end
   end
 
-  private
 
-  def nesting_level_change(line)
-    keyword_boundaries = /\b/
-    unfinished_keywords = keyword_boundaries+ /(class|def|module|for|if|else|elsif|until|unless|case|while|do|\{)/ +keyword_boundaries
-    finished_keywords = keyword_boundaries+ /(end|\})/ +keyword_boundaries
-    line.scan(unfinished_keywords).length -
-      line.scan(finished_keywords).length
-  end
 
 
     
