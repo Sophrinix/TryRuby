@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/env ruby1.9
 
 # yes i put ruby1.9 instead of ruby because of debian, i know
 #i need to fix that, i'll do it later
