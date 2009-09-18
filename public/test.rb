@@ -130,7 +130,7 @@ EOF
 
       # can't test for BlogEntry directly, as it isn't defined in this scope
       input 'entry = BlogEntry.new', result: Proc.new {|v|
-        assert_equal(v.class.name, "BlogEntry",
+        assert_equal("BlogEntry", v.class.name, 
                      "line should result in a BlogEntry")
       }
 
