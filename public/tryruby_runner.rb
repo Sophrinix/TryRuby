@@ -1,3 +1,4 @@
+
 class TryRubyBaseSession
   def reset
     self.start_time = Time.now
@@ -49,9 +50,7 @@ $stdout = FakeStdout.new
 #{past_commands.join("\n")}
 begin
 $stdout = FakeStdout.new
-result = instance_eval do
-#{line}
-end
+result = #{line}
 {:result => result, :output => $stdout.to_s}
 rescue SecurityError => e
 TryRubyOutput.standard(result: "SECURITY ERROR: " + e.inspect + e.backtrace.inspect)
@@ -59,14 +58,11 @@ rescue Exception => e
 TryRubyOutput.error(error: e, output: $stdout.string)
 end
 EOF
-    line_count = 0
 
-    # puts eval_cmd
     
-    # o = Object.new
     # thread = Thread.new { o.instance_eval(eval_cmd) }
     # result = thread.value
-    eval_result = eval(eval_cmd)
+    eval_result = eval(eval_cmd, TOPLEVEL_BINDING)
     self.current_statement = []
     $stdout = $original_stdout
     return eval_result if eval_result.is_a?(TryRubyOutput) # exception occurred
