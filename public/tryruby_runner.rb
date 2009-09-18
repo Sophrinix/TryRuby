@@ -7,22 +7,6 @@ class TryRubyBaseSession
   end
 end
  
- 
-class TryRubyTestSession < TryRubyBaseSession
-  def initialize()
-    @current_statement = []
-    @nesting_level = 0
-    @start_time = Time.now
-    @past_commands = []
-    @current_includes = []
-  end
- 
- 
-  attr_accessor :start_time, :current_statement
-  attr_accessor :nesting_level, :past_commands, :current_includes
- 
-end
- 
 alias :old_require :require
  
 def special_require(require_path)
@@ -35,8 +19,9 @@ end
   
 def time
   seconds = (Time.now - $session.start_time).ceil
-  return "#{seconds} seconds" if seconds < 60
-  return "#{seconds / 60} minutes" if seconds > 60
+  if seconds < 60; return "#{seconds} seconds"
+  else; return "#{seconds / 60} minutes"
+  end # if
 end
  
 def debug_define_all
@@ -96,17 +81,20 @@ class JavascriptResult
     self.javascript = javascript
   end
 end
- 
- 
-def unfinished_statement?(line)
-  [/^\s*((def)|(class))/,
-  /.* do *\|.*\| *$/,
-  /((do)|(\{))\s*$/].any? {|regexp| line.match(regexp) }
+
+class Regexp
+  def +(regex)
+    return false if regex.class != Regexp
+    Regexp.new(self.source + regex.source)
+  end
 end
- 
-def finished_statement?(line)
-  [/^\s*end\s*$/,
-  /^\s*}\s*$/].any? {|regexp| line.match(regexp)};
+
+def nesting_level_change(line)
+  keyword_boundaries = /\b/
+  unfinished_keywords = keyword_boundaries+ /(class|def|module|for|if|else|elsif|until|unless|case|while|do|\{)/ +keyword_boundaries
+  finished_keywords = keyword_boundaries+ /(end|\})/ +keyword_boundaries
+  line.scan(unfinished_keywords).length -
+  line.scan(finished_keywords).length
 end
  
 $common_code = <<EOF
@@ -210,33 +198,26 @@ def run_script(session, line)
     session.nesting_level = 0
     return TryRubyOutput.no_output
   end
- 
-  if unfinished_statement?(line) then
-    session.current_statement << line
-    session.nesting_level += 1
-    return TryRubyOutput.line_continuation(session.nesting_level)
-  end
- 
- 
-  if finished_statement?(line) then
-    session.nesting_level -= 1
-    session.current_statement << line
-    
-    if session.nesting_level <= 0 then
-      new_line = session.current_statement.join("\n")
-      session.current_statement = []
-      return run_line(session, new_line)
-    else
-      return TryRubyOutput.line_continuation(session.nesting_level)
-    end
-  end
+  
+  session.nesting_level += nesting_level_change(line)
+  
   if session.nesting_level > 0 then
     session.current_statement << line
     return TryRubyOutput.line_continuation(session.nesting_level)
+  elsif session.nesting_level == 0 and session.current_statement != [] then
+    session.current_statement += [line]
+    new_line = session.current_statement.join("\n")
+    session.current_statement = []
+    #return run_line(session, new_line)
+    line = new_line
+  elsif session.nesting_level < 0 then
+    #return TryRubyOutput.standard({output: 'you ended too much.', result: nil}) #should think of a more user-friendly message.
+    # do nothing. As said in the poignant guide, "ruby will chime in".
+    session.nesting_level = 0
   end
-  # finally ready to run a command
+
   run_line(session, line)
-end
+end #run_script
  
 class FakeStdout
   attr_accessor :calls

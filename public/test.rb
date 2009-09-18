@@ -6,6 +6,18 @@ require 'stringio'
 
 load 'tryruby_runner.rb'
 
+class TryRubyTestSession < TryRubyBaseSession
+  def initialize
+    reset
+    @current_includes = []
+  end
+ 
+ 
+  attr_accessor :start_time, :current_statement
+  attr_accessor :nesting_level, :past_commands, :current_includes
+ 
+end
+
 $session = nil
 
 class TryRubyTest < Test::Unit::TestCase
