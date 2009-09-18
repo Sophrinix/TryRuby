@@ -13,13 +13,13 @@ require 'tryruby_runner.rb'
  
 class TryRubyCGISession < TryRubyBaseSession
   def initialize
-    @cgi = CGI.new("html5")
-    @session = CGI::Session.new(@cgi,
+    @session = CGI::Session.new(@cgi = CGI.new,
                                     'database_manager' => CGI::Session::PStore, # use PStore
                                     'session_key' => '_rb_sess_id', # custom $session key
                                     'session_expires' => Time.now + 60 * 60, # 30 minute timeout
                                     'prefix' => 'pstore_sid_', #Pstore option
-                                    'tmpdir' => 'tmp')       # Temp Directory for sessions
+                                    'tmpdir' => 'tmp'       # Temp Directory for sessions
+    )
     
  
     @session['current_statement'] ||= []
@@ -30,7 +30,7 @@ class TryRubyCGISession < TryRubyBaseSession
     @session['past_commands'] ||= []
     
     @session['current_includes'] ||= []
-    print cgi.header
+    print cgi.header('text/plain')
   end
 
   def self.make_session_accessor(name)
@@ -51,7 +51,6 @@ class TryRubyCGISession < TryRubyBaseSession
 
   attr_accessor :cgi, :session
 
-  
 end
   
 $session = TryRubyCGISession.new 
