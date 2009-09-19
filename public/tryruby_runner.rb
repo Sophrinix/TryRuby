@@ -1,7 +1,5 @@
 require 'ruby_parser'
 
-
-
 class TryRubyBaseSession
   def reset
     self.start_time = Time.now
@@ -32,22 +30,26 @@ class TryRubyBaseSession
       end
     end
   end
-      
-      
-    
-
+  
   def <<(line)
     if line == "!INIT!IRB!" then
       self.reset
-      return TryRubyOutput.no_output
+      TryRubyOutput.no_output
     end
     
     if line =~ /^\s*reset\s*$/ then
       self.current_statement = []
       self.nesting_level = 0
-      return TryRubyOutput.no_output
+      TryRubyOutput.no_output
     end
     
+    if line =~ /^\s*time\s*$/
+      seconds = (Time.now - $session.start_time).ceil
+      if seconds < 60; time = "#{seconds} seconds"
+      else; time = "#{seconds / 60} minutes"
+      end # if
+      TryRubyOutput.standard({result: time})
+    end
 
     self.current_statement << line
     self.nesting_level = calculate_nesting_level(current_statement.join("\n"))
@@ -124,13 +126,6 @@ def special_require(require_path)
   return false if $session.current_includes.include? path
   $session.current_includes << path
   true
-end
-  
-def time
-  seconds = (Time.now - $session.start_time).ceil
-  if seconds < 60; return "#{seconds} seconds"
-  else; return "#{seconds / 60} minutes"
-  end # if
 end
  
 def debug_define_all
