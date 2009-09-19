@@ -69,7 +69,6 @@ class TryRubyBaseSession
     line = current_statement.join("\n")
     
     include_cmd = self.current_includes.map do |inc|
-      return false unless inc.is_a? String
       "old_require #{inc.inspect}"
     end.join("\n")
     
