@@ -34,13 +34,13 @@ class TryRubyBaseSession
   def <<(line)
     if line == "!INIT!IRB!" then
       self.reset
-      TryRubyOutput.no_output
+      return TryRubyOutput.no_output
     end
     
     if line =~ /^\s*reset\s*$/ then
       self.current_statement = []
       self.nesting_level = 0
-      TryRubyOutput.no_output
+      return TryRubyOutput.no_output
     end
     
     if line =~ /^\s*time\s*$/
@@ -48,7 +48,7 @@ class TryRubyBaseSession
       if seconds < 60; time = "#{seconds} seconds"
       else; time = "#{seconds / 60} minutes"
       end # if
-      TryRubyOutput.standard({result: time})
+      return TryRubyOutput.standard({result: time})
     end
 
     self.current_statement << line
