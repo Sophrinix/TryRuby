@@ -69,7 +69,7 @@ class TryRubyBaseSession
     line = current_statement.join("\n")
     
     include_cmd = self.current_includes.map do |inc|
-      "old_require '#{inc}'"
+      "old_require #{inc.inspect}"
     end.join("\n")
     
     eval_cmd = <<EOF
