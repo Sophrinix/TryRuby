@@ -230,7 +230,7 @@ class TryRubyOutput
   end
  
   def self.no_output
-    params = { type: :standard, result: nil, output: "" }
+    params = { type: :no_output, result: nil, output: "" }
     TryRubyOutput.new(params)
   end
  
@@ -258,7 +258,7 @@ class TryRubyOutput
     if self.type == :javascript
       result += "\033[1;JSm#{self.javascript}\033[m "
     else
-      result += "=> \033[1;20m#{self.result.inspect}"
+      result += "=> \033[1;20m#{self.result.inspect}" unless self.type == :no_output
     end
     result
   end
