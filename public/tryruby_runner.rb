@@ -59,6 +59,7 @@ class TryRubyBaseSession
       begin
         eval(line)
       rescue Exception => e
+        self << 'reset' #run this method to calm down the interpreter kind of.
         return TryRubyOutput.error(error: e)
       end
     end
@@ -265,6 +266,7 @@ class TryRubyOutput
   def format_error
     e = @error
     msg = e.message.sub(/.*:in `initialize': |\(eval\):1: /, "")
+    # RegEx explination: (regular error|syntax error)
 
     "\033[1;33m#{e.class}: #{msg}"
   end
