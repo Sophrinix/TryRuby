@@ -195,9 +195,6 @@ end
 
  
 $common_code = <<EOF
-poem = "My toast has flown from my hand\nAnd my toast has gone to the moon.
-But when I saw it on television,\nPlanting our flag on Halley's comet,
-More still did I want to eat it.\n"
  
 def require(str)
  special_require(str)
