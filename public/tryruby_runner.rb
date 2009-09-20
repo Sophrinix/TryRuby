@@ -52,7 +52,16 @@ class TryRubyBaseSession
     end
 
     self.current_statement << line
-    self.nesting_level = calculate_nesting_level(current_statement.join("\n"))
+    begin
+      self.nesting_level = calculate_nesting_level(current_statement.join("\n"))
+    rescue Exception => e
+      #syntax error.
+      begin
+        eval(line)
+      rescue Exception => e
+        return TryRubyOutput.error(error: e)
+      end
+    end
 
     run_session
     
@@ -86,7 +95,7 @@ result = #{line}
 rescue SecurityError => e
 TryRubyOutput.standard(result: "SECURITY ERROR: " + e.inspect + e.backtrace.inspect)
 rescue Exception => e
-TryRubyOutput.error(error: e, output: $stdout.string)
+TryRubyOutput.error(error: e)
 end
 EOF
 
@@ -255,7 +264,7 @@ class TryRubyOutput
  
   def format_error
     e = @error
-    msg = e.message.sub(/.*:in `initialize': /, "")
+    msg = e.message.sub(/.*:in `initialize': |\(eval\):1: /, "")
 
     "\033[1;33m#{e.class}: #{msg}"
   end
