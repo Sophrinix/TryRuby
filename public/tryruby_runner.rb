@@ -82,9 +82,9 @@ $stdout = FakeStdout.new
 result = #{line}
 {:result => result, :output => $stdout.to_s}
 rescue SecurityError => e
-TryRubyOutput.standard(result: "SECURITY ERROR: " + e.inspect + e.backtrace.inspect)
+TryRubyOutput.illegal
 rescue Exception => e
-TryRubyOutput.error(error: e, output: $stdout.string)
+TryRubyOutput.error(error: e, output: $stdout.to_s)
 end
 EOF
 
@@ -219,6 +219,11 @@ class TryRubyOutput
     new_params[:output] ||= ""
     TryRubyOutput.new(new_params)
   end
+
+  def self.illegal
+    new_params = { type: :illegal }
+    TryRubyOutput.new(new_params)
+  end
  
   def self.javascript(params)
     new_params = { type: :javascript, javascript: params[:javascript],
@@ -249,6 +254,7 @@ class TryRubyOutput
       return ".." * self.indent_level
     end
     return format_error if self.type == :error
+    return format_illegal if self.type == :illegal
     
     result = ""
     result += "#{self.output}\n" unless self.output.empty?
@@ -259,6 +265,10 @@ class TryRubyOutput
       result += "=> \033[1;20m#{self.result.inspect}"
     end
     result
+  end
+
+  def format_illegal
+    return "\033[1;33mYou aren't allowed to run that command!"
   end
  
   def format_error

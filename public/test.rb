@@ -124,6 +124,13 @@ class TryRubyTest < Test::Unit::TestCase
     end
   end
 
+  def test_errors
+    tryruby_session do
+      input 'asdf', error: NameError, output: ""
+      input 'print "hello"; asdf', error: NameError, output: "hello"
+    end
+  end
+
   # tests statements that shouldn't end with a line continuation
   def test_shouldnt_have_line_continuation
     tryruby_session do
@@ -287,6 +294,7 @@ EOF
               I hope a giraffe steals it.</li>
           </ul></xml>
           EOF
+
         expected_xml = REXML::Document.new(expected_str.strip)
         assert_match(/^window.irb.options.popup_make\(".*"\)?/m,
                      v,
@@ -385,6 +393,7 @@ EOF
           @test.assert_equal(:error, result.type, 
                               "Testing if line `#{line}` resulted in an error")
           do_assert(result.error, params[:error], "error", line)
+          do_assert(result.output, params[:output], "output", line)
         elsif params[:javascript] then
           do_assert(result.javascript, params[:javascript], "javascript", line)
           do_assert(result.output, params[:output], "output", line)
@@ -436,6 +445,24 @@ class TryRubyOutputTest < Test::Unit::TestCase
     assert_equal("\033[1;33mNoMethodError: undefined method `reverse' for 40:Fixnum",
                  t.format_output)
   end
+
+  def test_error_with_output
+    begin
+      40.reverse
+    rescue Exception => e
+      t = TryRubyOutput.error(error: e, output: "hello\nworld")
+    end
+    assert_equal("hello\nworld\n\033[1;33mNoMethodError: undefined method `reverse' for 40:Fixnum",
+                 t.format_output)
+  end
+
+  def test_illegal
+    t = TryRubyOutput.illegal
+    assert_equal("\033[1;33mYou aren't allowed to run that command!",
+                 t.format_output)
+  end
+      
+
 
   def test_line_continuation
     t = TryRubyOutput.line_continuation(3)
