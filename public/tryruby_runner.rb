@@ -28,22 +28,6 @@ class TryRubyBaseSession
       else
         raise e
       end
-    rescue SyntaxError => e
-      case e.message
-      when /unterminated string meets end of file\./
-         new_statement = statement + "\""
-        begin
-          RubyParser.new.parse(new_statement)
-          return 1
-        rescue Syntaxerror => e
-          if e.message =~ /unterminated string meets end of file\./ then
-            new_statement = statement + "'"
-          end
-        end
-        1 + calculate_nesting_level(new_statement)
-      else
-        raise e
-      end
     end
   end
   
