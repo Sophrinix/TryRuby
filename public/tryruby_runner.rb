@@ -268,7 +268,7 @@ class TryRubyOutput
       return ".." * self.indent_level
     end
     return format_error if self.type == :error
-    return format_illegal if self.type == :illegal
+    return "\033[1;33mYou aren't allowed to run that command!" if self.type == :illegal
     
     result = ""
     result += "#{self.output}\n" unless self.output.empty?
@@ -280,10 +280,6 @@ class TryRubyOutput
       result += "=> \033[1;20m#{self.result.inspect}" unless self.type == :no_output
     end
     result
-  end
-
-  def format_illegal
-    return "\033[1;33mYou aren't allowed to run that command!"
   end
  
   def format_error
