@@ -207,9 +207,15 @@ end
 
  
 $common_code = <<EOF
-poem = "My toast has flown from my hand\nAnd my toast has gone to the moon.
-But when I saw it on television,\nPlanting our flag on Halley's comet,
-More still did I want to eat it.\n"
+poem = <<POEM_EOF
+My toast has flown from my hand
+And my toast has gone to the
+moon.
+But when I saw it on television,
+Planting our flag on Halley's
+comet,
+More still did I want to eat it.
+POEM_EOF
  
 def require(str)
  special_require(str)
@@ -256,6 +262,7 @@ class TryRubyOutput
     TryRubyOutput.new(new_params)
   end
  
+
   def format_output
     if self.type == :line_continuation then
       return ".." * self.indent_level
@@ -266,7 +273,8 @@ class TryRubyOutput
     result = ""
     result += "#{self.output}\n" unless self.output.empty?
  
-    if self.type == :javascript
+
+    if self.type == :javascript then
       result += "\033[1;JSm#{self.javascript}\033[m "
     else
       result += "=> \033[1;20m#{self.result.inspect}" unless self.type == :no_output
