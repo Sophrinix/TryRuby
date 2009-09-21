@@ -143,6 +143,7 @@ class TryRubyTest < Test::Unit::TestCase
     $session = TryRubyTestSession.new
     tryruby_session $session do
       input '`cat /etc/passwd`', illegal: true
+      input 'require "popup"', result: Proc.new{}
       input '%x(cat /etc/passwd)', illegal: true
     end
   end
@@ -406,6 +407,8 @@ EOF
           do_assert(result.error, params[:error], "error", line)
           do_assert(result.output, params[:output], "output", line)
         elsif params[:javascript] then
+          @test.assert_nil(result.error,
+                            "Testing line `#{line}' to ensure there was no error")
           do_assert(result.javascript, params[:javascript], "javascript", line)
           do_assert(result.output, params[:output], "output", line)
         elsif params[:line_continuation]

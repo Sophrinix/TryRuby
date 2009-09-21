@@ -67,8 +67,10 @@ class TryRubyBaseSession
     line = current_statement.join("\n")
     
     include_cmd = self.current_includes.map do |inc|
-      "old_require '#{inc}'"
+      File.read("#{inc}.rb")
+      # "old_require '#{inc}'"
     end.join("\n")
+
     
     eval_cmd = <<EOF
 #{include_cmd}
