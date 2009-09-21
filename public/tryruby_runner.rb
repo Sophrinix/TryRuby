@@ -1,7 +1,5 @@
 require 'ruby_parser'
 
-
-
 class TryRubyBaseSession
   def reset
     self.start_time = Time.now
@@ -32,10 +30,7 @@ class TryRubyBaseSession
       end
     end
   end
-      
-      
-    
-
+  
   def <<(line)
     if line == "!INIT!IRB!" then
       self.reset
@@ -48,9 +43,26 @@ class TryRubyBaseSession
       return TryRubyOutput.no_output
     end
     
+    if line =~ /^\s*time\s*$/
+      seconds = (Time.now - $session.start_time).ceil
+      if seconds < 60; time = "#{seconds} seconds"
+      else; time = "#{seconds / 60} minutes"
+      end # if
+      return TryRubyOutput.standard({result: time})
+    end
 
     self.current_statement << line
-    self.nesting_level = calculate_nesting_level(current_statement.join("\n"))
+    begin
+      self.nesting_level = calculate_nesting_level(current_statement.join("\n"))
+    rescue Exception => e
+      #syntax error.
+      begin
+        eval(line)
+      rescue Exception => e
+        self << 'reset' #run this method to calm down the interpreter kind of.
+        return TryRubyOutput.error(error: e)
+      end
+    end
 
     run_session
     
@@ -127,13 +139,6 @@ def special_require(require_path)
   $session.current_includes << path
   true
 end
-  
-def time
-  seconds = (Time.now - $session.start_time).ceil
-  if seconds < 60; return "#{seconds} seconds"
-  else; return "#{seconds / 60} minutes"
-  end # if
-end
  
 def debug_define_all
 eval <<RUBY_EOF
@@ -202,9 +207,6 @@ end
 
  
 $common_code = <<EOF
-poem = "My toast has flown from my hand\nAnd my toast has gone to the
-moon.\nBut when I saw it on television,\nPlanting our flag on Halley's
-comet,\nMore still did I want to eat it.\n"
  
 def require(str)
  special_require(str)
@@ -235,7 +237,7 @@ class TryRubyOutput
   end
  
   def self.no_output
-    params = { type: :standard, result: nil, output: "" }
+    params = { type: :no_output, result: nil, output: "" }
     TryRubyOutput.new(params)
   end
  
@@ -264,7 +266,7 @@ class TryRubyOutput
     if self.type == :javascript
       result += "\033[1;JSm#{self.javascript}\033[m "
     else
-      result += "=> \033[1;20m#{self.result.inspect}"
+      result += "=> \033[1;20m#{self.result.inspect}" unless self.type == :no_output
     end
     result
   end
@@ -275,16 +277,10 @@ class TryRubyOutput
  
   def format_error
     e = @error
-    msg = e.message.sub(/.*:in `initialize': /, "")
-    error_s = "#{e.class}: #{msg}"
-    
-    error_output = "\033[1;33m#{error_s}"
-    if output.empty? then
-      result = error_output
-    else
-      result = output + "\n" + error_output
-    end
-    result
+    msg = e.message.sub(/.*:in `initialize': |\(eval\):1: /, "")
+    # RegEx explination: (regular error|syntax error)
+
+    "\033[1;33m#{e.class}: #{msg}"
   end
  
   protected
@@ -328,4 +324,3 @@ class FakeStdout
     # @calls.join("\n")
   end
 end
- 

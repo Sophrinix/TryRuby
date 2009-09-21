@@ -33,21 +33,22 @@ class TryRubyCGISession < TryRubyBaseSession
     print cgi.header('text/plain')
   end
  
-  def self.make_session_accessor(name)
-    define_method(name.to_sym) do
-      @session[name]
-    end
- 
-    define_method("#{name}=".to_sym) do |new_val|
-      @session[name] = new_val
+  def self.make_session_accessors(*names)
+    names.each do |name|
+      define_method(name.to_sym) do
+        @session[name]
+      end
+      define_method("#{name}=".to_sym) do |new_val|
+        @session[name] = new_val
+      end
     end
   end
  
-  make_session_accessor 'current_statement'
-  make_session_accessor 'past_commands'
-  make_session_accessor 'nesting_level'
-  make_session_accessor 'start_time'
-  make_session_accessor 'current_includes'
+  make_session_accessors 'current_statement',
+    'past_commands',
+    'nesting_level',
+    'start_time',
+    'current_includes'
  
   attr_accessor :cgi, :session
  
