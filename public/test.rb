@@ -139,6 +139,14 @@ class TryRubyTest < Test::Unit::TestCase
     end
   end
 
+  def test_illegal_ops
+    $session = TryRubyTestSession.new
+    tryruby_session $session do
+      input '`cat /etc/passwd`', illegal: true
+      input '%x(cat /etc/passwd)', illegal: true
+    end
+  end
+
 
   def test_lesson2
     tryruby_session do
@@ -389,7 +397,10 @@ EOF
       
       result = do_test(line)
       begin
-        if params[:error] then
+        if params[:illegal] then
+          @test.assert_equal(:illegal, result.type,
+                             "Testing if line `#{line}' resulted in an illegal operation")
+        elsif params[:error] then
           @test.assert_equal(:error, result.type, 
                               "Testing if line `#{line}` resulted in an error")
           do_assert(result.error, params[:error], "error", line)
