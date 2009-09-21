@@ -280,10 +280,16 @@ class TryRubyOutput
  
   def format_error
     e = @error
-    msg = e.message.sub(/.*:in `initialize': |\(eval\):1: /, "")
-    # RegEx explination: (regular error|syntax error)
-
-    "\033[1;33m#{e.class}: #{msg}"
+    msg = e.message.sub(/.*:in `initialize': /, "")
+    error_s = "#{e.class}: #{msg}"
+    
+    error_output = "\033[1;33m#{error_s}"
+    if output.empty? then
+      result = error_output
+    else
+      result = output + "\n" + error_output
+    end
+    result
   end
  
   protected
