@@ -86,8 +86,20 @@ class TryRubyBaseSession
     
     eval_cmd = <<EOF
 #{include_cmd}
- 
-#{$common_code}
+
+poem = <<POEM_EOF
+My toast has flown from my hand
+And my toast has gone to the
+moon.
+But when I saw it on television,
+Planting our flag on Halley's
+comet,
+More still did I want to eat it.
+POEM_EOF
+def require(str)
+ special_require(str)
+end
+
 $SAFE = 3
 $stdout = FakeStdout.new
 #{past_commands.join("\n")}
@@ -204,45 +216,27 @@ class Regexp
     Regexp.new(self.source + regex.source)
   end
 end
-
- 
-$common_code = <<EOF
-poem = <<POEM_EOF
-My toast has flown from my hand
-And my toast has gone to the
-moon.
-But when I saw it on television,
-Planting our flag on Halley's
-comet,
-More still did I want to eat it.
-POEM_EOF
- 
-def require(str)
- special_require(str)
-end
- 
-EOF
  
 class TryRubyOutput
   attr_reader :type, :result, :output, :error, :indent_level, :javascript
  
   def self.standard(params)
-    new_params = { type: :standard, result: params[:result],
+    params = { type: :standard, result: params[:result],
       output: params[:output]}
-    new_params[:output] ||= ""
-    TryRubyOutput.new(new_params)
+    params[:output] ||= ""
+    TryRubyOutput.new(params)
   end
 
   def self.illegal
-    new_params = { type: :illegal }
-    TryRubyOutput.new(new_params)
+    params = { type: :illegal }
+    TryRubyOutput.new(params)
   end
  
   def self.javascript(params)
-    new_params = { type: :javascript, javascript: params[:javascript],
+    params = { type: :javascript, javascript: params[:javascript],
       output: params[:output]}
-    new_params[:output] ||= ""
-    TryRubyOutput.new(new_params)
+    params[:output] ||= ""
+    TryRubyOutput.new(params)
   end
  
   def self.no_output
@@ -256,10 +250,10 @@ class TryRubyOutput
   end
  
   def self.error(params = {})
-    new_params = { type: :error, error: params[:error],
+    params = { type: :error, error: params[:error],
       output: params[:output]}
-    new_params[:output] ||= ""
-    TryRubyOutput.new(new_params)
+    params[:output] ||= ""
+    TryRubyOutput.new(params)
   end
  
 
@@ -284,7 +278,8 @@ class TryRubyOutput
  
   def format_error
     e = @error
-    msg = e.message.sub(/.*:in `initialize': /, "")
+    msg = e.message.sub(/.*:in `initialize': |\(eval\):1: /, "")
+    # RegEx explination: (regular error|syntax error)
     error_s = "#{e.class}: #{msg}"
     
     error_output = "\033[1;33m#{error_s}"
