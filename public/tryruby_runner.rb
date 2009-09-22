@@ -57,16 +57,17 @@ class TryRubyBaseSession
     rescue Exception => e
       #syntax error.
       begin
+        #RubyParser.new.parse(line)
         eval(line)
       rescue Exception => e
-        self << 'reset' #run this method to calm down the interpreter kind of.
+        self << 'reset'
         return TryRubyOutput.error(error: e)
       end
     end
 
+
     run_session
     
-
   end
 
   # This method is executed after a line is added to this Session. If indent_level is not 0,
@@ -77,6 +78,8 @@ class TryRubyBaseSession
 
     
     line = current_statement.join("\n")
+
+    return TryRubyOutput.no_output if RubyParser.new.parse(line) == nil
     
     include_cmd = self.current_includes.map do |inc|
       File.read("#{inc}.rb")
@@ -105,8 +108,9 @@ $stdout = FakeStdout.new
 #{past_commands.join("\n")}
 begin
 $stdout = FakeStdout.new
-result = #{line}
-{:result => result, :output => $stdout.to_s}
+{result:(
+#{line}
+), output: $stdout.to_s}
 rescue SecurityError => e
 TryRubyOutput.illegal
 rescue Exception => e
@@ -263,6 +267,7 @@ class TryRubyOutput
     end
     return format_error if self.type == :error
     return "\033[1;33mYou aren't allowed to run that command!" if self.type == :illegal
+    return '' if self.type == :no_output
     
     result = ""
     result += "#{self.output}\n" unless self.output.empty?
@@ -271,7 +276,7 @@ class TryRubyOutput
     if self.type == :javascript then
       result += "\033[1;JSm#{self.javascript}\033[m "
     else
-      result += "=> \033[1;20m#{self.result.inspect}" unless self.type == :no_output
+      result += "=> \033[1;20m#{self.result.inspect}"
     end
     result
   end
