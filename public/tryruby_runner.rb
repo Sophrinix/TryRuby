@@ -24,7 +24,11 @@ class TryRubyBaseSession
             new_statement = statement + "\n }"
           end
         end
-        1 + calculate_nesting_level(new_statement)
+        begin
+          1 + calculate_nesting_level(new_statement)
+        rescue Racc::ParseError => e
+          return 1
+        end
       else
         raise e
       end
