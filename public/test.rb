@@ -1,9 +1,6 @@
-require 'pp'
+#!/usr/bin/env ruby
 require 'test/unit'
 require 'rexml/document'
-require 'test/unit/ui/console/testrunner'
-require 'stringio'
-
 load 'tryruby_runner.rb'
 
 class TryRubyTestSession < TryRubyBaseSession
@@ -12,10 +9,8 @@ class TryRubyTestSession < TryRubyBaseSession
     @current_includes = []
   end
  
- 
   attr_accessor :start_time, :current_statement
   attr_accessor :nesting_level, :past_commands, :current_includes
- 
 end
 
 $session = nil
@@ -68,6 +63,7 @@ class NestingLevelTest < Test::Unit::TestCase
     assert_equal(0, t.calculate_nesting_level("3.times { puts 'lol' }"))
     assert_equal(0, t.calculate_nesting_level("3.times do |v| puts 'lol'; end"))
   end
+
   def test_half_statement
     t = TryRubyBaseSession.new
     assert_equal(1, t.calculate_nesting_level('true and'))
@@ -508,8 +504,3 @@ class TryRubyOutputTest < Test::Unit::TestCase
   end
 
 end
-    
-
-Test::Unit::UI::Console::TestRunner.run(NestingLevelTest)
-Test::Unit::UI::Console::TestRunner.run(TryRubyOutputTest)
-Test::Unit::UI::Console::TestRunner.run(TryRubyTest)
