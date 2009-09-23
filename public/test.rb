@@ -68,7 +68,11 @@ class NestingLevelTest < Test::Unit::TestCase
     assert_equal(0, t.calculate_nesting_level("3.times { puts 'lol' }"))
     assert_equal(0, t.calculate_nesting_level("3.times do |v| puts 'lol'; end"))
   end
-
+  def test_half_statement
+    t = TryRubyBaseSession.new
+    assert_equal(1, t.calculate_nesting_level('true and'))
+    assert_equal(1, t.calculate_nesting_level('amethod('))
+  end
                                                                    
 end
     
