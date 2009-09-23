@@ -266,23 +266,23 @@ class TryRubyOutput
  
 
   def format_output
-    if self.type == :line_continuation then
-      return ".." * self.indent_level
-    end
-    return format_error if self.type == :error
-    return "\033[1;33mYou aren't allowed to run that command!" if self.type == :illegal
-    return '' if self.type == :no_output
-    
-    result = ""
-    result += "#{self.output}\n" unless self.output.empty?
- 
-
-    if self.type == :javascript then
-      result += "\033[1;JSm#{self.javascript}\033[m "
+    case self.type
+    when :line_continuation
+      ".." * self.indent_level
+    when :error
+      format_error
+    when :illegal
+      "\033[1;33mYou aren't allowed to run that command!" if self.type == :illegal
+    when :no_output
+      ''
     else
-      result += "=> \033[1;20m#{self.result.inspect}"
+      result = ''
+      result += "#{self.output}\n" unless self.output.empty?
+      if self.type == :javascript; result += "\033[1;JSm#{self.javascript}\033[m "
+      else; result += "=> \033[1;20m#{self.result.inspect}"
+      end
+      result
     end
-    result
   end
  
   def format_error
