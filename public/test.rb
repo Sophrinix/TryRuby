@@ -128,6 +128,16 @@ class TryRubyTest < Test::Unit::TestCase
     end
   end
 
+  def test_lines_with_semicolons
+    tryruby_session do
+      input '3; 4', result: 4
+      input 'puts "hello"; a = 4; 5', output: "hello\n", result: 5
+      input 'a', result: 4
+      input '; 42', result: 42
+    end
+  end
+      
+
   def test_errors
     tryruby_session do
       input 'asdf', error: NameError, output: ""
