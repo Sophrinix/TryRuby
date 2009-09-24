@@ -282,7 +282,7 @@ class TryRubyOutput
     if self.output.empty?
       error_output
     else
-      self.output + "\n" + error_output
+      self.output + error_output
     end
   end
  
