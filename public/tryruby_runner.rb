@@ -48,18 +48,18 @@ class TryRubyBaseSession
     end
     
     if line =~ /^\s*time\s*$/
-      seconds = (Time.now - $session.start_time).ceil
+      seconds = (Time.now - self.start_time).ceil
       if seconds < 60; time = "#{seconds} seconds"
       else; time = "#{seconds / 60} minutes"
       end # if
-      return TryRubyOutput.standard({result: time})
+      return TryRubyOutput.standard(result: time)
     end
 
     self.current_statement << line
     begin
       self.nesting_level = calculate_nesting_level(current_statement.join("\n"))
     rescue Exception => e
-      #syntax error.
+      # syntax error.
       begin
         #RubyParser.new.parse(line)
         eval(line)
@@ -89,7 +89,8 @@ class TryRubyBaseSession
       File.read("#{inc}.rb")
     end.join("\n")
 
-    
+
+    original_stdout = $stdout
     eval_cmd = <<EOF
 #{include_cmd}
 
@@ -130,35 +131,22 @@ TryRubyOutput.error(error: e, output: $stdout.to_s)
 end
 EOF
 
-    
-    # puts eval_cmd
-    # thread = Thread.new { o.instance_eval(eval_cmd) }
-    # result = thread.value
     eval_result = eval(eval_cmd, TOPLEVEL_BINDING)
     self.current_statement = []
-    $stdout = $original_stdout
+    $stdout = original_stdout
     return eval_result if eval_result.is_a?(TryRubyOutput) # exception occurred
     output = eval_result[:output]
     result = eval_result[:result]
     
-    
-    
-    # result = eval(eval_cmd)
     self.past_commands << line
-    if result.is_a?(JavascriptResult) then
+    if result.is_a? JavascriptResult
       return TryRubyOutput.javascript(javascript: result.javascript, output: output)
     else
       return TryRubyOutput.standard(result: result, output: output)
     end
   end
 
-
-
-
-    
 end
- 
-alias :old_require :require
  
 def debug_define_all
 eval <<RUBY_EOF
@@ -289,15 +277,13 @@ class TryRubyOutput
     e = @error
     msg = e.message.sub(/.*:in `initialize': |\(eval\):1: /, "")
     # RegEx explination: (regular error|syntax error)
-    error_s = "#{e.class}: #{msg}"
     
-    error_output = "\033[1;33m#{error_s}"
-    if output.empty? then
-      result = error_output
+    error_output = "\033[1;33m#{e.class}: #{msg}"
+    if self.output.empty?
+      error_output
     else
-      result = output + "\n" + error_output
+      self.output + "\n" + error_output
     end
-    result
   end
  
   protected
@@ -307,17 +293,7 @@ class TryRubyOutput
     end
   end
  
- 
-  
 end
- 
-$original_stdout = $stdout
- 
-def run_script(session, line)
-  session << line
-
- 
-end #run_script
  
 class FakeStdout
   attr_accessor :calls
@@ -325,6 +301,7 @@ class FakeStdout
     @calls = []
     @string = ""
   end
+
   def method_missing(method, *args)
     @calls << {method: method, args: args}
   end

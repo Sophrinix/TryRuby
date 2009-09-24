@@ -3,6 +3,10 @@ require 'test/unit'
 require 'rexml/document'
 load 'tryruby_runner.rb'
 
+def run_script(session,line)
+  session << line
+end
+
 class TryRubyTestSession < TryRubyBaseSession
   def initialize
     reset
@@ -388,9 +392,9 @@ EOF
         
       result = thread.value
       # restores require to its old functionality
-      def Object.require(str)
-        old_require(str)
-      end
+      #def Object.require(str)
+      #  old_require(str)
+      #end
 
       # next 4 lines will revert Object to the way it was before
       # run_script
