@@ -87,7 +87,6 @@ class TryRubyBaseSession
     
     include_cmd = self.current_includes.map do |inc|
       File.read("#{inc}.rb")
-      # "old_require '#{inc}'"
     end.join("\n")
 
     
@@ -103,8 +102,17 @@ Planting our flag on Halley's
 comet,
 More still did I want to eat it.
 POEM_EOF
-def require(str)
- special_require(str)
+def require(require_path)
+  result = false
+  Thread.new do
+    #require_path.untaint
+    path = require_path.sub(/\.rb$/, "")
+    if ['popup'].include?(path) and !$session.current_includes.include?(path)
+      $session.current_includes << path
+      result = true
+    end
+  end.join
+  result
 end
 
 $SAFE = 3
@@ -151,14 +159,6 @@ EOF
 end
  
 alias :old_require :require
- 
-def special_require(require_path)
-  path = require_path.sub(/\.rb$/, "")
-  return false unless ['popup'].include? path
-  return false if $session.current_includes.include? path
-  $session.current_includes << path
-  true
-end
  
 def debug_define_all
 eval <<RUBY_EOF
