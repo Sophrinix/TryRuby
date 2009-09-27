@@ -22,29 +22,53 @@ class FakeStdout
   end
 end
 
-class Object
-  attr_reader :tryruby_line, :tryruby_past_commands, :tryruby_current_includes
-  @tryruby_line, @tryruby_past_commands, @tryruby_current_includes = ARGV
+module TryRuby
+Line, Past_commands, current_includes = ARGV
+def current_includes
+current_includes
+end
+def current_includes<<(item)
+current_includes << item
+end
 end
 ARGV = []
 
 poem = <<POEM_EOF
-blah blah blah
+My toast has flown from my hand
+And my toast has gone to the
+moon.
+But when I saw it on television,
+Planting our flag on Halley's
+comet,
+More still did I want to eat it.
 POEM_EOF
 
-def require(path)
-  result = ''
-  path = path.sub(/\.rb$/, "")
-  return false unless ['popup'].include?(path)
-  if Object.tryruby_current_includes.include?(path)
-    
-  else
-    Thread.new do
-      result = File.read(path)
-      Object.tryruby_current_includes << path
+#def require(path)
+#  result = ''
+#  path = path.sub(/\.rb$/, "")
+#  return false unless ['popup'].include?(path)
+#  if Object.tryruby_current_includes.include?(path)
+#    Thread.new do
+#      
+#    end.join
+#  else
+#    Thread.new do
+#      result = File.read(path)
+#      Object.tryruby_current_includes << path
+#    end.join
+#  end
+#  true
+#end
+def require(require_path)
+  result = false
+  Thread.new do
+    path = require_path.sub(/\.rb$/, "")
+    if ['popup'].include?(path) and !TryRuby::Current_includes.include?(path)
+      TryRuby::Current_includes << path
+      result = true
     end
-  end
-  true
+  end.join
+  result
 end
 
 $stdout = FakeStdout.new
