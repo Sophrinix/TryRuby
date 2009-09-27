@@ -80,7 +80,6 @@ class TryRubyBaseSession
   def run_session
     return TryRubyOutput.line_continuation(nesting_level) if nesting_level > 0
 
-    
     line = current_statement.join("\n")
 
     return TryRubyOutput.no_output if RubyParser.new.parse(line) == nil
@@ -265,7 +264,7 @@ class TryRubyOutput
       ''
     else
       result = ''
-      result += "#{self.output}\n" unless self.output.empty?
+      result += "#{self.output}" unless self.output.empty?
       if self.type == :javascript; result += "\033[1;JSm#{self.javascript}\033[m "
       else; result += "=> \033[1;20m#{self.result.inspect}"
       end
@@ -307,7 +306,7 @@ class FakeStdout
   end
  
   def write(str)
-    @string += str
+    @string += str.to_s
     
     method_missing(:write, strs)
   end
