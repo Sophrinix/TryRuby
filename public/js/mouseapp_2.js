@@ -45,14 +45,16 @@ var MouseApp = {
         'lt_green', 'lt_cyan', 'lt_red',
         'lt_purple', 'yellow', 'white']
 }
-if ( navigator.appVersion.indexOf('AppleWebKit') > 0 ) {
-    MouseApp.KeyCodes = {
-        Backspace: 8, Tab: 9, Enter: 13, Esc: 27, PageUp: 63276, PageDown: 63277,
-        End: 63275, Home: 63273, Left: 63234, Up: 63232, Right: 63235, Down: 63233, Insert: 632325,
-        Delete: 63272, F1: 63236, F2: 63237, F3: 63238, F4: 63239, F5: 63240, F6: 63241,
-        F7: 63242, F8: 63243, F10: 63244
-    };
-}
+// i am going to comment this out, since this seems un needed. if it past december 15 2009 and this
+// is still commented it, please del me
+//if ( navigator.appVersion.indexOf('AppleWebKit') > 0 ) {
+//    MouseApp.KeyCodes = {
+//       Backspace: 8, Tab: 9, Enter: 13, Esc: 27, PageUp: 63276, PageDown: 63277,
+//        End: 63275, Home: 63273, Left: 63234, Up: 63232, Right: 63235, Down: 63233, Insert: 632325,
+//        Delete: 63272, F1: 63236, F2: 63237, F3: 63238, F4: 63239, F5: 63240, F6: 63241,
+//        F7: 63242, F8: 63243, F10: 63244
+//    };//
+//}
 for ( var k in MouseApp.KeyCodes ) {
     MouseApp.CodeKeys[MouseApp.KeyCodes[k]] = k;
 }
