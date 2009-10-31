@@ -23,7 +23,7 @@
 // SOFTWARE.
 //
 var MouseApp = {
-    Version: '0.10',
+    Version: '0.12',
     CharCodes: {
         0: '&nbsp;', 1: '&nbsp;', 9: '&nbsp;',
         32: '&nbsp;', 34: '&quot;', 38: '&amp;',
@@ -45,6 +45,29 @@ var MouseApp = {
         'lt_green', 'lt_cyan', 'lt_red',
         'lt_purple', 'yellow', 'white']
 }
+//some of these are patently false, because I need to get on a real keyboard-- not a macbook.
+if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1){
+	 MouseApp.KeyCodes = {
+	       Backspace: 8, Tab: 9, Enter: 13, Esc: 27, PageUp: 63276, PageDown: 63277,
+	        End: 63275, Home: 63273, Left: 37, Up: 38, Right: 39, Down: 40, Insert: 632325,
+	        Delete: 8, F1: 63236, F2: 63237, F3: 63238, F4: 63239, F5: 63240, F6: 63241,
+	        F7: 63242, F8: 63243, F10: 63244
+	    }
+	
+}
+
+//even though I am tempted to combine chrome and opera into the same if statment, I will refrain for now
+// i dont have proper access to a proper keyboard and there might be a single difference between the two
+if (navigator.userAgent.indexOf("Opera") > -1){
+	 MouseApp.KeyCodes = {
+	       Backspace: 8, Tab: 9, Enter: 13, Esc: 27, PageUp: 63276, PageDown: 63277,
+	        End: 63275, Home: 63273, Left: 37, Up: 38, Right: 39, Down: 40, Insert: 632325,
+	        Delete: 8, F1: 63236, F2: 63237, F3: 63238, F4: 63239, F5: 63240, F6: 63241,
+	        F7: 63242, F8: 63243, F10: 63244
+	    }
+	
+}
+
 // i am going to comment this out, since this seems un needed. if it past december 15 2009 and this
 // is still commented it, please del me
 //if ( navigator.appVersion.indexOf('AppleWebKit') > 0 ) {
