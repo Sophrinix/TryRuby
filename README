@@ -35,10 +35,10 @@ Please note that If you feel like you are stuck in the middle of a lesson try ty
 
 next
 
-
 Doing so will skip to to the next part of the less/next lesson
 
 UPDATE:
+EXPECT TO SEE THIS CHANGE IN THE NEXT FEW DAYS. I AM LOOKING INTO A SQLITE STORE OPTION.
 The sessions are now stored in a tmp folder.
 For the time being it is within the htdoc path. I know this is bad. 
 I have included an index.html that redirects you back to the home page in the mean time. 
