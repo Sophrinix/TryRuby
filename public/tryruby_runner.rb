@@ -1,4 +1,5 @@
 require 'ruby_parser'
+require 'fakefs/safe'
 
 class TryRubyBaseSession
   def reset
@@ -115,9 +116,11 @@ def require(require_path)
   result
 end
 
-$SAFE = 3
+FakeFS.activate!
+FakeFS::FileSystem.clear
+#{self.past_commands.join("\n")}
+# $SAFE = 3
 $stdout = FakeStdout.new
-#{past_commands.join("\n")}
 begin
 $stdout = FakeStdout.new
 {result:(
@@ -130,6 +133,7 @@ TryRubyOutput.error(error: e, output: $stdout.to_s)
 end
 EOF
 
+    puts past_commands
     eval_result = eval(eval_cmd, TOPLEVEL_BINDING)
     self.current_statement = []
     $stdout = original_stdout
