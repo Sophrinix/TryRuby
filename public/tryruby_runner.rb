@@ -118,9 +118,9 @@ end
 
 FakeFS.activate!
 FakeFS::FileSystem.clear
-#{self.past_commands.join("\n")}
-# $SAFE = 3
+$SAFE = 3
 $stdout = FakeStdout.new
+#{self.past_commands.join("\n")}
 begin
 $stdout = FakeStdout.new
 {result:(
@@ -133,7 +133,10 @@ TryRubyOutput.error(error: e, output: $stdout.to_s)
 end
 EOF
 
-    eval_result = eval(eval_cmd, TOPLEVEL_BINDING)
+    eval_result = Thread.new do 
+      eval(eval_cmd, TOPLEVEL_BINDING)
+    end.value
+    FakeFS.deactivate!
     self.current_statement = []
     $stdout = original_stdout
     return eval_result if eval_result.is_a?(TryRubyOutput) # exception occurred
