@@ -443,7 +443,8 @@ EOF
           do_assert(result.output, params[:output], "output", line)
         end
         
-      rescue Test::Unit::AssertionFailedError => e
+      rescue Exception => e # Test::Unit::AssertionFailedError => e
+        p e
         
         new_bt = Test::Unit::Util::BacktraceFilter.filter_backtrace(e.backtrace)
         new_bt = new_bt[@backtrace_pos..@backtrace_pos]
@@ -465,7 +466,7 @@ class TryRubyOutputTest < Test::Unit::TestCase
   
   def test_result_and_output
     t = TryRubyOutput.standard(result: 333, output: "hello")
-    assert_equal("hello\n=> \033[1;20m333", t.format_output)
+    assert_equal("hello=> \033[1;20m333", t.format_output)
   end
 
   def test_error
@@ -484,7 +485,7 @@ class TryRubyOutputTest < Test::Unit::TestCase
     rescue Exception => e
       t = TryRubyOutput.error(error: e, output: "hello\nworld")
     end
-    assert_equal("hello\nworld\n\033[1;33mNoMethodError: undefined method `reverse' for 40:Fixnum",
+    assert_equal("hello\nworld\033[1;33mNoMethodError: undefined method `reverse' for 40:Fixnum",
                  t.format_output)
   end
 

@@ -133,7 +133,6 @@ TryRubyOutput.error(error: e, output: $stdout.to_s)
 end
 EOF
 
-    puts past_commands
     eval_result = eval(eval_cmd, TOPLEVEL_BINDING)
     self.current_statement = []
     $stdout = original_stdout
