@@ -1,3 +1,4 @@
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), 'submodules', 'fakefs', 'lib')
 require 'ruby_parser'
 require 'fakefs/safe'
 
