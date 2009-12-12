@@ -123,12 +123,12 @@ FakeFS::FileSystem.clear
 # create the basic filesystem
 ["Home", "Libraries", "MouseHole", "Programs", "Tutorials"].each {|dir| Dir.mkdir dir}
 comic_txt_text = <<COMIC_EOF
-Achewood: http://achewood.com/                           
-Dinosaur Comics: http://qwantz.com/                      
+Achewood: http://achewood.com/
+Dinosaur Comics: http://qwantz.com/
 Perry Bible Fellowship: http://cheston.com/pbf/archive.html
-Get Your War On: http://mnftiu.cc/  
+Get Your War On: http://mnftiu.cc/
 COMIC_EOF
-File.open("/comics.txt", "w") { |file| file << file.write(comic_txt_text) }
+File.open("/comics.txt", "w") { |file| file.write(comic_txt_text) }
 
 flickrpedia_user_rb_text = <<FLICK_EOF
 MouseHole.script do                                                   

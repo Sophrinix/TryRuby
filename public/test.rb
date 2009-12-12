@@ -226,6 +226,31 @@ EOF
     end
   end
 
+  def test_lesson5
+    tryruby_session do
+      input 'Dir.entries "/"',
+        result: [".", "..", "Home", "Libraries", "MouseHole", "Programs", "Tutorials",
+                 "comics.txt"]
+      input 'Dir["/*.txt"]', result: ["/comics.txt"]
+      comics_txt_text = <<EOF
+Achewood: http://achewood.com/
+Dinosaur Comics: http://qwantz.com/
+Perry Bible Fellowship: http://cheston.com/pbf/archive.html
+Get Your War On: http://mnftiu.cc/
+EOF
+      input 'print File.read("/comics.txt")', output: comics_txt_text
+      input "FileUtils.copy('/comics.txt', '/Home/comics.txt')", result: nil
+      input 'File.open("/Home/comics.txt", "a") do |f|', line_continuation: 1
+      input 'f << "Cat and Girl: http://catandgirl.com/\n"', line_continuation: 1
+      input 'end', result: Proc.new { |value| 
+        assert_equal "#<File:/Home/comics.txt (closed)>", value.inspect
+      }
+      input 'File.mtime("/Home/comics.txt")', result: Time
+      input 'File.mtime("/Home/comics.txt").hour', result: Fixnum
+    end
+      
+  end
+
     
 
   def test_lesson6_and_7

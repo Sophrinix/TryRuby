@@ -292,7 +292,7 @@ of <code>lines</code>. By using lines, ruby will return each line of the poem.</
             between them.</li>
     </ul>
     <p>To list just the text files in that directory: <code class="cmd">Dir["/*.txt"]</code></p>
-    <div class="answer">\["comics\.txt"\]</div>
+    <div class="answer">\["\/comics\.txt"\]</div>
 </div>
 <div class="stretcher">
     <h3>Come, Read Comics With Me</h3>
@@ -310,7 +310,7 @@ of <code>lines</code>. By using lines, ruby will return each line of the poem.</
        we exit Ruby, all our variables will be gone.  Ruby, by itself, forgets these things.  
        But if we save things in files, we can read those files in future Ruby escapades.</p>
     <p>Hey, and guess what?  The <code>/Home</code> directory is yours!  I gave it to you!  I am generous!  Let's make a copy of the comics file.</p>
-    <p>You'll want to: <code class="cmd">File.copy('/comics.txt', '/Home/comics.txt')</code>
+    <p>You'll want to: <code class="cmd">FileUtils.copy('/comics.txt', '/Home/comics.txt')</code>
     </p><p><em>If you've already created the file, use File.delete('/Home/comics.txt') to trash it.</em></p>
     <div class="answer">nil</div>
 </div>
@@ -357,7 +357,7 @@ of <code>lines</code>. By using lines, ruby will return each line of the poem.</
     <h3>The Clock Nailed To the File</h3>
     <p>Good, good!  You've added that new comic to the file.  You can see for yourself: <code>print File.read("/Home/comics.txt")</code></p>
     <p>What time was it when you changed the file?  Let's check.  Type: <code class="cmd">File.mtime("/Home/comics.txt")</code></p>
-    <div class="answer">\w+ \w+ \d+ \d{2}:\d{2}:\d{2} [+-]\d{4} \d{4}</div>
+    <div class="answer">\d{4}-\d+-\d+ \d{2}:\d{2}:\d{2} [+-]\d{4}</div>
 </div>
 <div class="stretcher">
     <h3>Just the Hour Hand</h3>
