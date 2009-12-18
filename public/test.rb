@@ -1,7 +1,15 @@
 #!/usr/bin/env ruby
 require 'test/unit'
 require 'rexml/document'
+require 'hpricot'
 load 'tryruby_runner.rb'
+
+class Integer
+  def weeks
+    self * 7*24*60*60
+  end
+end
+
 
 def run_script(session,line)
   session << line
@@ -251,9 +259,92 @@ EOF
       
   end
 
+  def test_lesson6
+    $session = TryRubyTestSession.new
+    tryruby_session $session do
+      input 'def load_comics( path )', line_continuation: 1
+      input 'comics = {}', line_continuation: 1
+      input 'File.foreach(path) do |line|', line_continuation: 2
+      input "url, name = line.split(': ')", line_continuation: 2
+      input 'comics[url] = name.strip', line_continuation: 2
+      input 'end', line_continuation: 1
+      input 'comics', line_continuation: 1
+      input 'end', result: nil
+
+      input "comics = load_comics('/comics.txt')",  result:
+        {"Achewood"=>"http://achewood.com/",
+        "Dinosaur Comics"=>"http://qwantz.com/",
+        "Perry Bible Fellowship"=>"http://cheston.com/pbf/archive.html" ,
+        "Get Your War On"=>"http://mnftiu.cc/"}
+
+      input "require 'popup'", result: Proc.new {}
+      input 'Popup.goto "http://google.com/"',
+        javascript: "window.irb.options.popup_goto(\"http://google.com/\")"
+
+      input 'Popup.make {', line_continuation: 1
+      input 'h1 "My Links"', line_continuation: 1
+      input 'link "Go to Google", "http://google.com/"', line_continuation: 1
+      input '}', javascript: 
+        "window.irb.options.popup_make" + 
+        "(\"<h1>My Links</h1> " +
+        "<a href=\\\"http://google.com/\\\">Go to Google</a>\")"
+
+      input 'Popup.make do', line_continuation: 1
+      input 'h1 "Things To Do"', line_continuation: 1
+      input 'list do', line_continuation: 2
+      input 'p "Try out Ruby"', line_continuation: 2
+      input 'p "Ride a tiger"', line_continuation: 2
+      input 'p "(down River Euphrates)"', line_continuation: 2
+      input 'end', line_continuation: 1
+      expected = <<EOF
+window.irb.options.popup_make("<h1>Things To Do</h1>
+ <ul><li>Try out Ruby</li>
+ <li>Ride a tiger</li>
+ <li>(down River Euphrates)
+</li></ul>")
+EOF
+    input 'end', javascript: expected.gsub("\n", "")
+
+input 'Popup.make do', line_continuation: 1
+input 'h1 "Comics on the Web"', line_continuation: 1
+input 'list do', line_continuation: 2
+input 'comics.each do |name, url|', line_continuation: 3
+input 'link name, url', line_continuation: 3
+input 'end', line_continuation: 2
+input 'end', line_continuation: 1
+input 'end', javascript: Proc.new { |v|
+        matches = v.match(/^window.irb.options.popup_make\("(.*)"\)/)
+        assert_not_nil(matches)
+        html = matches[1].gsub(/\\(.)/, '\1')
+        doc = Hpricot(html)
+        assert_equal("Comics on the Web", (doc/:h1).inner_html)
+        list_items = (doc/:li/:a).map do |elem|
+          {href: elem.attributes['href'], title: elem.inner_html}
+        end
+        assert_equal({href: "http://achewood.com/", title: "Achewood"},
+                     list_items[0])
+        assert_equal({href: "http://qwantz.com/", title: "Dinosaur Comics"},
+                     list_items[1])
+        assert_equal({href: "http://cheston.com/pbf/archive.html",
+                       title: "Perry Bible Fellowship"},
+                     list_items[2])
+        assert_equal({href: "http://mnftiu.cc/", title: "Get Your War On"},
+                     list_items[3])
+
+        #assert_equal("", html)
+      }
+        
+
+
+
+    end
+
+  end
+      
+
     
 
-  def test_lesson6_and_7
+  def test_lesson7_and_8
     $session = TryRubyTestSession.new
     tryruby_session $session do
       input 'Hash.new',              result: {}
@@ -320,6 +411,7 @@ EOF
 
 
       input 'blog.map { |entry| entry.mood }', result: [:sick, :confused]
+
       input 'require "popup"',                 result: Proc.new {} # don't care
       input 'Popup.make do',                   line_continuation: 1
       input "h1 'My Blog'",                    line_continuation: 1
@@ -359,10 +451,15 @@ EOF
                      "testing that html used with the javascript popup " +
                      "function is correct")
       }
+
+      input 'Time.now - 2.weeks', result: Time
+
+      input 'File.read("/MouseHole/flickrpedia.user.rb")', result: String
         
     end # tryruby_session
 
   end # lesson6_and_7
+    
 
 
     
@@ -434,7 +531,7 @@ EOF
     # The input function, used with the tryruby_session test helper
     # see tryruby_session for more details
     def input(line, params = {})
-      @backtrace_pos = 1
+      @backtrace_pos = 2
       params[:output] ||= ""
       params[:result] ||= nil
       params[:error] ||= nil
@@ -468,7 +565,7 @@ EOF
           do_assert(result.output, params[:output], "output", line)
         end
         
-      rescue Exception => e # Test::Unit::AssertionFailedError => e
+      rescue Test::Unit::AssertionFailedError => e
         p e
         
         new_bt = Test::Unit::Util::BacktraceFilter.filter_backtrace(e.backtrace)
