@@ -1,17 +1,13 @@
-
-#do the check to make sure im less than 1.9 or not jruby
-#the check isnt working so i have it commented out for this moment.
-#if RUBY_VERSION >= 1.9
-   class Symbol
-     def to_proc
-       Proc.new { |obj, *args| obj.send(self, *args) }
-     end
-   end
-#end
+class Symbol
+  def to_proc
+    Proc.new { |obj, *args| obj.send(self, *args) }
+  end
+end
 
 module Popup
   def self.goto(url)
-    JavascriptResult.new("window.irb.options.popup_goto(\"#{url}\")")
+    url = url.gsub '"', '\"'
+    TryRuby::Output.javascript "window.irb.options.popup_goto(\"#{url}\")"
   end
  
   class Header
@@ -110,11 +106,9 @@ module Popup
     result = ComplexPopup.new
     result.instance_eval(&block)
  
-    html = result.generate_html.gsub('\\', '\\\\').gsub('"', '\\"')
+    html = result.generate_html.gsub('\\', '\\\\').gsub('"', '\"')
     command = "window.irb.options.popup_make(\"#{html}\")"
-    # puts command
-    JavascriptResult.new command
-      
+    TryRuby::Output.javascript command
   end
     
 end
