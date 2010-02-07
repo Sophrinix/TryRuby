@@ -389,8 +389,8 @@ of <code>lines</code>. By using lines, ruby will return each line of the poem.</
     <ul><li><code class="faded">def load_comics( path )</code></li>
         <li><code>&nbsp;&nbsp;comics = {}</code></li>
         <li><code>&nbsp;&nbsp;File.foreach(path) do |line|</code></li>
-        <li><code>&nbsp;&nbsp;&nbsp;&nbsp;url, name = line.split(': ')</code></li>
-        <li><code>&nbsp;&nbsp;&nbsp;&nbsp;comics[url] = name.strip</code></li>
+        <li><code>&nbsp;&nbsp;&nbsp;&nbsp;name, url = line.split(': ')</code></li>
+        <li><code>&nbsp;&nbsp;&nbsp;&nbsp;comics[name] = url.strip</code></li>
         <li><code>&nbsp;&nbsp;end</code></li>
         <li><code>&nbsp;&nbsp;comics</code></li>
         <li><code>end</code></li>

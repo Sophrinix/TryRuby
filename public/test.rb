@@ -265,8 +265,8 @@ EOF
       input 'def load_comics( path )', line_continuation: 1
       input 'comics = {}', line_continuation: 1
       input 'File.foreach(path) do |line|', line_continuation: 2
-      input "url, name = line.split(': ')", line_continuation: 2
-      input 'comics[url] = name.strip', line_continuation: 2
+      input "name, url = line.split(': ')", line_continuation: 2
+      input 'comics[name] = url.strip', line_continuation: 2
       input 'end', line_continuation: 1
       input 'comics', line_continuation: 1
       input 'end', result: nil
