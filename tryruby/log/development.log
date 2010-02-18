@@ -809,3 +809,170 @@ ActionController::RoutingError (No route matches "/irb.cgi" with {:method=>:get}
   /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
 
 Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 01:04:44) [GET]
+  Parameters: {"cmd"=>"2"}
+
+ActionController::RoutingError (No route matches "/irb.cgi" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 01:04:49) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TutorialsController#intro (for 127.0.0.1 at 2010-02-18 01:04:49) [GET]
+Rendering tutorials/intro
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/tutorials/intro]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 01:04:51) [GET]
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+
+ActionController::RoutingError (No route matches "/irb.cgi" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 01:04:51) [GET]
+  Parameters: {"cmd"=>"2"}
+
+ActionController::RoutingError (No route matches "/irb.cgi" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 01:07:17) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TutorialsController#intro (for 127.0.0.1 at 2010-02-18 01:07:17) [GET]
+Rendering tutorials/intro
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/tutorials/intro]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:07:19) [GET]
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+Completed in 51ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=%21INIT%21IRB%21]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:07:19) [GET]
+  Parameters: {"cmd"=>"2"}
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=2]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:07:21) [GET]
+  Parameters: {"cmd"=>"2 + 6"}
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=2%20%2B%206]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:07:27) [GET]
+  Parameters: {"cmd"=>"Dir.entires"}
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=Dir.entires]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:07:47) [GET]
+  Parameters: {"cmd"=>"\"jimmy\".reverse"}
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=%22jimmy%22.reverse]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:08:01) [GET]
+  Parameters: {"cmd"=>"40.reverse"}
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=40.reverse]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:08:08) [GET]
+  Parameters: {"cmd"=>"40.to_s.reverse"}
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=40.to_s.reverse]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:08:10) [GET]
+  Parameters: {"cmd"=>"40.to_s.reverse"}
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=40.to_s.reverse]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:08:11) [GET]
+  Parameters: {"cmd"=>"40.to_s.reverse"}
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=40.to_s.reverse]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:08:22) [GET]
+  Parameters: {"cmd"=>"poem = \"My toast has flown from my hand\\nAnd my toast has gone to the\nmoon.\\nBut when I saw it on television,\\nPlanting our flag on Halley's\ncomet,\\nMore still did I want to eat it.\\n\""}
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=poem%20%3D%20%22My%20toast%20has%20flown%20from%20my%20hand%5CnAnd%20my%20toast%20has%20gone%20to%20the%0Amoon.%5CnBut%20when%20I%20saw%20it%20on%20television%2C%5CnPlanting%20our%20flag%20on%20Halley%27s%0Acomet%2C%5CnMore%20still%20did%20I%20want%20to%20eat%20it.%5Cn%22]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:08:30) [GET]
+  Parameters: {"cmd"=>"print poem"}
+Completed in 7ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=print%20poem]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:09:17) [GET]
+  Parameters: {"cmd"=>"RUBY"}
+Completed in 4ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=RUBY]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:09:22) [GET]
+  Parameters: {"cmd"=>"RUBY_PLATFORM"}
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=RUBY_PLATFORM]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:09:29) [GET]
+  Parameters: {"cmd"=>"RUBY_VERSION"}
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=RUBY_VERSION]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:09:53) [GET]
+  Parameters: {"cmd"=>"Dir[\"/*.txt\"]"}
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=Dir%5B%22/*.txt%22%5D]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:10:22) [GET]
+  Parameters: {"cmd"=>"print File.read(\"/comics.txt\")"}
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=print%20File.read%28%22/comics.txt%22%29]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-02-18 01:10:40) [GET]
+  Parameters: {"cmd"=>"system(\"ls \")"}
+Completed in 25ms (View: 2, DB: 0) | 200 OK [http://localhost/tryruby/run?cmd=system%28%22ls%20%22%29]

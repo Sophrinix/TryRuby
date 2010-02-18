@@ -47,7 +47,7 @@ window.onload = function() {
         user: 'guest',
         host: 'tryruby',
         // original: irbUrl: '/irb',
-        irbUrl: '/irb.cgi',
+        irbUrl: '/tryruby/run',
         init: function () {
             helpPages = $(".stretcher");
             chapPages = new Array();
