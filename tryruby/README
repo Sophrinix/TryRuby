@@ -1,0 +1,21 @@
+=README
+
+This is a highly experimental version of tryruby
+I realize putting try ruby is rails is going to be controversial.
+My origional idea was to use sinatra. Maybe I will use both.
+
+What is driving this decision is:
+* the desire to move away from explictly needing to state where the ruby interpreter is
+* an admission that I need to become rack based, rails is a cheap way out
+* more people know rails within the ruby world then not (sorry its true)
+* I need to be able to extend this eaiser, if I tried to add even 30 lessons in its current form, it would not be as fun as inside rails
+* rspec-rails I understand way better than rspec some random script.
+
+so why am I not using camping, simple, I am not sure how maintained camping is.
+What about merb? I admit, I don't know merb and with rails 3.0  won't I be getting the benefits of merb anyway?
+
+I will contact everyone who has a fork of this project to notify them of if and when I plan on making the architectual switch before hand.
+
+Thanks.
+
+In the meanwhile, ignore this branch.
