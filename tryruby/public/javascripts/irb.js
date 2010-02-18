@@ -63,7 +63,7 @@ window.onload = function() {
         },
         loadTutorial: function (id, instruct) {
             $.ajax({
-                url: '/tutorials/' + id + '.html',
+                url: '/tutorials/' + id ,
                 type: 'GET', 
                 complete: function (r) {
                     $('#helpstone').html("<div class='stretcher chapmark'>" + defaultPage + "</div>" + r.responseText);

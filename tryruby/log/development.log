@@ -1,0 +1,811 @@
+/!\ FAILSAFE /!\  2010-02-18 00:05:10 -0600
+  Status: 500 Internal Server Error
+  no driver for sqlite3 found
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/sqlite3-0.0.7/lib/sqlite3/database.rb:301:in `load_driver'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/sqlite3-0.0.7/lib/sqlite3/database.rb:67:in `initialize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `new'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `sqlite3_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `block (2 levels) in checkout'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `block in checkout'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/monitor.rb:190:in `mon_synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+/!\ FAILSAFE /!\  2010-02-18 00:06:28 -0600
+  Status: 500 Internal Server Error
+  no driver for sqlite3 found
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/sqlite3-0.0.7/lib/sqlite3/database.rb:301:in `load_driver'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/sqlite3-0.0.7/lib/sqlite3/database.rb:67:in `initialize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `new'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `sqlite3_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `block (2 levels) in checkout'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `block in checkout'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/monitor.rb:190:in `mon_synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+/!\ FAILSAFE /!\  2010-02-18 00:07:52 -0600
+  Status: 500 Internal Server Error
+  no driver for sqlite3 found
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/sqlite3-0.0.7/lib/sqlite3/database.rb:301:in `load_driver'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/sqlite3-0.0.7/lib/sqlite3/database.rb:67:in `initialize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `new'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/sqlite3_adapter.rb:13:in `sqlite3_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `block (2 levels) in checkout'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `block in checkout'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/monitor.rb:190:in `mon_synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+/!\ FAILSAFE /!\  2010-02-18 00:11:29 -0600
+  Status: 500 Internal Server Error
+  no such file to load -- mysql
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `block in require'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:156:in `require'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:7:in `block in require_library_or_gem'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/reporting.rb:11:in `silence_warnings'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/core_ext/kernel/requires.rb:5:in `require_library_or_gem'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/mysql_adapter.rb:61:in `mysql_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:223:in `new_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:245:in `checkout_new_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:188:in `block (2 levels) in checkout'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `loop'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:184:in `block in checkout'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/monitor.rb:190:in `mon_synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:183:in `checkout'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:98:in `connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:326:in `retrieve_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:123:in `retrieve_connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_specification.rb:115:in `connection'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:9:in `cache'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/query_cache.rb:28:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract/connection_pool.rb:361:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:20:13) [GET]
+
+ActionController::RoutingError (No route matches "/" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 00:27:53) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: ):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 00:28:24) [GET]
+Rendering tryruby/index
+Completed in 11ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 00:28:37) [GET]
+Rendering tryruby/index
+Completed in 11ms (View: 9, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 00:34:06) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 22ms (View: 20, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:34:06) [GET]
+
+ActionController::RoutingError (No route matches "/javascript/jquery-1.3.2.min.js" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:34:06) [GET]
+
+ActionController::RoutingError (No route matches "/javascript/mouseapp_2.js" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:34:06) [GET]
+
+ActionController::RoutingError (No route matches "/javascript/mouseirb_2.js" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:34:06) [GET]
+
+ActionController::RoutingError (No route matches "/javascript/irb.js" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 00:34:24) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:34:25) [GET]
+
+ActionController::RoutingError (No route matches "/javascript/jquery-1.3.2.min.js" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:34:25) [GET]
+
+ActionController::RoutingError (No route matches "/javascript/mouseapp_2.js" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:34:25) [GET]
+
+ActionController::RoutingError (No route matches "/javascript/mouseirb_2.js" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:34:25) [GET]
+
+ActionController::RoutingError (No route matches "/javascript/irb.js" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 00:34:49) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 12ms (View: 11, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:34:50) [GET]
+
+ActionController::RoutingError (No route matches "/javascript/jquery-1.3.2.min.js" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:34:50) [GET]
+
+ActionController::RoutingError (No route matches "/javascript/mouseapp_2.js" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:34:50) [GET]
+
+ActionController::RoutingError (No route matches "/javascript/irb.js" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:34:50) [GET]
+
+ActionController::RoutingError (No route matches "/javascript/mouseirb_2.js" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:34:50) [GET]
+
+ActionController::RoutingError (No route matches "/javascript/irb.js" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 00:35:15) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 12ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:35:16) [GET]
+
+ActionController::RoutingError (No route matches "/javascript/irb.js" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:35:16) [GET]
+
+ActionController::RoutingError (No route matches "/javascript/irb.js" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 00:35:25) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 13ms (View: 10, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:35:27) [GET]
+
+ActionController::RoutingError (No route matches "/tutorials/intro.html" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:35:30) [GET]
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+
+ActionController::RoutingError (No route matches "/irb.cgi" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:35:31) [GET]
+  Parameters: {"cmd"=>"2"}
+
+ActionController::RoutingError (No route matches "/irb.cgi" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 00:37:25) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:37:27) [GET]
+
+ActionController::RoutingError (No route matches "/tutorials/intro.html" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:37:34) [GET]
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+
+ActionController::RoutingError (No route matches "/irb.cgi" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:37:34) [GET]
+  Parameters: {"cmd"=>"2"}
+
+ActionController::RoutingError (No route matches "/irb.cgi" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:37:55) [GET]
+
+ActionController::RoutingError (No route matches "/tutorials/intro.html" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:38:29) [GET]
+
+ActionController::RoutingError (No route matches "/tutorials/intro" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:39:11) [GET]
+
+ActionController::RoutingError (No route matches "/tutorials/intro" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:40:03) [GET]
+
+ActionController::RoutingError (No route matches "/tutorials/" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TutorialsController#intro (for 127.0.0.1 at 2010-02-18 00:40:28) [GET]
+Rendering tutorials/intro
+Completed in 22ms (View: 20, DB: 0) | 200 OK [http://localhost/tutorials/intro]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TutorialsController#intro_files to gif (for 127.0.0.1 at 2010-02-18 00:40:28) [GET]
+  Parameters: {"id"=>"sick"}
+
+ActionController::UnknownAction (No action responded to intro_files. Actions: intro):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TutorialsController#index (for 127.0.0.1 at 2010-02-18 00:40:37) [GET]
+
+ActionController::UnknownAction (No action responded to index. Actions: intro):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TutorialsController#intro (for 127.0.0.1 at 2010-02-18 00:40:38) [GET]
+Rendering tutorials/intro
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/tutorials/intro]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TutorialsController#intro_files to gif (for 127.0.0.1 at 2010-02-18 00:40:39) [GET]
+  Parameters: {"id"=>"sick"}
+
+ActionController::UnknownAction (No action responded to intro_files. Actions: intro):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:40:41) [GET]
+
+ActionController::RoutingError (No route matches "/tutorials/intro.html" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 00:40:42) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 00:40:50) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:40:51) [GET]
+
+ActionController::RoutingError (No route matches "/tutorials/intro.html" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 00:45:41) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TutorialsController#intro (for 127.0.0.1 at 2010-02-18 00:45:43) [GET]
+Rendering tutorials/intro
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/tutorials/intro]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:45:44) [GET]
+
+ActionController::RoutingError (No route matches "/intro_files/sick.gif" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:45:49) [GET]
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+
+ActionController::RoutingError (No route matches "/irb.cgi" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:45:49) [GET]
+  Parameters: {"cmd"=>"2"}
+
+ActionController::RoutingError (No route matches "/irb.cgi" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 00:48:01) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TutorialsController#intro (for 127.0.0.1 at 2010-02-18 00:48:03) [GET]
+Rendering tutorials/intro
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/tutorials/intro]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:48:03) [GET]
+
+ActionController::RoutingError (No route matches "/intro_files/sick.gif" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 00:48:08) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 3ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TutorialsController#intro (for 127.0.0.1 at 2010-02-18 00:48:10) [GET]
+Rendering tutorials/intro
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/tutorials/intro]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:48:10) [GET]
+
+ActionController::RoutingError (No route matches "/intro_files/sick.gif" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-02-18 00:49:54) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 2ms (View: 1, DB: 0) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing TutorialsController#intro (for 127.0.0.1 at 2010-02-18 00:49:56) [GET]
+Rendering tutorials/intro
+Completed in 27ms (View: 25, DB: 0) | 200 OK [http://localhost/tutorials/intro]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:50:16) [GET]
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+
+ActionController::RoutingError (No route matches "/irb.cgi" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:50:16) [GET]
+  Parameters: {"cmd"=>"\"jimmy\".reverse"}
+
+ActionController::RoutingError (No route matches "/irb.cgi" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:52:37) [GET]
+  Parameters: {"cmd"=>"2"}
+
+ActionController::RoutingError (No route matches "/irb.cgi" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-02-18 00:52:38) [GET]
+  Parameters: {"cmd"=>"2"}
+
+ActionController::RoutingError (No route matches "/irb.cgi" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
