@@ -1,11 +1,7 @@
 # SQLite version 3.x
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 development:
-  adapter: mysql
-  database: tryruby
-  user: root
-  password:
-  hostname: localhost
+    
 
 
 # Warning: The database defined as "test" will be erased and

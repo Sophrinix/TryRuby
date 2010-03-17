@@ -1,15 +1,21 @@
-#!/usr/bin/env ruby
 
 require 'tryruby.rb'
-#require 'cgi'
-#equire 'cgi/session'
-#require 'cgi/session/pstore'
+require 'cgi'
+require 'cgi/session'
+require 'cgi/session/pstore'
 
-
-class TryRubyCGISession < TryRubyBaseSession
+class TryRubyCGISession #< TryRuby::Session
+  attr_accessor :cgi, :session
+  
   def initialize
-    @session ||= {}
-
+    @session = CGI::Session.new @cgi = CGI.new,
+      'database_manager' => CGI::Session::PStore, # use PStore
+      'session_key' => 'trb_sess_id', # custom $session key
+      'session_expires' => Time.now + 60 * 60, # 60 minute timeout
+      'prefix' => 'pstore_sid_you_retard_', #Pstore option
+      'tmpdir' => 'tmp' # Temp Directory for sessions
+    
+    
     @session['start_time'] ||= Time.now
     @session['current_statement'] ||= ''
     @session['past_commands'] ||= ''

@@ -7,5 +7,8 @@ class ApplicationController < ActionController::Base
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
-
+  #class << self
+    attr_accessor :session
+    TryRuby.session = TryRuby::Session.new
+  #end
 end
