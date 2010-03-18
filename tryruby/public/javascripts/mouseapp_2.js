@@ -50,7 +50,7 @@ if (navigator.userAgent.toLowerCase().indexOf('chrome') > -1){
 	 MouseApp.KeyCodes = {
 	       Backspace: 8, Tab: 9, Enter: 13, Esc: 27, PageUp: 63276, PageDown: 63277,
 	        End: 63275, Home: 63273, Left: 37, Up: 38, Right: 39, Down: 40, Insert: 632325,
-	        Delete: 8, F1: 63236, F2: 63237, F3: 63238, F4: 63239, F5: 63240, F6: 63241,
+	        Delete: 46, F1: 63236, F2: 63237, F3: 63238, F4: 63239, F5: 63240, F6: 63241,
 	        F7: 63242, F8: 63243, F10: 63244
 	    }
 	
@@ -62,7 +62,7 @@ if (navigator.userAgent.indexOf("Opera") > -1){
 	 MouseApp.KeyCodes = {
 	       Backspace: 8, Tab: 9, Enter: 13, Esc: 27, PageUp: 63276, PageDown: 63277,
 	        End: 63275, Home: 63273, Left: 37, Up: 38, Right: 39, Down: 40, Insert: 632325,
-	        Delete: 8, F1: 63236, F2: 63237, F3: 63238, F4: 63239, F5: 63240, F6: 63241,
+	        Delete: 46, F1: 63236, F2: 63237, F3: 63238, F4: 63239, F5: 63240, F6: 63241,
 	        F7: 63242, F8: 63243, F10: 63244
 	    }
 	

@@ -2,10 +2,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>try ruby! (in your browser)</title>
+    <meta name="description" content="Try Ruby in your browser! An interactive tutorial for the Ruby programming language.">
+	<title>try ruby! (in your browser)</title>
     <script type="text/javascript" src="/javascripts/jquery-1.3.2.min.js"></script>
     <script type="text/javascript" src="/javascripts/mouseapp_2.js"></script>
     <script type="text/javascript" src="/javascripts/mouseirb_2.js"></script>
+    <script type="text/javascript" src="/javascripts/console.js"></script>
+    
  
     <script type="text/javascript" src="/javascripts/irb.js"></script>
     <style type="text/css">
@@ -24,6 +27,8 @@
                 <p id="lbClose">[<a href="javascript:void(window.irb.options.popup_close());">x</a>]</p>
             </div>
             <%= yield %>
+		 
+
         </div>
         <div id="shellwin">
  
@@ -76,6 +81,7 @@ Allows you to skip to the next section of a lesson.</li>
 </div>
 <input class="keyboard-selector-input" type="text" id="irb_input" autocomplete="off" />
  
+
 <!-- Putting the Google Analytics Code Here. Google Likes this to be in the header, but I can't bare
 putting my code though that. Expect This to become it's own .js file in the future.
 Replace the UA code if your hosting your own copy -->

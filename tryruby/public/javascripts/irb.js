@@ -1,6 +1,6 @@
 //
 // Copyright (c) 2008 why the lucky stiff
-// 
+// Copyright (c) 2010 Andrew McElroy
 // Permission is hereby granted, free of charge, to any person
 // obtaining a copy of this software and associated documentation
 // files (the "Software"), to deal in the Software without restriction,
