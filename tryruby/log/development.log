@@ -2565,3 +2565,119 @@ Processing ApplicationController#index (for 127.0.0.1 at 2010-03-17 23:00:21) [G
     /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
     /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
     /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2010-05-06 22:02:38) [GET]
+
+ActionController::RoutingError (No route matches "/%5C" with {:method=>:get}):
+  <internal:prelude>:8:in `synchronize'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendering rescues/layout (not_found)
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-05-06 22:02:43) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 43ms (View: 42 | 200 OK [http://localhost/]
+
+
+Processing TutorialsController#intro (for 127.0.0.1 at 2010-05-06 22:02:44) [GET]
+Rendering tutorials/intro
+Completed in 33ms (View: 32 | 200 OK [http://localhost/tutorials/intro]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-05-06 22:02:45) [GET]
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+Completed in 2ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=%21INIT%21IRB%21]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-05-06 22:02:45) [GET]
+  Parameters: {"cmd"=>"4"}
+Completed in 5ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=4]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-05-06 22:02:47) [GET]
+  Parameters: {"cmd"=>"4 +7"}
+Completed in 5ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=4%20%2B7]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-05-06 22:02:49) [GET]
+  Parameters: {"cmd"=>"a =6"}
+Completed in 46ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=a%20%3D6]
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-05-06 22:08:12) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 11ms (View: 10 | 200 OK [http://localhost/]
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-05-06 22:09:06) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 12ms (View: 10 | 200 OK [http://localhost/]
+
+
+Processing TutorialsController#intro (for 127.0.0.1 at 2010-05-06 22:09:07) [GET]
+Rendering tutorials/intro
+Completed in 2ms (View: 1 | 200 OK [http://localhost/tutorials/intro]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-05-06 22:09:08) [GET]
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+Completed in 8ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=%21INIT%21IRB%21]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-05-06 22:09:08) [GET]
+  Parameters: {"cmd"=>"2"}
+Completed in 5ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=2]
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-05-06 22:10:06) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 11ms (View: 10 | 200 OK [http://localhost/]
+
+
+Processing TutorialsController#intro (for 127.0.0.1 at 2010-05-06 22:10:07) [GET]
+Rendering tutorials/intro
+Completed in 2ms (View: 1 | 200 OK [http://localhost/tutorials/intro]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-05-06 22:10:09) [GET]
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+Completed in 3ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=%21INIT%21IRB%21]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-05-06 22:10:09) [GET]
+  Parameters: {"cmd"=>"2 + 6"}
+Completed in 5ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=2%20%2B%206]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-05-06 22:10:22) [GET]
+  Parameters: {"cmd"=>"2 + 6 !@\#$%^&*()_+ASDFGHJKL:\"|}{POIUYTREWQ?><MNBVCX###"}
+Completed in 3ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=2%20%2B%206%20%21@%23%24%25%5E%26*%28%29_%2BASDFGHJKL%3A%22%7C%7D%7BPOIUYTREWQ%3F%3E%3CMNBVCX%23%23%23]
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-05-06 22:10:49) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 3ms (View: 1 | 200 OK [http://localhost/]
+
+
+Processing TutorialsController#intro (for 127.0.0.1 at 2010-05-06 22:10:50) [GET]
+Rendering tutorials/intro
+Completed in 2ms (View: 1 | 200 OK [http://localhost/tutorials/intro]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-05-06 22:10:57) [GET]
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+Completed in 2ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=%21INIT%21IRB%21]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-05-06 22:10:57) [GET]
+  Parameters: {"cmd"=>"!@\#$%^&*()_+"}
+Completed in 3ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=%21@%23%24%25%5E%26*%28%29_%2B]
