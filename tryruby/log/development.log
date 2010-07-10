@@ -2681,3 +2681,1424 @@ Completed in 2ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=%21INIT%21I
 Processing TryrubyController#run (for 127.0.0.1 at 2010-05-06 22:10:57) [GET]
   Parameters: {"cmd"=>"!@\#$%^&*()_+"}
 Completed in 3ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=%21@%23%24%25%5E%26*%28%29_%2B]
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2010-06-03 11:50:48) [GET]
+
+SyntaxError (./lib/tryruby.rb:23: syntax error, unexpected ':', expecting kEND
+      Output.new type: :standard, result: params[:result],
+                      ^
+./lib/tryruby.rb:24: syntax error, unexpected ':', expecting '='
+        output: params[:output] || ''
+               ^
+./lib/tryruby.rb:28: syntax error, unexpected ':', expecting kEND
+      Output.new type: :illegal
+                      ^
+./lib/tryruby.rb:32: syntax error, unexpected ':', expecting kEND
+      Output.new type: :javascript, javascript: js
+                      ^
+./lib/tryruby.rb:36: syntax error, unexpected ':', expecting kEND
+      Output.standard result: nil
+                             ^
+./lib/tryruby.rb:40: syntax error, unexpected ':', expecting kEND
+      Output.new type: :line_continuation, indent_level: level
+                      ^
+./lib/tryruby.rb:46: syntax error, unexpected ':', expecting kEND
+      Output.new type: :error, error: params[:error],
+                      ^
+./lib/tryruby.rb:47: syntax error, unexpected ':', expecting '='
+        output: params[:output] || ''
+               ^
+./lib/tryruby.rb:115: syntax error, unexpected ':', expecting kEND
+./lib/tryruby.rb:164: syntax error, unexpected ':', expecting kEND
+    Output.standard result: result, output: output
+                           ^
+./lib/tryruby.rb:164: syntax error, unexpected ':', expecting '='
+    Output.standard result: result, output: output
+                                           ^
+./lib/tryruby.rb:174: syntax error, unexpected kEND, expecting $end):
+  app/controllers/tryruby_controller.rb:1
+
+Rendered rescues/_trace (44.7ms)
+Rendered rescues/_request_and_response (26.1ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-06-03 11:51:24) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 52ms (View: 50 | 200 OK [http://localhost/]
+
+
+Processing TutorialsController#intro (for 127.0.0.1 at 2010-06-03 11:51:25) [GET]
+Rendering tutorials/intro
+Completed in 49ms (View: 47 | 200 OK [http://localhost/tutorials/intro]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-06-03 11:51:47) [GET]
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+Completed in 2ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=%21INIT%21IRB%21]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-06-03 11:51:47) [GET]
+  Parameters: {"cmd"=>"40.to_s.reverse"}
+Completed in 8ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=40.to_s.reverse]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-06-03 11:51:52) [GET]
+  Parameters: {"cmd"=>"40.reverse"}
+Completed in 5ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=40.reverse]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-06-03 11:52:03) [GET]
+  Parameters: {"cmd"=>"40.reverse"}
+Completed in 6ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=40.reverse]
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-06-03 12:09:18) [GET]
+Rendering template within layouts/tryruby2
+Rendering tryruby/index
+Completed in 251ms (View: 250 | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:09:18) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:09:18 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:09:18) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:09:18 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:09:18) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:09:18 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:09:18) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:09:18 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:09:18) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:09:18 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:09:18) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:09:18 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-06-03 12:10:29) [GET]
+Rendering template within layouts/tryruby2
+Rendering tryruby/index
+Completed in 13ms (View: 12 | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:10:29) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:10:29 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:10:29) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:10:29 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:10:29) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:10:29 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:10:29) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:10:29 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:10:29) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:10:29 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:10:29) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:10:29 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-06-03 12:10:37) [GET]
+Rendering template within layouts/tryruby2
+Rendering tryruby/index
+Completed in 3ms (View: 1 | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:10:37) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:10:37 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:10:37) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:10:37 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:10:37) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:10:37 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:10:37) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:10:37 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:10:37) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:10:37 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:10:37) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:10:37 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:10:37) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:10:37 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:10:37) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:10:37 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:10:37) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:10:37 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-06-03 12:16:14) [GET]
+Rendering template within layouts/tryruby2
+Rendering tryruby/index
+Completed in 12ms (View: 10 | 200 OK [http://localhost/]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:16:14) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:16:14 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:16:15) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:16:15 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:16:15) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:16:15 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:16:15) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:16:15 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:16:15) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:16:15 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-03 12:16:15) [GET]
+/!\ FAILSAFE /!\  2010-06-03 12:16:15 -0500
+  Status: 500 Internal Server Error
+  uninitialized constant Rails::BacktraceCleaner
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:440:in `rescue in load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:436:in `load_missing_constant'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/dependencies.rb:80:in `const_missing_with_dependencies'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/initializer.rb:47:in `backtrace_cleaner'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:179:in `clean_backtrace'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:86:in `block in log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/activesupport-2.3.5/lib/active_support/deprecation.rb:44:in `silence'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:80:in `log_error'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:142:in `rescue_action_without_handler'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:74:in `rescue_action'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process_with_filters'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:65:in `call_with_exception'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:90:in `rescue in dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:96:in `dispatch'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:121:in `_call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:130:in `block in build_middleware_stack'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/string_coercion.rb:25:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/head.rb:9:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/methodoverride.rb:24:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/params_parser.rb:15:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/session/cookie_store.rb:93:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/failsafe.rb:26:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `block in call'
+    <internal:prelude>:8:in `synchronize'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/lock.rb:11:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:114:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/reloader.rb:34:in `run'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/actionpack-2.3.5/lib/action_controller/dispatcher.rb:108:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/static.rb:31:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:46:in `block in call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `each'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/urlmap.rb:40:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rails-2.3.5/lib/rails/rack/log_tailer.rb:17:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/content_length.rb:13:in `call'
+    /Users/sophrinix/.rvm/gems/ruby/1.9.1/gems/rack-1.0.1/lib/rack/handler/webrick.rb:50:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /Users/sophrinix/.rvm/ruby-1.9.1-p243/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-06-03 12:16:46) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 2ms (View: 1 | 200 OK [http://localhost/]
+
+
+Processing TutorialsController#intro (for 127.0.0.1 at 2010-06-03 12:16:47) [GET]
+Rendering tutorials/intro
+Completed in 2ms (View: 1 | 200 OK [http://localhost/tutorials/intro]
+
+
+Processing ActionController::Base#index (for 127.0.0.1 at 2010-07-09 22:04:18) [GET]
+
+SyntaxError (./lib/tryruby.rb:23: syntax error, unexpected ':', expecting kEND
+      Output.new type: :standard, result: params[:result],
+                      ^
+./lib/tryruby.rb:24: syntax error, unexpected ':', expecting '='
+        output: params[:output] || ''
+               ^
+./lib/tryruby.rb:28: syntax error, unexpected ':', expecting kEND
+      Output.new type: :illegal
+                      ^
+./lib/tryruby.rb:32: syntax error, unexpected ':', expecting kEND
+      Output.new type: :javascript, javascript: js
+                      ^
+./lib/tryruby.rb:36: syntax error, unexpected ':', expecting kEND
+      Output.standard result: nil
+                             ^
+./lib/tryruby.rb:40: syntax error, unexpected ':', expecting kEND
+      Output.new type: :line_continuation, indent_level: level
+                      ^
+./lib/tryruby.rb:46: syntax error, unexpected ':', expecting kEND
+      Output.new type: :error, error: params[:error],
+                      ^
+./lib/tryruby.rb:47: syntax error, unexpected ':', expecting '='
+        output: params[:output] || ''
+               ^
+./lib/tryruby.rb:115: syntax error, unexpected ':', expecting kEND
+./lib/tryruby.rb:164: syntax error, unexpected ':', expecting kEND
+    Output.standard result: result, output: output
+                           ^
+./lib/tryruby.rb:164: syntax error, unexpected ':', expecting '='
+    Output.standard result: result, output: output
+                                           ^
+./lib/tryruby.rb:174: syntax error, unexpected kEND, expecting $end):
+  app/controllers/tryruby_controller.rb:1
+
+Rendered rescues/_trace (37.1ms)
+Rendered rescues/_request_and_response (28.0ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing TryrubyController#index (for 127.0.0.1 at 2010-07-09 22:05:35) [GET]
+Rendering template within layouts/tryruby
+Rendering tryruby/index
+Completed in 54ms (View: 52 | 200 OK [http://localhost/]
+
+
+Processing TutorialsController#intro (for 127.0.0.1 at 2010-07-09 22:05:36) [GET]
+Rendering tutorials/intro
+Completed in 22ms (View: 20 | 200 OK [http://localhost/tutorials/intro]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-07-09 22:06:23) [GET]
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+Completed in 2ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=%21INIT%21IRB%21]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-07-09 22:06:24) [GET]
+  Parameters: {"cmd"=>"begin; q = ->{`echo hi`}.(); rescue Exception =>; p e; end;p q"}
+Completed in 4ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=begin%3B%20q%20%3D%20-%3E%7B%60echo%20hi%60%7D.%28%29%3B%20rescue%20Exception%20%3D%3E%3B%20p%20e%3B%20end%3Bp%20q]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-07-09 22:06:35) [GET]
+  Parameters: {"cmd"=>"begin; q = ->{`echo hi`}.(); rescue Exception =>e; p e; end;p q"}
+Completed in 244ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=begin%3B%20q%20%3D%20-%3E%7B%60echo%20hi%60%7D.%28%29%3B%20rescue%20Exception%20%3D%3Ee%3B%20p%20e%3B%20end%3Bp%20q]
+
+
+Processing TryrubyController#run (for 127.0.0.1 at 2010-07-09 22:07:11) [GET]
+  Parameters: {"cmd"=>"begin; q = ->{`echo hi`}.(); rescue Exception =>e; p e; end;p q"}
+Completed in 6ms (View: 1 | 200 OK [http://localhost/tryruby/run?cmd=begin%3B%20q%20%3D%20-%3E%7B%60echo%20hi%60%7D.%28%29%3B%20rescue%20Exception%20%3D%3Ee%3B%20p%20e%3B%20end%3Bp%20q]
