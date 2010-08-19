@@ -1,5 +1,6 @@
 require 'stringio'
 require 'setup.rb'
+require 'fakefs/safe'
 
 module TryRuby
   extend self
