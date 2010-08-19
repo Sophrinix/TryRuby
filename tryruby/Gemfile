@@ -10,7 +10,7 @@ gem 'ruby_parser'
 
 group :test do
   gem 'test-unit', '2.1.1'
-  gem 'fakefs', '0.2.1', :require => 'fakefs/safe'
+  gem 'fakefs', '0.2.1', :git => "http://github.com/defunkt/fakefs.git", :ref => "aa0cb96b8ebc81287a2e",  :require => 'fakefs/safe'
   gem 'hpricot'
   gem 'ruby-debug19'
 end
