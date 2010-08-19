@@ -1,6 +1,5 @@
-$LOAD_PATH.unshift File.join(File.dirname(__FILE__), 'submodules', 'lib')
-require 'setup.rb'
 require 'stringio'
+require 'setup.rb'
 
 module TryRuby
   extend self
