@@ -10,4 +10,5 @@ gem 'ruby_parser'
 
 group :test do
   gem 'test-unit', '2.1.1'
+  gem 'fakefs', '0.2.1', :require => 'fakefs/safe'
 end
