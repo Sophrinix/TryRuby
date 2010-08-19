@@ -1,6 +1,28 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
+require 'rexml/document'
+require 'hpricot'
+
+class Integer
+  def weeks
+    self * 7*24*60*60
+  end
+end
+
+
+def run_script(session,line)
+  TryRuby.run_line(line)
+end
+
+class TryRubyTestSession < TryRuby::Session
+  def initialize
+    @current_includes = []
+  end
+ 
+  attr_accessor :start_time, :current_statement
+  attr_accessor :nesting_level, :past_commands, :current_includes
+end
 
 class ActiveSupport::TestCase
   # Transactional fixtures accelerate your tests by wrapping each test method
