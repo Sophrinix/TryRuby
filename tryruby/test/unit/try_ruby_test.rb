@@ -115,8 +115,7 @@ EOF
     tryruby_session do
       # the below line should be done automatically by the interpretor
       # when help 3 is loaded
-      # input "poem = #{poem.inspect}",             result: Proc.new{}
-
+      input "poem = #{poem.inspect}",             result: Proc.new{}
       input 'print poem',                         output: poem
       input "poem['toast'] = 'honeydew'",         result: "honeydew"
       input 'print poem',                         output: (poem['toast'] = 'honeydew'; poem)
@@ -423,13 +422,13 @@ EOF
       initial_constants = Object.constants
       session = @session
       
-      thread = Thread.new do
-        o.instance_eval do
-          run_script(session, line)
-        end
-      end
+      #thread = Thread.new do
+       # o.instance_eval do
+          result = run_script(session, line)
+        #end
+      #end
         
-      result = thread.value
+      #result = thread.value
       # restores require to its old functionality
       #def Object.require(str)
       #  old_require(str)
