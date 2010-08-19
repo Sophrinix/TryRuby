@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class TryrubyControllerTest < ActionController::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+  test "run" do
+    get :run, :cmd => "2 + 6"
+    assert_response :success
   end
 end

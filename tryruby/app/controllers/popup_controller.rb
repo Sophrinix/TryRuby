@@ -1,2 +1,0 @@
-class PopupController < ApplicationController
-end
