@@ -54,7 +54,8 @@ module Kernel
     result = true
     case path
     when 'popup'
-      load '/Libraries/popup.rb'
+      include LoadPopup
+      extend LoadPopup
     else
       result = false
     end

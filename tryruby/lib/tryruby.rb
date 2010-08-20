@@ -1,6 +1,38 @@
 require 'stringio'
+require 'popup.rb'
 require 'setup.rb'
 require 'fakefs/safe'
+
+module FakeFS
+  class File
+  
+    def self.expand_path(*args)
+      file_name = args.first
+      if (file_name.start_with?("~")) then
+        user,remaining_path = file_name.match("^~([^/]*)/(.*)$")[1..2]
+        user = ENV['USER'] if user.empty?
+        home_path = Etc.getpwnam(user).dir
+        abs_file_name = RealFile.join(home_path, remaining_path)
+      elsif (file_name.start_with?("/")) then
+        abs_file_name = file_name
+      else
+        abs_file_name = RealFile.expand_path(*args)
+      end
+    
+      path_parts = abs_file_name.split(RealFile::Separator)
+      result_path_parts = [""]
+      path_parts.each do |part|
+        case part
+        when ".." then result_path_parts.pop
+        when "." then # ignore
+        else result_path_parts.push(part)
+        end
+      end
+      RealFile.join(*result_path_parts)
+    end
+  end
+  
+end
 
 module TryRuby
   extend self
@@ -144,8 +176,9 @@ module TryRuby
     EOF
     begin
       result = Thread.new { eval cmd, TOPLEVEL_BINDING }.value
-    rescue SecurityError
-      return Output.illegal
+    #rescue SecurityError => e
+     # puts e
+      #return Output.illegal
     rescue Exception => e
       return Output.error :error => e, :output => get_stdout
     ensure

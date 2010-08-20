@@ -3,7 +3,7 @@ class Symbol
     Proc.new { |obj, *args| obj.send(self, *args) }
   end
 end
-
+module LoadPopup
 module Popup
   def self.goto(url)
     url = url.gsub '"', '\"'
@@ -111,4 +111,5 @@ module Popup
     TryRuby::Output.javascript command
   end
     
+end
 end
