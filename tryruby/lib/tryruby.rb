@@ -4,21 +4,67 @@ require 'setup.rb'
 require 'fakefs/safe'
 
 module FakeFS
+  
+  class Dir
+    def self.entries(dirname)
+      FileSystem.fs
+      raise SystemCallError, dirname unless FileSystem.find(dirname)
+      Dir.new(dirname).map { |file| File.basename(file) }
+    end
+  end
+
+  module FileSystem
+    def fs
+      @fs ||= FakeDir.new("/")
+    end
+
+    def normalize_path(path)
+      if Pathname.new(path).absolute?
+        File.expand_path(path)
+      else
+        parts = [""] + dir_levels + [path]
+        File.expand_path(File.join(*parts))
+      end
+    end
+    
+    def current_dir
+      parts = FileSystem.dir_levels
+      return fs if parts.empty? # '/'
+      entries = find_recurser(fs, parts).flatten
+
+      return case entries.length
+      when 0 then nil
+      when 1 then entries.first
+      else entries
+      end
+    end
+  end
+
+  class FakeDir
+    def to_s
+      if parent && parent.to_s == '/'
+        File.join("", name)
+      elsif parent && parent.to_s != '.'
+        File.join("", *parent.to_s.split(File::PATH_SEPARATOR).reject { |part| part.empty? }, name)
+      elsif parent && parent.to_s == '.'
+        File.join(*parent.to_s.split(File::PATH_SEPARATOR).reject { |part| part.empty? }, name)
+      else
+        name
+      end
+    end
+    
+  end
+
   class File
   
     def self.expand_path(*args)
-      file_name = args.first
-      if (file_name.start_with?("~")) then
-        user,remaining_path = file_name.match("^~([^/]*)/(.*)$")[1..2]
-        user = ENV['USER'] if user.empty?
-        home_path = Etc.getpwnam(user).dir
-        abs_file_name = RealFile.join(home_path, remaining_path)
-      elsif (file_name.start_with?("/")) then
+      file_name, dir_string = args
+      dir_string ||= FileSystem.current_dir.to_s
+      if (file_name.start_with?("/"))
         abs_file_name = file_name
       else
-        abs_file_name = RealFile.expand_path(*args)
+        abs_file_name = RealFile.join(dir_string, file_name)
       end
-    
       path_parts = abs_file_name.split(RealFile::Separator)
       result_path_parts = [""]
       path_parts.each do |part|
@@ -30,6 +76,7 @@ module FakeFS
       end
       RealFile.join(*result_path_parts)
     end
+
   end
   
 end

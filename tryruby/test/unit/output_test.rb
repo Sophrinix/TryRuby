@@ -2,7 +2,7 @@ require 'test_helper'
 
 # tests if the TryRubyOutput translation, for use with mouseapp_2.js and similar
 # is working correctly
-class TryRubyOutputTest < Test::Unit::TestCase
+class OutputTest < Test::Unit::TestCase
   def test_simple_result
     t = TryRuby::Output.standard(result: [12,24])
     assert_equal("=> \033[1;20m[12, 24]", t.format)
@@ -46,7 +46,7 @@ class TryRubyOutputTest < Test::Unit::TestCase
     assert_equal(".." * 3, t.format)
   end
 
-  def test_javascript
+  def xtest_javascript
     t = TryRuby::Output.javascript(javascript: 'alert("hello")')
     # expected ends in a space to stop a visual problem in mouseapp
     assert_equal("\033[1;JSmalert(\"hello\")\033[m ", t.format)
