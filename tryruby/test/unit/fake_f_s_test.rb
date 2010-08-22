@@ -68,7 +68,7 @@ class FakeFSTest < Test::Unit::TestCase
     end
   end
 
-  def xtest_file_expand_path_for_root_dir
+  def test_file_expand_path_for_root_dir
     assert_equal RealFile.expand_path("/"), File.expand_path("/")
   end
 

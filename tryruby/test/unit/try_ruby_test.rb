@@ -83,7 +83,7 @@ class TryRubyTest < Test::Unit::TestCase
     end
   end
 
-  def xtest_illegal_ops
+  def test_illegal_ops
     $session = TryRubyTestSession.new
     tryruby_session $session do
       input '`cat /etc/passwd`', illegal: true
@@ -155,7 +155,7 @@ EOF
     end
   end
 
-  def xtest_lesson5
+  def test_lesson5
     tryruby_session do
       input 'Dir.entries "/"',
         result: [".", "..", "Home", "Libraries", "MouseHole", "Programs", "Tutorials",
@@ -180,7 +180,7 @@ EOF
       
   end
 
-  def xtest_lesson6
+  def test_lesson6
     $session = TryRubyTestSession.new
     tryruby_session $session do
       input 'def load_comics( path )', line_continuation: 1
@@ -265,7 +265,7 @@ input 'end', javascript: Proc.new { |v|
 
     
 
-  def xtest_lesson7_and_8
+  def test_lesson7_and_8
     $session = TryRubyTestSession.new
     tryruby_session $session do
       input 'Hash.new',              result: {}
