@@ -456,9 +456,7 @@ EOF
       params[:output] ||= ""
       params[:result] ||= nil
       params[:error] ||= nil
-      #puts "#{line}"
       result = do_test(line)
-      #puts "#{result.inspect} #{params.inspect}"
       begin
         if params[:illegal] then
           @test.assert_equal(:illegal, result.type,

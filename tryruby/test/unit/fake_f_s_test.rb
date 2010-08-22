@@ -4,7 +4,6 @@ class FakeFSTest < Test::Unit::TestCase
   def setup
     FakeFS.activate!
     FakeFS::FileSystem.clear
-    puts "#########################################"
   end
 
   def teardown
@@ -23,7 +22,6 @@ class FakeFSTest < Test::Unit::TestCase
   end
 
   def test_dir_entries_for_current_dir
-    puts "test_dir_entries_for_current_dir"
     assert_equal [".", ".."], Dir.entries(".")
   end
 
