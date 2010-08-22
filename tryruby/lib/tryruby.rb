@@ -44,10 +44,22 @@ module FakeFS
     def to_s
       if parent && parent.to_s == '/'
         File.join("", name)
-      elsif parent && parent.to_s != '.'
+      elsif parent
         File.join("", *parent.to_s.split(File::PATH_SEPARATOR).reject { |part| part.empty? }, name)
-      elsif parent && parent.to_s == '.'
-        File.join(*parent.to_s.split(File::PATH_SEPARATOR).reject { |part| part.empty? }, name)
+      else
+        "/"
+      end
+    end
+    
+  end
+
+  class FakeFile
+    
+    def to_s
+      if parent && parent.to_s == '/'
+        File.join("", name)
+      elsif parent
+        File.join("", *parent.to_s.split(File::PATH_SEPARATOR).reject { |part| part.empty? }, name)
       else
         name
       end
@@ -60,8 +72,10 @@ module FakeFS
     def self.expand_path(*args)
       file_name, dir_string = args
       dir_string ||= FileSystem.current_dir.to_s
-      if (file_name.start_with?("/"))
-        abs_file_name = file_name
+      if file_name == "/"
+        return "/"
+      elsif (file_name.start_with?("/"))
+        abs_file_name = RealFile.join(file_name)
       else
         abs_file_name = RealFile.join(dir_string, file_name)
       end

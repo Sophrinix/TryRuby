@@ -199,13 +199,13 @@ EOF
         "Get Your War On"=>"http://mnftiu.cc/"}
 
       input "require 'popup'", result: Proc.new {}
-      input 'Popup.goto "http://google.com/"',
+      input 'Popup.goto "http://google.com/"', :output => nil,
         javascript: "window.irb.options.popup_goto(\"http://google.com/\")"
 
       input 'Popup.make {', line_continuation: 1
       input 'h1 "My Links"', line_continuation: 1
       input 'link "Go to Google", "http://google.com/"', line_continuation: 1
-      input '}', javascript: 
+      input '}', :output => nil, javascript: 
         "window.irb.options.popup_make" + 
         "(\"<h1>My Links</h1> " +
         "<a href=\\\"http://google.com/\\\">Go to Google</a>\")"
@@ -224,7 +224,7 @@ window.irb.options.popup_make("<h1>Things To Do</h1>
  <li>(down River Euphrates)
 </li></ul>")
 EOF
-    input 'end', javascript: expected.gsub("\n", "")
+    input 'end', :output => nil, javascript: expected.gsub("\n", "")
 
 input 'Popup.make do', line_continuation: 1
 input 'h1 "Comics on the Web"', line_continuation: 1
@@ -233,7 +233,7 @@ input 'comics.each do |name, url|', line_continuation: 3
 input 'link name, url', line_continuation: 3
 input 'end', line_continuation: 2
 input 'end', line_continuation: 1
-input 'end', javascript: Proc.new { |v|
+input 'end', :output => nil, javascript: Proc.new { |v|
         matches = v.match(/^window.irb.options.popup_make\("(.*)"\)/)
         assert_not_nil(matches)
         html = matches[1].gsub(/\\(.)/, '\1')
@@ -345,7 +345,7 @@ EOF
 
       
       
-      input 'end', javascript: Proc.new {|v|
+      input 'end', output: nil, javascript: Proc.new {|v|
         # v = v.gsub(/\s+/,"") # remove all spaces
         expected_str = <<-EOF
           <xml><h1>My Blog</h1>
@@ -453,7 +453,7 @@ EOF
     # see tryruby_session for more details
     def input(line, params = {})
       @backtrace_pos = 2
-      params[:output] ||= ""
+      params[:output] = "" unless params.has_key?(:output)
       params[:result] ||= nil
       params[:error] ||= nil
       result = do_test(line)
