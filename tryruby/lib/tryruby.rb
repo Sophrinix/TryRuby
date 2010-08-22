@@ -93,6 +93,12 @@ module FakeFS
 
   end
   
+  module FileUtils
+    def copy(src, dest)
+      cp(src, dest)
+      nil
+    end
+  end
 end
 
 module TryRuby
