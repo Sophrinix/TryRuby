@@ -427,13 +427,13 @@ EOF
       initial_constants = Object.constants
       session = @session
       
-      #thread = Thread.new do
-       # o.instance_eval do
+      thread = Thread.new do
+       o.instance_eval do
           result = run_script(session, line)
-        #end
-      #end
+        end
+      end
         
-      #result = thread.value
+      result = thread.value
       # restores require to its old functionality
       #def Object.require(str)
       #  old_require(str)
