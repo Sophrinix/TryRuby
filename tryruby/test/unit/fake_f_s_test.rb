@@ -64,6 +64,14 @@ class FakeFSTest < Test::Unit::TestCase
     assert_equal("#<File:/comics.txt>", File.open("/comics.txt", "a") { |f| f << "a"}.inspect)
   end
 
+  def test_file_foreach
+    File.open("/comics.txt", "a") { |f| f << "a"}
+    lines = []
+      File.foreach("/comics.txt") do |l| lines << l
+    end
+    assert_equal(["a"], lines)
+  end
+
   def test_file_expand_path_for_current_dir
     assert_equal "/", File.expand_path(".")
     Dir.mkdir "Home"

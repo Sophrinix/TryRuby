@@ -72,6 +72,10 @@ module FakeFS
       "#<File:#{@path}>"
     end
       
+    def self.foreach(path)
+      self.read(path).each_line {|line| yield(line) }
+    end
+
     def self.expand_path(*args)
       file_name, dir_string = args
       dir_string ||= FileSystem.current_dir.to_s
