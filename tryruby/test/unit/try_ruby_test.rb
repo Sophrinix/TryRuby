@@ -172,7 +172,7 @@ EOF
       input 'File.open("/Home/comics.txt", "a") do |f|', line_continuation: 1
       input 'f << "Cat and Girl: http://catandgirl.com/\n"', line_continuation: 1
       input 'end', result: Proc.new { |value| 
-        assert_equal "#<File:/Home/comics.txt (closed)>", value.inspect
+        assert_equal "#<File:/Home/comics.txt>", value.inspect
       }
       input 'File.mtime("/Home/comics.txt")', result: Time
       input 'File.mtime("/Home/comics.txt").hour', result: Fixnum

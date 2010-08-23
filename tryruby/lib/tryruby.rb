@@ -68,7 +68,10 @@ module FakeFS
   end
 
   class File
-  
+    def inspect
+      "#<File:#{@path}>"
+    end
+      
     def self.expand_path(*args)
       file_name, dir_string = args
       dir_string ||= FileSystem.current_dir.to_s
@@ -243,9 +246,9 @@ module TryRuby
     EOF
     begin
       result = Thread.new { eval cmd, TOPLEVEL_BINDING }.value
-    #rescue SecurityError => e
-     # puts e
-      #return Output.illegal
+    rescue SecurityError => e
+      puts e
+      return Output.illegal
     rescue Exception => e
       return Output.error :error => e, :output => get_stdout
     ensure
