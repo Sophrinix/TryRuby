@@ -56,6 +56,7 @@ module Kernel
     when 'popup'
       include LoadPopup
       extend LoadPopup
+      true
     else
       result = false
     end

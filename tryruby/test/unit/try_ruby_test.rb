@@ -333,7 +333,7 @@ EOF
 
       input 'blog.map { |entry| entry.mood }', result: [:sick, :confused]
 
-      input 'require "popup"',                 result: Proc.new {} # don't care
+      input 'require "popup"',                 result: true      
       input 'Popup.make do',                   line_continuation: 1
       input "h1 'My Blog'",                    line_continuation: 1
       input "list do",                         line_continuation: 2
