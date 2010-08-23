@@ -60,7 +60,7 @@ class FakeFSTest < Test::Unit::TestCase
     end
   end
 
-  def test_file_open
+  def test_file_inspect
     assert_equal("#<File:/comics.txt>", File.open("/comics.txt", "a") { |f| f << "a"}.inspect)
   end
 
