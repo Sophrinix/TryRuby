@@ -1,3 +1,5 @@
 .DS*
 ._*
+.bundle
+*.lock
 tryruby/log/*

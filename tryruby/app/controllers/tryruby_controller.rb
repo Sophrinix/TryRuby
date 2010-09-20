@@ -1,4 +1,4 @@
-require 'lib/tryruby'
+require './lib/tryruby'
 class TryrubyController < ApplicationController
   layout 'tryruby'
   attr_accessor :past_commands, :current_statement, :start_time
