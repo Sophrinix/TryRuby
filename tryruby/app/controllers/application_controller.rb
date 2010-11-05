@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   #class << self
     attr_accessor :session
-#    TryRuby.session = TryRuby::Session.new
+   TryRuby.session = TryRuby::Session.new
 # not needed
   #end
 end
