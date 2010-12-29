@@ -1,0 +1,96 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>try ruby! (in your browser)</title>
+    <script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
+    <script type="text/javascript" src="/js/mouseapp_2.js"></script>
+    <script type="text/javascript" src="/js/mouseirb_2.js"></script>
+ 
+    <script type="text/javascript" src="/js/irb.js"></script>
+    <style type="text/css">
+        @import '/site.css';
+    </style>
+</head>
+<body>
+ 
+<div id="container">
+    <div id="header"><img src="/images/header.png" /></div>
+    <div id="content">
+        <div id="lilBrowser">
+            <div id="lbTitlebar">
+ 
+                <h3 id="lbTitle">A Popup Browser</h3>
+                <p id="lbClose">[<a href="javascript:void(window.irb.options.popup_close());">x</a>]</p>
+            </div>
+            <iframe width="500" height="400" src="about:blank" id="lbIframe"></iframe>
+        </div>
+        <div id="shellwin">
+ 
+        <div id="terminal">
+            <div id="irb"></div>
+        </div>
+        </div>
+        <div id="helpstone">
+            <div class="stretcher chapmark">
+                <h3>Got 15 minutes? Give Ruby a shot right now!</h3>
+                <p>Ruby is a programming language from Japan
+                   (available at <a href="http://ruby-lang.org" target="_new">ruby-lang.org</a>)
+                   which is revolutionizing the web.
+                   The beauty of Ruby is found in its balance between simplicity and power.</p>
+ 
+                <p>Try out Ruby code in the prompt above. In addition
+                   to Ruby's builtin methods, the following commands are available:</p>
+                <ul class="commands">
+                   <li><strong>help</strong>
+                       Start the 15 minute interactive tutorial. Trust me, it's very basic!</li>
+                   <li><strong>help 2</strong>
+                       Hop to chapter two.</li>
+ 
+                   <li><strong>clear</strong>
+                       Clear screen. Useful if your browser starts slowing down.
+                       Your command history will be remembered.</dd>
+                   <li><strong>back</strong>
+                       Go back one screen in the tutorial.</li>
+                   <li><strong>reset</strong>
+                       Reset the interpreter if you get too deep. (or <b>Ctrl-D</b>!)</li>
+<li><strong>next</strong>
+Allows you to skip to the next section of a lesson.</li>
+ 
+                   <li><strong>time</strong>
+                       A stopwatch. Prints the time your session has been open.</li>
+                </ul>
+                <p>If you happen to leave or refresh the page, your session will still be here for
+                unless it is left inactive for ten minutes.</p>
+                <br />
+                <div class="answer"></div>
+            </div>
+ 
+        </div>
+        <div class="note">Trapped in double dots? A quote or something was left open. Type: <strong>reset</strong> or hit <strong>Ctrl-D</strong>.</div>
+    </div>
+    <div id="footer"><img src="/images/footer.png" /></div>
+    <p>This place <del>was sired by <a href="http://whytheluckystiff.net">why the lucky stiff</a>.
+       Please contact me using the email address at that link.</del><add>is maintained by Andrew McElroy and David Miani. For support issues, please post a ticket or contact Sophrinix on <a href="http://github.com/Sophrinix/TryRuby">github</a>. </add>
+       </p>
+ 
+</div>
+<input class="keyboard-selector-input" type="text" id="irb_input" autocomplete="off" />
+ 
+<!-- Putting the Google Analytics Code Here. Google Likes this to be in the header, but I can't bare
+putting my code though that. Expect This to become it's own .js file in the future.
+Replace the UA code if your hosting your own copy -->
+ 
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-2365371-3");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+ 
+<!-- end of GA code -->
+</body>
+</html>
