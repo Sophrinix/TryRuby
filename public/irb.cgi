@@ -1,9 +1,10 @@
-#!/usr/bin/env ruby
+#!/usr/local/bin/ruby 
 
-require 'tryruby.rb'
+require './tryruby.rb'
 require 'cgi'
 require 'cgi/session'
 require 'cgi/session/pstore'
+require './popup.rb'
 
 class TryRubyCGISession# < TryRuby::Session
   attr_accessor :cgi, :session

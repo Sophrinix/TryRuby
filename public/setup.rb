@@ -38,9 +38,10 @@ end
 FLICK_EOF
 
 popup_rb_text = <<-POPUP_EOF
-module Popup
-  # ...
-end
+
+
+
+
 POPUP_EOF
 
 File.open('/comics.txt', "w") {|f| f.write(comic_txt_text) }
