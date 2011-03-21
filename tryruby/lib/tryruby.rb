@@ -3,6 +3,8 @@ require 'popup.rb'
 require 'setup.rb'
 require 'fakefs/safe'
 
+
+    
 module FakeFS
   
   class Dir
@@ -252,7 +254,7 @@ module TryRuby
       result = Thread.new { eval cmd, TOPLEVEL_BINDING }.value
     rescue SecurityError => e
       puts e
-      return Output.illegal
+      return Output.illegal :illegal => e, :output => get_stdout
     rescue Exception => e
       return Output.error :error => e, :output => get_stdout
     ensure

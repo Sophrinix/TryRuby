@@ -1,11 +1,14 @@
-require './lib/tryruby'
 class TryrubyController < ApplicationController
   layout 'tryruby'
-  attr_accessor :past_commands, :current_statement, :start_time
   
   def run
-    render :text => run_script(params[:cmd])
-  end
+    @cmd=params[:cmd]
+  
+ @a= run_script(@cmd)
+@b = "handleJSON({\"type\": #{@a.type.to_json}, \"output\":#{@a.output.to_json},\"result\":#{@a.result.inspect.to_json}, \"error\": #{@a.error.inspect.to_json}})"
+ 
+ render :json => @b
+   end
   
   private 
   
@@ -15,7 +18,7 @@ class TryrubyController < ApplicationController
      #         rescue StandardError => e
       #          e.message + ". On the "
        
-        TryRuby.run_line(command).format
+        TryRuby.run_line(command)
    #           end
 
   #  return "=> #{output}" + ", says yoda"

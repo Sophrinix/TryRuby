@@ -4,40 +4,81 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="description" content="Try Ruby in your browser! An interactive tutorial for the Ruby programming language.">
 	<title>try ruby! (in your browser)</title>
-    <script type="text/javascript" src="/javascripts/jquery-1.3.2.min.js"></script>
-    <script type="text/javascript" src="/javascripts/mouseapp_2.js"></script>
-    <script type="text/javascript" src="/javascripts/mouseirb_2.js"></script>
-    <!-- script type="text/javascript" src="/javascripts/console.js"></script -->
-    <script type="text/javascript" src="/javascripts/jquery.console.min.js"></script>
+	
+   <script type="text/javascript" src="/javascripts/lib.min.js"></script>
+    <script type="text/javascript">
+     // jQuery.noConflict(); 
+      </script>
+	  
  
-    <script type="text/javascript" src="/javascripts/irb.js"></script>
-    <style type="text/css">
-        @import '/stylesheets/site.css';
-    </style>
+    <script type="text/javascript" src="/javascripts/jquery.console.js"></script>
+    <script type="text/javascript" src="/javascripts/jQuery.irb.js"></script>
+    <script type="text/javascript" src="/javascripts/raphael-min.js"></script>
+    <script type="text/javascript" src="/javascripts/facebox.js"></script>
+	  <link href="/stylesheets/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/site.css" media="screen" rel="stylesheet" type="text/css" />
+	<!-- script type="text/javascript" src="/javascripts/irb.js"></script -->
+    
+ 
+    <script type="text/javascript">
+	    jQuery(document).ready(function($) {
+	      $('a[rel*=facebox]').facebox({
+	        loadingImage : '/images/loading.gif',
+	        closeImage   : '/images/closelabel.png'
+	      })
+	    })
+    </script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
 </head>
 <body>
+    
+
  
-<div id="container">
-    <div id="header"><img src="/images/header.png" /></div>
-    <div id="content">
+<div class="container">
+    <div class="header"><img src="/images/header.png" /></div>
+    <div class="content">
+	
+		
+		<%= render :partial => 'tryruby/donate' %>
+		
+		
         <div id="lilBrowser">
             <div id="lbTitlebar">
  
                 <h3 id="lbTitle">A Popup Browser</h3>
                 <p id="lbClose">[<a href="javascript:void(window.irb.options.popup_close());">x</a>]</p>
             </div>
-            <%= yield %>
+            
 		 
 
         </div>
-        <div id="shellwin">
+		
  
-        <div id="terminal">
-            <div id="irb"></div>
+
+        <div class="shellwin">
+ 
+
+        <div class="terminal">
+           	<div class="console-wrapper">
+			  <div class="console-wrapper-top sprites"></div>
+			    <div class="console">
+			    </div>
+			  <div class="console-wrapper-bottom sprites"></div>
+			</div>
         </div>
-        </div>
+        </div> 
         <div id="helpstone">
-            <div class="stretcher chapmark">
+            <div class="chapmark">
                 <h3>Got 15 minutes? Give Ruby a shot right now!</h3>
                 <p>Ruby is a programming language from Japan
                    (available at <a href="http://ruby-lang.org" target="_new">ruby-lang.org</a>)
@@ -79,8 +120,7 @@ Allows you to skip to the next section of a lesson.</li>
        </p>
  
 </div>
-<input class="keyboard-selector-input" type="text" id="irb_input" autocomplete="off" />
- 
+<!-- input class="keyboard-selector-input" type="text" id="irb_input" autocomplete="off" / -->
 
 <!-- Putting the Google Analytics Code Here. Google Likes this to be in the header, but I can't bare
 putting my code though that. Expect This to become it's own .js file in the future.
@@ -97,5 +137,7 @@ pageTracker._trackPageview();
 } catch(err) {}</script>
  
 <!-- end of GA code -->
+<a class="trigger" rel="facebox" href="#donation">Please Support<br> Try Ruby!</a>
+
 </body>
 </html>

@@ -2,15 +2,43 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>try ruby! (in your browser)</title>
-    <script type="text/javascript" src="/js/jquery-1.3.2.min.js"></script>
-    <script type="text/javascript" src="/js/mouseapp_2.js"></script>
-    <script type="text/javascript" src="/js/mouseirb_2.js"></script>
+    <meta name="description" content="Try Ruby in your browser! An interactive tutorial for the Ruby programming language.">
+	<title>try ruby! (in your browser)</title>
+	
+   <script type="text/javascript" src="/javascripts/lib.min.js"></script>
+    <script type="text/javascript">
+     // jQuery.noConflict(); 
+      </script>
+	  
  
-    <script type="text/javascript" src="/js/irb.js"></script>
-    <style type="text/css">
-        @import '/site.css';
-    </style>
+    <script type="text/javascript" src="/javascripts/jquery.console.js"></script>
+    <script type="text/javascript" src="/javascripts/jQuery.irb.js"></script>
+    <script type="text/javascript" src="/javascripts/raphael-min.js"></script>
+    <script type="text/javascript" src="/javascripts/facebox.js"></script>
+	  <link href="/stylesheets/facebox.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="/stylesheets/site.css" media="screen" rel="stylesheet" type="text/css" />
+	<!-- script type="text/javascript" src="/javascripts/irb.js"></script -->
+    
+ 
+    <script type="text/javascript">
+	    jQuery(document).ready(function($) {
+	      $('a[rel*=facebox]').facebox({
+	        loadingImage : '/images/loading.gif',
+	        closeImage   : '/images/closelabel.png'
+	      })
+	    })
+    </script>
+    <script type="text/javascript">
+    /* <![CDATA[ */
+        (function() {
+            var s = document.createElement('script'), t = document.getElementsByTagName('script')[0];
+            s.type = 'text/javascript';
+            s.async = true;
+            s.src = 'http://api.flattr.com/js/0.6/load.js?mode=auto';
+            t.parentNode.insertBefore(s, t);
+        })();
+    /* ]]> */
+    </script>
 </head>
 <body>
 <div id="container">
@@ -91,5 +119,7 @@ pageTracker._trackPageview();
 } catch(err) {}</script>
  
 <!-- end of GA code -->
+<a class="trigger" rel="facebox" href="#donation">Please Support<br> Try Ruby!</a>
+
 </body>
 </html>
