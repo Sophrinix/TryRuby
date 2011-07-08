@@ -1,0 +1,673 @@
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/sophrinix/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 17:52:45 -0500
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 17:54:39 -0500
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 17:54:44 -0500
+
+ActionController::RoutingError (No route matches "/"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (100.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 17:54:57 -0500
+
+NoMethodError (undefined method `reverse_merge' for #<ActionDispatch::Routing::Mapper:0x000001036a9a60>):
+  config/routes.rb:2:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.0ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (19.8ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (46.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 17:55:29 -0500
+
+ArgumentError (missing :action):
+  config/routes.rb:2:in `block in <top (required)>'
+  config/routes.rb:1:in `<top (required)>'
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (4.2ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.8ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (26.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 17:55:42 -0500
+  Processing by IndexController#index as HTML
+Completed 500 Internal Server Error in 73ms
+
+ActionView::MissingTemplate (Missing template index/index with {:handlers=>[:erb, :rjs, :builder, :rhtml, :rxml], :formats=>[:html], :locale=>[:en, :en]} in view paths "/Users/sophrinix/Desktop/herokutr/TryRuby/tryruby/app/views"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 17:55:56 -0500
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/footer.png" for 127.0.0.1 at 2011-07-08 17:55:57 -0500
+
+ActionController::RoutingError (No route matches "/images/footer.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/images/header.png" for 127.0.0.1 at 2011-07-08 17:55:57 -0500
+
+ActionController::RoutingError (No route matches "/images/header.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/images/header.png" for 127.0.0.1 at 2011-07-08 17:55:57 -0500
+
+ActionController::RoutingError (No route matches "/images/header.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/images/footer.png" for 127.0.0.1 at 2011-07-08 17:55:57 -0500
+
+ActionController::RoutingError (No route matches "/images/footer.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/stylesheets/images/plus.png" for 127.0.0.1 at 2011-07-08 17:55:57 -0500
+
+ActionController::RoutingError (No route matches "/stylesheets/images/plus.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/images/closelabel.png" for 127.0.0.1 at 2011-07-08 17:55:57 -0500
+
+ActionController::RoutingError (No route matches "/images/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/images/loading.gif" for 127.0.0.1 at 2011-07-08 17:55:58 -0500
+
+ActionController::RoutingError (No route matches "/images/loading.gif"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/facebox/closelabel.png" for 127.0.0.1 at 2011-07-08 17:55:58 -0500
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 17:57:25 -0500
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 14ms (Views: 13.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/footer.png" for 127.0.0.1 at 2011-07-08 17:57:25 -0500
+
+ActionController::RoutingError (No route matches "/images/footer.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.7ms)
+
+
+Started GET "/images/header.png" for 127.0.0.1 at 2011-07-08 17:57:25 -0500
+
+ActionController::RoutingError (No route matches "/images/header.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.0ms)
+
+
+Started GET "/images/footer.png" for 127.0.0.1 at 2011-07-08 17:57:25 -0500
+
+ActionController::RoutingError (No route matches "/images/footer.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.6ms)
+
+
+Started GET "/images/header.png" for 127.0.0.1 at 2011-07-08 17:57:25 -0500
+
+ActionController::RoutingError (No route matches "/images/header.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/facebox/closelabel.png" for 127.0.0.1 at 2011-07-08 17:57:26 -0500
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/stylesheets/images/plus.png" for 127.0.0.1 at 2011-07-08 17:57:26 -0500
+
+ActionController::RoutingError (No route matches "/stylesheets/images/plus.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/images/loading.gif" for 127.0.0.1 at 2011-07-08 17:57:26 -0500
+
+ActionController::RoutingError (No route matches "/images/loading.gif"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (9.0ms)
+
+
+Started GET "/images/closelabel.png" for 127.0.0.1 at 2011-07-08 17:57:26 -0500
+
+ActionController::RoutingError (No route matches "/images/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 17:57:31 -0500
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 17:58:24 -0500
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 30ms (Views: 29.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/images/plus.png" for 127.0.0.1 at 2011-07-08 17:58:24 -0500
+
+ActionController::RoutingError (No route matches "/stylesheets/images/plus.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/facebox/closelabel.png" for 127.0.0.1 at 2011-07-08 17:58:24 -0500
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/images/loading.gif" for 127.0.0.1 at 2011-07-08 17:58:24 -0500
+
+ActionController::RoutingError (No route matches "/images/loading.gif"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/images/closelabel.png" for 127.0.0.1 at 2011-07-08 17:58:25 -0500
+
+ActionController::RoutingError (No route matches "/images/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 17:59:08 -0500
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 22ms (Views: 21.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/images/plus.png" for 127.0.0.1 at 2011-07-08 17:59:09 -0500
+
+ActionController::RoutingError (No route matches "/stylesheets/images/plus.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/facebox/closelabel.png" for 127.0.0.1 at 2011-07-08 17:59:09 -0500
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/images/closelabel.png" for 127.0.0.1 at 2011-07-08 17:59:09 -0500
+
+ActionController::RoutingError (No route matches "/images/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/images/loading.gif" for 127.0.0.1 at 2011-07-08 17:59:09 -0500
+
+ActionController::RoutingError (No route matches "/images/loading.gif"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 18:07:42 -0500
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/images/plus.png" for 127.0.0.1 at 2011-07-08 18:07:43 -0500
+
+ActionController::RoutingError (No route matches "/stylesheets/images/plus.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.8ms)
+
+
+Started GET "/facebox/closelabel.png" for 127.0.0.1 at 2011-07-08 18:07:43 -0500
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/images/loading.gif" for 127.0.0.1 at 2011-07-08 18:07:43 -0500
+
+ActionController::RoutingError (No route matches "/images/loading.gif"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/images/closelabel.png" for 127.0.0.1 at 2011-07-08 18:07:43 -0500
+
+ActionController::RoutingError (No route matches "/images/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 18:08:38 -0500
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/facebox/closelabel.png" for 127.0.0.1 at 2011-07-08 18:08:38 -0500
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/stylesheets/images/plus.png" for 127.0.0.1 at 2011-07-08 18:08:38 -0500
+
+ActionController::RoutingError (No route matches "/stylesheets/images/plus.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/images/loading.gif" for 127.0.0.1 at 2011-07-08 18:08:38 -0500
+
+ActionController::RoutingError (No route matches "/images/loading.gif"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/images/closelabel.png" for 127.0.0.1 at 2011-07-08 18:08:38 -0500
+
+ActionController::RoutingError (No route matches "/images/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 18:09:04 -0500
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 18ms (Views: 17.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/facebox/closelabel.png" for 127.0.0.1 at 2011-07-08 18:09:05 -0500
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/images/closelabel.png" for 127.0.0.1 at 2011-07-08 18:09:05 -0500
+
+ActionController::RoutingError (No route matches "/images/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/images/loading.gif" for 127.0.0.1 at 2011-07-08 18:09:05 -0500
+
+ActionController::RoutingError (No route matches "/images/loading.gif"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/stylesheets/images/plus.png" for 127.0.0.1 at 2011-07-08 18:09:05 -0500
+
+ActionController::RoutingError (No route matches "/stylesheets/images/plus.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 18:09:30 -0500
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (1.3ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/images/plus.png" for 127.0.0.1 at 2011-07-08 18:09:30 -0500
+
+ActionController::RoutingError (No route matches "/stylesheets/images/plus.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/facebox/closelabel.png" for 127.0.0.1 at 2011-07-08 18:09:30 -0500
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.8ms)
+
+
+Started GET "/images/closelabel.png" for 127.0.0.1 at 2011-07-08 18:09:30 -0500
+
+ActionController::RoutingError (No route matches "/images/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.1ms)
+
+
+Started GET "/images/loading.gif" for 127.0.0.1 at 2011-07-08 18:09:30 -0500
+
+ActionController::RoutingError (No route matches "/images/loading.gif"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 18:10:21 -0500
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/loading.gif" for 127.0.0.1 at 2011-07-08 18:10:22 -0500
+
+ActionController::RoutingError (No route matches "/images/loading.gif"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/stylesheets/images/plus.png" for 127.0.0.1 at 2011-07-08 18:10:22 -0500
+
+ActionController::RoutingError (No route matches "/stylesheets/images/plus.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/facebox/closelabel.png" for 127.0.0.1 at 2011-07-08 18:10:22 -0500
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/images/closelabel.png" for 127.0.0.1 at 2011-07-08 18:10:22 -0500
+
+ActionController::RoutingError (No route matches "/images/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/tutorials/intro" for 127.0.0.1 at 2011-07-08 18:10:22 -0500
+
+ActionController::RoutingError (No route matches "/tutorials/intro"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 18:11:20 -0500
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 14ms (Views: 13.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/images/plus.png" for 127.0.0.1 at 2011-07-08 18:11:20 -0500
+
+ActionController::RoutingError (No route matches "/stylesheets/images/plus.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/images/loading.gif" for 127.0.0.1 at 2011-07-08 18:11:20 -0500
+
+ActionController::RoutingError (No route matches "/images/loading.gif"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/images/closelabel.png" for 127.0.0.1 at 2011-07-08 18:11:20 -0500
+
+ActionController::RoutingError (No route matches "/images/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/facebox/closelabel.png" for 127.0.0.1 at 2011-07-08 18:11:21 -0500
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/tutorials/intro" for 127.0.0.1 at 2011-07-08 18:11:21 -0500
+  Processing by TutorialsController#intro as 
+Rendered tutorials/intro.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 41ms (Views: 40.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/facebox/closelabel.png" for 127.0.0.1 at 2011-07-08 18:11:23 -0500
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/images/closelabel.png" for 127.0.0.1 at 2011-07-08 18:11:23 -0500
+
+ActionController::RoutingError (No route matches "/images/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.8ms)
+
+
+Started GET "/images/loading.gif" for 127.0.0.1 at 2011-07-08 18:11:23 -0500
+
+ActionController::RoutingError (No route matches "/images/loading.gif"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 18:11:39 -0500
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/images/plus.png" for 127.0.0.1 at 2011-07-08 18:11:40 -0500
+
+ActionController::RoutingError (No route matches "/stylesheets/images/plus.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (5.1ms)
+
+
+Started GET "/images/loading.gif" for 127.0.0.1 at 2011-07-08 18:11:40 -0500
+
+ActionController::RoutingError (No route matches "/images/loading.gif"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/images/closelabel.png" for 127.0.0.1 at 2011-07-08 18:11:40 -0500
+
+ActionController::RoutingError (No route matches "/images/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/facebox/closelabel.png" for 127.0.0.1 at 2011-07-08 18:11:40 -0500
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/tutorials/intro" for 127.0.0.1 at 2011-07-08 18:11:41 -0500
+  Processing by TutorialsController#intro as 
+Rendered tutorials/intro.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 47ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/facebox/closelabel.png" for 127.0.0.1 at 2011-07-08 18:11:42 -0500
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/images/loading.gif" for 127.0.0.1 at 2011-07-08 18:11:42 -0500
+
+ActionController::RoutingError (No route matches "/images/loading.gif"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/images/closelabel.png" for 127.0.0.1 at 2011-07-08 18:11:42 -0500
+
+ActionController::RoutingError (No route matches "/images/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 18:13:34 -0500
+  Processing by IndexController#index as HTML
+Rendered index/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 14ms (Views: 13.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/stylesheets/images/plus.png" for 127.0.0.1 at 2011-07-08 18:13:35 -0500
+
+ActionController::RoutingError (No route matches "/stylesheets/images/plus.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.9ms)
+
+
+Started GET "/images/closelabel.png" for 127.0.0.1 at 2011-07-08 18:13:35 -0500
+
+ActionController::RoutingError (No route matches "/images/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/facebox/closelabel.png" for 127.0.0.1 at 2011-07-08 18:13:35 -0500
+
+ActionController::RoutingError (No route matches "/facebox/closelabel.png"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (6.7ms)
+
+
+Started GET "/images/loading.gif" for 127.0.0.1 at 2011-07-08 18:13:35 -0500
+
+ActionController::RoutingError (No route matches "/images/loading.gif"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/tutorials/intro" for 127.0.0.1 at 2011-07-08 18:13:36 -0500
+  Processing by TutorialsController#intro as 
+Rendered tutorials/intro.html.erb within layouts/blank (14.9ms)
+Completed 200 OK in 51ms (Views: 50.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tryruby/run?cmd=%21INIT%21IRB%21" for 127.0.0.1 at 2011-07-08 18:13:41 -0500
+
+ActionController::RoutingError (No route matches "/tryruby/run"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/tryruby/run?cmd=1" for 127.0.0.1 at 2011-07-08 18:13:42 -0500
+
+ActionController::RoutingError (No route matches "/tryruby/run"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.4ms)
