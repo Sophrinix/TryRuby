@@ -1324,3 +1324,387 @@ NameError (undefined local variable or method `hi' for #<TryrubyController:0x000
 Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
 Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.1ms)
 Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.5ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/sophrinix/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 19:39:12 -0500
+
+ActionController::RoutingError (undefined local variable or method `r' for main:Object):
+  app/controllers/tryruby_controller.rb:2:in `<top (required)>'
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 19:39:14 -0500
+
+ActionController::RoutingError (undefined local variable or method `r' for main:Object):
+  app/controllers/tryruby_controller.rb:2:in `<top (required)>'
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 19:39:24 -0500
+
+ActionController::RoutingError (undefined local variable or method `r' for main:Object):
+  app/controllers/tryruby_controller.rb:2:in `<top (required)>'
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 19:39:36 -0500
+  Processing by TryrubyController#index as HTML
+Rendered tryruby/index.html.erb within layouts/tryruby (1.6ms)
+Completed 200 OK in 21ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tutorials/intro" for 127.0.0.1 at 2011-07-08 19:39:36 -0500
+
+ActionController::RoutingError (No route matches "/tutorials/intro"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.1ms)
+
+
+Started GET "/tryruby/run?cmd=%21INIT%21IRB%21" for 127.0.0.1 at 2011-07-08 19:39:38 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+Completed 500 Internal Server Error in 32ms
+
+NameError (uninitialized constant TryrubyController::SetupCode):
+  app/controllers/tryruby_controller.rb:18:in `run'
+
+
+
+Started GET "/tryruby/run?cmd=1" for 127.0.0.1 at 2011-07-08 19:39:39 -0500
+
+Errno::ENOENT (No such file or directory - No such file or directory - /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.9/lib/active_support/locale/en.yml):
+  
+
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 19:39:45 -0500
+
+Errno::ENOENT (No such file or directory - No such file or directory - /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.9/lib/active_support/locale/en.yml):
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/sophrinix/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 19:42:38 -0500
+  Processing by TryrubyController#index as HTML
+Rendered tryruby/index.html.erb within layouts/tryruby (1.8ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tutorials/intro" for 127.0.0.1 at 2011-07-08 19:42:39 -0500
+
+ActionController::RoutingError (No route matches "/tutorials/intro"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/tryruby/run?cmd=%21INIT%21IRB%21" for 127.0.0.1 at 2011-07-08 19:43:18 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+Completed 500 Internal Server Error in 16ms
+
+NameError (uninitialized constant TryrubyController::SetupCode):
+  app/controllers/tryruby_controller.rb:19:in `run'
+
+
+
+Started GET "/tryruby/run?cmd=1" for 127.0.0.1 at 2011-07-08 19:43:18 -0500
+
+Errno::ENOENT (No such file or directory - No such file or directory - /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.9/lib/active_support/locale/en.yml):
+  
+
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 19:43:43 -0500
+
+Errno::ENOENT (No such file or directory - No such file or directory - /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.9/lib/active_support/locale/en.yml):
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/sophrinix/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 19:47:00 -0500
+  Processing by TryrubyController#index as HTML
+Rendered tryruby/index.html.erb within layouts/tryruby (1.8ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tutorials/intro" for 127.0.0.1 at 2011-07-08 19:47:01 -0500
+
+ActionController::RoutingError (No route matches "/tutorials/intro"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.3ms)
+
+
+Started GET "/tryruby/run?cmd=%21INIT%21IRB%21" for 127.0.0.1 at 2011-07-08 19:47:03 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+Completed 500 Internal Server Error in 16ms
+
+NameError (uninitialized constant TryrubyController::SetupCode):
+  app/controllers/tryruby_controller.rb:19:in `run'
+
+
+
+Started GET "/tryruby/run?cmd=1" for 127.0.0.1 at 2011-07-08 19:47:04 -0500
+
+Errno::ENOENT (No such file or directory - No such file or directory - /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/activesupport-3.0.9/lib/active_support/locale/en.yml):
+  
+
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/sophrinix/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 19:49:12 -0500
+  Processing by TryrubyController#index as HTML
+Rendered tryruby/index.html.erb within layouts/tryruby (1.8ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tutorials/intro" for 127.0.0.1 at 2011-07-08 19:49:13 -0500
+
+ActionController::RoutingError (No route matches "/tutorials/intro"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/tryruby/run?cmd=%21INIT%21IRB%21" for 127.0.0.1 at 2011-07-08 19:49:15 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError (undefined method `IRB!' for #<TryrubyController:0x00000103b1f1a8>):
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `block in run'
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.6ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.3ms)
+
+
+Started GET "/tryruby/run?cmd=1" for 127.0.0.1 at 2011-07-08 19:49:15 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"1"}
+Completed 200 OK in 8ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tryruby/run?cmd=time" for 127.0.0.1 at 2011-07-08 19:49:17 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"time"}
+Completed 500 Internal Server Error in 3ms
+
+NameError (undefined local variable or method `time' for #<TryrubyController:0x000001025f4328>):
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `block in run'
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.9ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.4ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (19.4ms)
+
+
+Started GET "/tryruby/run?cmd=1" for 127.0.0.1 at 2011-07-08 19:49:22 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"1"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tryruby/run?cmd=2" for 127.0.0.1 at 2011-07-08 19:49:26 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"2"}
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tryruby/run?cmd=2" for 127.0.0.1 at 2011-07-08 19:50:16 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"2"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tryruby/run?cmd=r" for 127.0.0.1 at 2011-07-08 19:50:28 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"r"}
+Completed 500 Internal Server Error in 3ms
+
+NameError (undefined local variable or method `r' for #<TryrubyController:0x000001027dd3d8>):
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `block in run'
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (3.5ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.9ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (20.5ms)
+
+
+Started GET "/tryruby/run?cmd=p" for 127.0.0.1 at 2011-07-08 19:50:33 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"p"}
+Completed 200 OK in 2ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 19:50:38 -0500
+  Processing by TryrubyController#index as HTML
+Rendered tryruby/index.html.erb within layouts/tryruby (1.5ms)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tutorials/intro" for 127.0.0.1 at 2011-07-08 19:50:39 -0500
+
+ActionController::RoutingError (No route matches "/tutorials/intro"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/tryruby/run?cmd=%21INIT%21IRB%21" for 127.0.0.1 at 2011-07-08 19:50:41 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError (undefined method `IRB!' for #<TryrubyController:0x00000103a49170>):
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `block in run'
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.9ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.4ms)
+
+
+Started GET "/tryruby/run?cmd=1" for 127.0.0.1 at 2011-07-08 19:50:41 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"1"}
+Completed 200 OK in 2ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tryruby/run?cmd=2" for 127.0.0.1 at 2011-07-08 19:51:04 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"2"}
+Rendered tryruby/run.html.erb within layouts/tryruby (1.8ms)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tryruby/run?cmd=2" for 127.0.0.1 at 2011-07-08 19:51:27 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"2"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tryruby/run?cmd=2%20%2B%206" for 127.0.0.1 at 2011-07-08 19:51:32 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"2 + 6"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 19:51:34 -0500
+  Processing by TryrubyController#index as HTML
+Rendered tryruby/index.html.erb within layouts/tryruby (1.6ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tutorials/intro" for 127.0.0.1 at 2011-07-08 19:51:35 -0500
+
+ActionController::RoutingError (No route matches "/tutorials/intro"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.6ms)
+
+
+Started GET "/tryruby/run?cmd=%21INIT%21IRB%21" for 127.0.0.1 at 2011-07-08 19:51:37 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+Completed 500 Internal Server Error in 3ms
+
+NoMethodError (undefined method `IRB!' for #<TryrubyController:0x0000010241f2c8>):
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `block in run'
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.3ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.6ms)
+
+
+Started GET "/tryruby/run?cmd=5%20%2B%207" for 127.0.0.1 at 2011-07-08 19:51:37 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"5 + 7"}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tryruby/run?cmd=time" for 127.0.0.1 at 2011-07-08 19:51:41 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"time"}
+Completed 500 Internal Server Error in 3ms
+
+NameError (undefined local variable or method `time' for #<TryrubyController:0x00000103b61620>):
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `block in run'
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.5ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.2ms)
+
+
+Started GET "/tryruby/run?cmd=Time.now" for 127.0.0.1 at 2011-07-08 19:51:44 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"Time.now"}
+Completed 200 OK in 1ms (Views: 0.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 19:52:23 -0500
+  Processing by TryrubyController#index as HTML
+Rendered tryruby/index.html.erb within layouts/tryruby (1.5ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tutorials/intro" for 127.0.0.1 at 2011-07-08 19:52:24 -0500
+
+ActionController::RoutingError (No route matches "/tutorials/intro"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (2.2ms)
+
+
+Started GET "/tryruby/run?cmd=%21INIT%21IRB%21" for 127.0.0.1 at 2011-07-08 19:52:25 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+Completed 500 Internal Server Error in 2ms
+
+NoMethodError (undefined method `IRB!' for #<TryrubyController:0x000001039aabd8>):
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `block in run'
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.7ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (18.0ms)
+
+
+Started GET "/tryruby/run?cmd=2" for 127.0.0.1 at 2011-07-08 19:52:25 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"2"}
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tryruby/run?cmd=time" for 127.0.0.1 at 2011-07-08 19:52:26 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"time"}
+Completed 500 Internal Server Error in 2ms
+
+NameError (undefined local variable or method `time' for #<TryrubyController:0x000001039c93f8>):
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `block in run'
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.7ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.4ms)

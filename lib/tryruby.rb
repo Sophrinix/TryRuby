@@ -1,9 +1,7 @@
 #require 'ruby_parser'
 require 'ruby_parser'
 
-require 'stringio'
-require 'popup.rb'
-require 'setup.rb'
+
 require 'fakefs/safe'
 require 'cgi'
 require 'cgi/session'
