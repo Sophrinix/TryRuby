@@ -1708,3 +1708,39 @@ NameError (undefined local variable or method `time' for #<TryrubyController:0x0
 Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.5ms)
 Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (6.7ms)
 Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (17.4ms)
+DEPRECATION WARNING: config.action_view.debug_rjs will be removed in 3.1, from 3.1 onwards you will need to install prototype-rails to continue to use RJS templates . (called from service at /Users/sophrinix/.rvm/rubies/ruby-1.9.2-p0/lib/ruby/1.9.1/webrick/httpserver.rb:111)
+
+
+Started GET "/" for 127.0.0.1 at 2011-07-08 19:54:05 -0500
+  Processing by TryrubyController#index as HTML
+Rendered tryruby/index.html.erb within layouts/tryruby (2.1ms)
+Completed 200 OK in 12ms (Views: 11.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/tutorials/intro" for 127.0.0.1 at 2011-07-08 19:54:06 -0500
+
+ActionController::RoutingError (No route matches "/tutorials/intro"):
+  
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (3.3ms)
+
+
+Started GET "/tryruby/run?cmd=%21INIT%21IRB%21" for 127.0.0.1 at 2011-07-08 19:54:08 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"!INIT!IRB!"}
+Completed 500 Internal Server Error in 5ms
+
+NoMethodError (undefined method `IRB!' for #<TryrubyController:0x000001025f1830>):
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `eval'
+  app/controllers/tryruby_controller.rb:14:in `block in run'
+
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_trace.erb (2.6ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (7.0ms)
+Rendered /Users/sophrinix/.rvm/gems/ruby-1.9.2-p0/gems/actionpack-3.0.9/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (21.6ms)
+
+
+Started GET "/tryruby/run?cmd=2" for 127.0.0.1 at 2011-07-08 19:54:09 -0500
+  Processing by TryrubyController#run as 
+  Parameters: {"cmd"=>"2"}
+Completed 200 OK in 1ms (Views: 0.3ms | ActiveRecord: 0.0ms)

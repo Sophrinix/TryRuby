@@ -3,3 +3,5 @@
 .bundle
 *.lock
 tryruby/log/*
+tmp/*
+log/*
