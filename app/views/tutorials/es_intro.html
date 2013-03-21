@@ -592,14 +592,14 @@ never going back to that mountain and I hope a giraffe steals it." )</code></p>
         con este tipo de criaturas.</p>
     <p>Aquí hay un puñado de cosas que puedes hacer con tu blog array:</p>
     <ul><li>Querrás ordenar tus entradas de mas reciente a viejas. Puedes hacerlo con:<br>
-        <code>blog.sort_by { |entry| entry.time }.reverse</code><br>Ve <a href="http://ruby-doc.org/core/classes/Enumerable.html#M001945" target="_new">sort_by</a> para más explicación.</li>
+        <code>blog.sort_by { |entry| entry.time }.reverse</code><br>Ve <a href="http://ruby-doc.org/core/classes/Enumerable.html#method-i-sort_by" target="_new">sort_by</a> para más explicación.</li>
     <li>Si quieres buscar en el blog por cualquier cosa relacionada con "cadillac": <br>
         <code>blog.find_all { |entry| entry.fulltext.match(/cadillac/i) }</code><br>
-        Lee mas en <a href="http://ruby-doc.org/core/classes/Enumerable.html#M001949" target="_new">find_all</a>
-        y <a href="http://ruby-doc.org/core/classes/String.html#M001380" target="_new">match</a>
+        Lee mas en <a href="http://ruby-doc.org/core-2.0/Enumerable.html#method-i-find_all" target="_new">find_all</a>
+        y <a href="http://ruby-doc.org/core-2.0/String.html#method-i-match" target="_new">match</a>
         para descubrir como funciona. También: <code>/giraffe/i</code> es un objeto Regexp, usado para concordar palabras.</li>
     <li>Y agregar nuevas entradas con <code>blog &lt;&lt; new_entry</code><br>
-        Y aquí la documentación del método <a href="http://ruby-doc.org/core/classes/Array.html#M000360" target="_new">&lt;&lt;</a>.</li>
+        Y aquí la documentación del método <a href="http://ruby-doc.org/core-2.0/Array.html#method-i-3C-3C" target="_new">&lt;&lt;</a>.</li>
     </ul>
     <p>Puedes buscar entre la lista de los métodos con los que viene Ruby en <a href="http://ruby-doc.org/core/" target="_new">ruby-doc.org's core</a>.
        Otra buena lista hay en <a href="http://www.whytheluckystiff.net/ruby/pickaxe/html/builtins.html">online pickaxe</a>.</p>

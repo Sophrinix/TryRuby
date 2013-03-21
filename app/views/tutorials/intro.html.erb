@@ -600,14 +600,14 @@ made of an array of classes. And, actually, Ruby really does good with
 this kind of creature.</p>
     <p>Here's a few things you can do with your array blog:</p>
     <ul><li>You'll want to sort your entries from newest to oldest. You can do this with:<br>
-        <code>blog.sort_by { |entry| entry.time }.reverse</code><br>See the <a href="http://ruby-doc.org/core/classes/Enumerable.html#M001945" target="_new">sort_by</a> explanation for more.</li>
+        <code>blog.sort_by { |entry| entry.time }.reverse</code><br>See the <a href="http://ruby-doc.org/core/classes/Enumerable.html#method-i-sort_by" target="_new">sort_by</a> explanation for more.</li>
     <li>If you want to search your blog for anything related to "cadillac": <br>
         <code>blog.find_all { |entry| entry.fulltext.match(/cadillac/i) }</code><br>
-        Read all about <a href="http://ruby-doc.org/core/classes/Enumerable.html#M001949" target="_new">find_all</a>
-        and <a href="http://ruby-doc.org/core/classes/String.html#M001380" target="_new">match</a>
+        Read all about <a href="http://ruby-doc.org/core-2.0/Enumerable.html#method-i-find_all" target="_new">find_all</a>
+        and <a href="http://ruby-doc.org/core-2.0/String.html#method-i-match" target="_new">match</a>
         to figure out how that works. Also: the slashy <code>/giraffe/i</code> is a Regexp object, used for matching words.</li>
     <li>Add new entries with <code>blog &lt;&lt; new_entry</code><br>
-        And check out the <a href="http://ruby-doc.org/core/classes/Array.html#M000360" target="_new">&lt;&lt;</a> method documentation.</li>
+        And check out the <a href="http://ruby-doc.org/core-2.0/Array.html#method-i-3C-3C" target="_new">&lt;&lt;</a> method documentation.</li>
     </ul>
     <p>You can browse a list of all Ruby's built-in methods at <a href="http://ruby-doc.org/core/" target="_new">ruby-doc.org's core</a> list.
        Another good list is at the <a href="http://www.whytheluckystiff.net/ruby/pickaxe/html/builtins.html">online pickaxe</a>.</p>
